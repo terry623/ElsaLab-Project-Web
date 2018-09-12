@@ -1,22 +1,24 @@
 {
   "name": "elsa-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "ElsaLab Project Website",
   "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=1 next build"
   },
   "author": "Terry Lin",
-  "license": "ISC",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "next": "^6.1.2",
+    "prop-types": "^15.6.2",
     "react": "^16.5.0",
-    "react-dom": "^16.5.0"
+    "react-dom": "^16.5.0",
+    "webpack-bundle-analyzer": "^3.0.1"
   },
   "devDependencies": {
-    "babel-eslint": "^9.0.0",
     "eslint": "5.4.0",
     "eslint-config-yoctol": "^0.18.1",
     "eslint-plugin-import": "^2.14.0",
