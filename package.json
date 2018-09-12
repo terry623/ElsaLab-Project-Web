@@ -2,7 +2,6 @@
   "name": "elsa-project",
   "version": "1.0.0",
   "description": "ElsaLab Project Website",
-  "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -11,9 +10,12 @@
   },
   "author": "Terry Lin",
   "dependencies": {
+    "@zeit/next-css": "^0.2.0",
+    "babel-plugin-import": "^1.8.0",
     "cross-env": "^5.2.0",
-    "next": "^6.1.2",
     "prop-types": "^15.6.2",
+    "antd": "^3.9.2",
+    "next": "^6.1.2",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "webpack-bundle-analyzer": "^3.0.1"
@@ -25,6 +27,7 @@
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-prettier": "2.6.2",
     "eslint-plugin-react": "7.11.1",
-    "eslint-plugin-sort-imports-es6-autofix": "0.3.0"
+    "eslint-plugin-sort-imports-es6-autofix": "0.3.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5"
   }
 }
