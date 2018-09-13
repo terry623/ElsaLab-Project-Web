@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Parallax } from 'react-spring';
 
+import Abstract from '../components/slides/Abstract';
+import Awarding from '../components/slides/Awarding';
+import Content from '../components/slides/Content';
+import ExperimentalResults from '../components/slides/ExperimentalResults';
 import Header from '../components/Header';
-
-const BackgroundImage = '/static/background_image.jpg';
-
-const url = (name, wrap = false) =>
-  `${
-    wrap ? 'url(' : ''
-  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
-    wrap ? ')' : ''
-  }`;
+import NextProject from '../components/slides/NextProject';
+import ProposedMethodology from '../components/slides/ProposedMethodology';
+import SystemStructure from '../components/slides/SystemStructure';
+import Topic from '../components/slides/Topic';
+import VideoOverview from '../components/slides/VideoOverview';
 
 class ProjectPage extends Component {
   render() {
@@ -19,30 +19,18 @@ class ProjectPage extends Component {
         ref={ref => {
           this.parallax = ref;
         }}
-        pages={3}
+        pages={2}
       >
         <Header />
-        <Parallax.Layer offset={0} speed={1}>
-          <img
-            className="back_layer"
-            src={BackgroundImage}
-            alt="backgroupImage"
-          />
-        </Parallax.Layer>
-        <Parallax.Layer offset={0.3} speed={0.5}>
-          <img
-            src={url('satellite4')}
-            style={{ width: '15%', marginLeft: '70%' }}
-            alt="titleCard"
-          />
-        </Parallax.Layer>
-        <style jsx>{`
-          .back_layer {
-            background-size: cover;
-            width: 100%;
-            height: 100%;
-          }
-        `}</style>
+        <Topic mainOffset={0} />
+        <SystemStructure mainOffset={1} />
+        {/* <Abstract mainOffset={2} />
+        <ProposedMethodology mainOffset={3} />
+        <ExperimentalResults mainOffset={4} />
+        <Awarding mainOffset={5} />
+        <VideoOverview mainOffset={6} />
+        <Content mainOffset={7} />
+        <NextProject mainOffset={8} /> */}
       </Parallax>
     );
   }
