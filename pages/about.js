@@ -1,11 +1,12 @@
 import React from 'react';
 
-import Layout from '../components/Layout';
+import Header from '../components/Header';
 
 const AboutPage = () => (
-  <Layout>
-    <p>This is the about page</p>
-  </Layout>
+  <div>
+    <Header />
+    <p>This is the home page</p>
+  </div>
 );
 
 export default AboutPage;

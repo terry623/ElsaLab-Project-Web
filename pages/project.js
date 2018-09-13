@@ -1,88 +1,49 @@
 import React, { Component } from 'react';
-import { Spring } from 'react-spring';
+import { Parallax } from 'react-spring';
 
-// import Layout from '../components/Layout';
+import Header from '../components/Header';
 
-// const ProjectPage = () => (
-//   <Layout>
-//     <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
-//       {styles => <div style={styles}>i will fade in</div>}
-//     </Spring>
-//   </Layout>
-// );
+const BackgroundImage = '/static/background_image.jpg';
 
-// export default ProjectPage;
-
-const TRIANGLE = 'M20,380 L380,380 L380,380 L200,20 L20,380 Z';
-const RECTANGLE = 'M20,20 L20,380 L380,380 L380,20 L20,20 Z';
-const styles = {
-  container: {
-    height: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    willChange: 'background',
-  },
-  shape: { width: 300, height: 300, willChange: 'transform' },
-};
-
-const Content = ({
-  toggle,
-  color,
-  scale,
-  shape,
-  start,
-  end,
-  stop,
-  rotation,
-}) => (
-  <div
-    style={{
-      ...styles.container,
-      background: `linear-gradient(to bottom, ${start} ${stop}, ${end} 100%)`,
-    }}
-  >
-    <svg
-      style={{
-        ...styles.shape,
-        transform: `scale3d(${scale}, ${scale}, ${scale}) rotate(${rotation})`,
-      }}
-      version="1.1"
-      viewBox="0 0 400 400"
-    >
-      <g
-        style={{ cursor: 'pointer' }}
-        fill={color}
-        fillRule="evenodd"
-        onClick={toggle}
-      >
-        <path id="path-1" d={shape} />
-      </g>
-    </svg>
-  </div>
-);
+const url = (name, wrap = false) =>
+  `${
+    wrap ? 'url(' : ''
+  }https://awv3node-homepage.surge.sh/build/assets/${name}.svg${
+    wrap ? ')' : ''
+  }`;
 
 class ProjectPage extends Component {
-  state = { toggle: true };
-  toggle = () => this.setState(state => ({ toggle: !state.toggle }));
-
   render() {
-    const toggle = this.state.toggle;
     return (
-      <Spring
-        from={{ color: 'black' }}
-        to={{
-          color: toggle ? '#247BA0' : '#70C1B3',
-          start: toggle ? '#B2DBBF' : '#B2DBBF',
-          end: toggle ? '#247BA0' : '#F3FFBD',
-          scale: toggle ? 0.6 : 1.5,
-          shape: toggle ? TRIANGLE : RECTANGLE,
-          stop: toggle ? '0%' : '50%',
-          rotation: toggle ? '0deg' : '45deg',
+      <Parallax
+        ref={ref => {
+          this.parallax = ref;
         }}
-        toggle={this.toggle} // Additional props will be spread over the child
-        children={Content} // Render prop
-      />
+        pages={3}
+      >
+        <Header />
+        <Parallax.Layer offset={0} speed={1}>
+          <img
+            className="back_layer"
+            src={BackgroundImage}
+            alt="backgroupImage"
+          />
+        </Parallax.Layer>
+        <Parallax.Layer offset={0.3} speed={0.5}>
+          <img
+            src={url('satellite4')}
+            style={{ width: '15%', marginLeft: '70%' }}
+            alt="titleCard"
+          />
+        </Parallax.Layer>
+        <style jsx>{`
+          .back_layer {
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+          }
+        `}</style>
+      </Parallax>
     );
   }
 }

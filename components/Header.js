@@ -4,14 +4,10 @@ import { Col, Row } from 'antd';
 
 const IconImg = '/static/icon.png';
 
-const linkStyle = {
-  marginRight: 15,
-};
-
 const Header = () => (
   <div>
     <Row type="flex" justify="space-between">
-      <Col span={12} className="nav_item">
+      <Col span={12}>
         <Row type="flex" justify="start">
           <Col>
             <img src={IconImg} alt="icon" />
@@ -23,20 +19,20 @@ const Header = () => (
         </Row>
       </Col>
       <Col span={12}>
-        <Row type="flex" justify="end">
+        <Row type="flex" justify="end" gutter={32}>
           <Col>
             <Link href="/">
-              <a style={linkStyle}>Home</a>
+              <a>Home</a>
             </Link>
           </Col>
           <Col>
             <Link href="/project">
-              <a style={linkStyle}>Project</a>
+              <a>Project</a>
             </Link>
           </Col>
           <Col>
             <Link href="/about">
-              <a style={linkStyle}>About</a>
+              <a>About</a>
             </Link>
           </Col>
         </Row>

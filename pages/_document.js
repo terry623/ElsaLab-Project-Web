@@ -10,6 +10,15 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
+        <style jsx global>{`
+          html,
+          body {
+            padding: 0;
+            margin: 0;
+          }
+          width: 100%;
+          height: 100%;
+        `}</style>
         <body>
           <Main />
           <NextScript />
