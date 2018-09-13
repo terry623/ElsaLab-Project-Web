@@ -1,4 +1,5 @@
 module.exports = {
+  parser: 'babel-eslint',
   extends: 'yoctol',
   plugins: ['jsx-a11y', 'react'],
   env: {
