@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Parallax } from 'react-spring';
 
-import Header from '../Header';
+import Header from './Header';
 
 const BackgroundImage = '/static/background_image.jpg';
 const satellite =
@@ -14,10 +14,10 @@ const Topic = ({ mainOffset, scroll }) => (
       <Header />
       <div className="back_layer" />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.5} speed={1}>
+    <Parallax.Layer offset={mainOffset + 0.5} speed={0.5}>
       <img
         src={satellite}
-        style={{ width: '15%', marginLeft: '70%' }}
+        style={{ width: '15%', marginLeft: '60%' }}
         alt="titleCard"
       />
     </Parallax.Layer>
