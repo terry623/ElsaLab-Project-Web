@@ -2,6 +2,8 @@ import Link from 'next/link';
 import React from 'react';
 import { Col, Row } from 'antd';
 
+import { pinkColor } from '../color';
+
 const IconImg = '/static/icon.png';
 
 const Header = () => (
@@ -9,10 +11,10 @@ const Header = () => (
     <Row type="flex" justify="space-between">
       <Col span={12}>
         <Row type="flex" justify="start">
-          <Col>
+          <Col className="nav_item">
             <img src={IconImg} alt="icon" />
           </Col>
-          <Col>
+          <Col className="nav_item">
             <p>NTHU</p>
             <p>ELSA</p>
           </Col>
@@ -20,17 +22,17 @@ const Header = () => (
       </Col>
       <Col span={12}>
         <Row type="flex" justify="end" gutter={32}>
-          <Col>
+          <Col className="nav_item">
             <Link href="/">
               <a>Home</a>
             </Link>
           </Col>
-          <Col>
+          <Col className="nav_item">
             <Link href="/project">
               <a>Project</a>
             </Link>
           </Col>
-          <Col>
+          <Col className="nav_item">
             <Link href="/about">
               <a>About</a>
             </Link>
@@ -38,9 +40,19 @@ const Header = () => (
         </Row>
       </Col>
     </Row>
-    <style jsx>{`
-      img {
+    <style jsx global>{`
+      .nav_item {
+        height: 70px;
+        font-size: 20px;
+        color: ${pinkColor};
+        padding-top: 30px;
+        padding-bottom: 10px;
+      }
+      .nav_item img {
         width: 50px;
+      }
+      .nav_item a {
+        color: ${pinkColor};
       }
     `}</style>
   </div>
