@@ -9,7 +9,7 @@ const IconImg = '/static/icon.png';
 const Header = () => (
   <div>
     <Row type="flex" justify="space-between">
-      <Col span={12}>
+      <Col span={12} id="test">
         <Row type="flex" justify="start">
           <Col className="nav_item">
             <img src={IconImg} alt="icon" />
@@ -40,9 +40,9 @@ const Header = () => (
         </Row>
       </Col>
     </Row>
+    {/* FIXME: 要參考 ant design 如何排列 */}
     <style jsx global>{`
       .nav_item {
-        height: 70px;
         font-size: 20px;
         color: ${pinkColor};
         padding-top: 30px;
