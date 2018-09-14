@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Parallax } from 'react-spring';
 
-const SystemStructure = ({ mainOffset }) => (
-  <div>
+const SystemStructure = ({ mainOffset, scroll }) => (
+  <div onClick={() => scroll(0)}>
     <Parallax.Layer
-      className="media_layer"
       offset={mainOffset}
       speed={1}
       style={{ backgroundColor: '#fcebeb' }}
@@ -15,6 +14,7 @@ const SystemStructure = ({ mainOffset }) => (
 
 SystemStructure.propTypes = {
   mainOffset: PropTypes.number.isRequired,
+  scroll: PropTypes.func.isRequired,
 };
 
 export default SystemStructure;
