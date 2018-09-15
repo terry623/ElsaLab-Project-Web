@@ -24,6 +24,7 @@ const Topic = ({ mainOffset, scroll }) => (
         </div>
       </div>
     </Parallax.Layer>
+    {/* FIXME: 把 px 改成 rem */}
     <style jsx>{`
       // FIXME: 中間白色也變半透明了
       .card {
