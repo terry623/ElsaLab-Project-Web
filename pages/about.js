@@ -5,7 +5,7 @@ import Header from '../components/slides/Header';
 const AboutPage = () => (
   <div>
     <Header />
-    <p>This is the home page</p>
+    <p>This is the about page</p>
   </div>
 );
 

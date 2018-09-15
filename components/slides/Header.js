@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { Col, Row } from 'antd';
 
-import { pinkColorDark } from '../color';
+import { pinkColorDark, pinkColorLight } from '../color';
 
 const IconImg = '/static/icon.png';
 
@@ -42,10 +42,12 @@ const Header = () => (
     </Row>
     <style jsx global>{`
       .nav_item {
+        padding-top: 30px;
+        padding-bottom: 15px;
         color: ${pinkColorDark};
       }
       .navbar_left {
-        padding-top: 25px;
+        margin-top: -10px;
       }
       .nav_item img {
         width: 50px;
@@ -56,13 +58,19 @@ const Header = () => (
       #ELSA {
         font-size: 20px;
       }
+      .navbar_right a {
+        color: ${pinkColorDark};
+      }
       .navbar_right {
         font-size: 20px;
-        padding-top: 30px;
         padding-right: 20px;
       }
-      .nav_item a {
-        color: ${pinkColorDark};
+      .navbar_right .nav_item:hover {
+        background-color: black;
+        opacity: 0.5;
+      }
+      .navbar_right .nav_item:hover a {
+        color: ${pinkColorLight};
       }
     `}</style>
   </div>
