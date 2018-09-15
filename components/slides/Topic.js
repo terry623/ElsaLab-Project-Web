@@ -5,8 +5,6 @@ import { Parallax } from 'react-spring';
 import Header from './Header';
 
 const BackgroundImage = '/static/background_image.jpg';
-const satellite =
-  'https://awv3node-homepage.surge.sh/build/assets/satellite4.svg';
 
 const Topic = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(1)}>
@@ -14,14 +12,42 @@ const Topic = ({ mainOffset, scroll }) => (
       <Header />
       <div className="back_layer" />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.5} speed={0.5}>
-      <img
-        src={satellite}
-        style={{ width: '15%', marginLeft: '60%' }}
-        alt="titleCard"
-      />
+    <Parallax.Layer offset={mainOffset + 0.3} speed={0.5}>
+      <div className="card">
+        <div className="title_block">
+          <div className="year_title">2017</div>
+          <div className="main_title">Virtual-to-Real:</div>
+          <div className="sub_title">
+            Learning to Control in Visual Semantic
+          </div>
+          <div className="sub_title">Segmentation</div>
+        </div>
+      </div>
     </Parallax.Layer>
     <style jsx>{`
+      // FIXME: 中間白色也變半透明了
+      .card {
+        width: 600px;
+        height: 400px;
+        margin-left: 45%;
+        background-color: black;
+        opacity: 0.5;
+        border: 15px solid white;
+        border-bottom-width: 150px;
+        padding: 15px;
+      }
+      .title_block {
+        padding: 0px 5px;
+        font-size: 30px;
+        color: white;
+      }
+      .year_title {
+        margin-bottom: -10px;
+      }
+      .main_title {
+        font-size: 50px;
+        font-weight: bold;
+      }
       .back_layer {
         background: url(${BackgroundImage});
         background-size: cover;

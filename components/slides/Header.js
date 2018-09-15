@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { Col, Row } from 'antd';
 
-import { pinkColorDark, pinkColorLight } from '../color';
+import { pinkColorDark } from '../color';
 
 const IconImg = '/static/icon.png';
 
@@ -65,12 +65,13 @@ const Header = () => (
         font-size: 20px;
         padding-right: 20px;
       }
+      // FIXME: 中間的文字也變成半透明了
       .navbar_right .nav_item:hover {
         background-color: black;
         opacity: 0.5;
       }
       .navbar_right .nav_item:hover a {
-        color: ${pinkColorLight};
+        color: white;
       }
     `}</style>
   </div>
