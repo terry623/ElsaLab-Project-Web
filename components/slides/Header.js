@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { Col, Row } from 'antd';
 
-import { pinkColor } from '../color';
+import { pinkColorDark } from '../color';
 
 const IconImg = '/static/icon.png';
 
@@ -44,7 +44,7 @@ const Header = () => (
     <style jsx global>{`
       .nav_item {
         font-size: 20px;
-        color: ${pinkColor};
+        color: ${pinkColorDark};
         padding-top: 30px;
         padding-bottom: 10px;
       }
@@ -52,7 +52,7 @@ const Header = () => (
         width: 50px;
       }
       .nav_item a {
-        color: ${pinkColor};
+        color: ${pinkColorDark};
       }
     `}</style>
   </div>

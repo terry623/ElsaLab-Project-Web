@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Parallax } from 'react-spring';
 
-import { pinkColor } from '../color';
+import { pinkColorLight } from '../color';
 
 const satellite =
   'https://awv3node-homepage.surge.sh/build/assets/satellite4.svg';
@@ -21,7 +21,7 @@ const SystemStructure = ({ mainOffset, scroll }) => (
     </Parallax.Layer>
     <style jsx>{`
       .back_layer_2 {
-        background-color: ${pinkColor};
+        background-color: ${pinkColorLight};
         background-size: cover;
         width: 100%;
         height: 100%;

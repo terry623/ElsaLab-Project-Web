@@ -10,7 +10,7 @@ import Abstract from '../components/slides/Abstract';
 import SystemStructure from '../components/slides/SystemStructure';
 import Topic from '../components/slides/Topic';
 // import VideoOverview from '../components/slides/VideoOverview';
-import { pinkColor } from '../components/color';
+import { pinkColorLight } from '../components/color';
 
 class ProjectPage extends Component {
   scroll = to => this.DOMnode.scrollTo(to);
@@ -27,7 +27,7 @@ class ProjectPage extends Component {
           speed={0}
           factor={3}
           style={{
-            backgroundColor: pinkColor,
+            backgroundColor: pinkColorLight,
             backgroundSize: 'cover',
           }}
         />

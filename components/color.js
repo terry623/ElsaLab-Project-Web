@@ -1,1 +1,2 @@
-export const pinkColor = '#fcebeb';
+export const pinkColorLight = '#fcebeb';
+export const pinkColorDark = '#ff75a8';
