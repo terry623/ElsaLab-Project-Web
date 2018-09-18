@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Parallax } from 'react-spring';
 
+import { ScreenXL, ScreenXXL } from '../size';
+
 import Header from './Header';
 
 const BackgroundImage = '/static/background_image.jpg';
@@ -24,29 +26,41 @@ const Topic = ({ mainOffset, scroll }) => (
         </div>
       </div>
     </Parallax.Layer>
-    {/* FIXME: 把 px 改成 rem */}
     <style jsx>{`
-      // FIXME: 中間白色也變半透明了
       .card {
-        width: 600px;
-        height: 400px;
+        width: 50%;
+        height: 60%;
         margin-left: 45%;
         background-color: black;
         opacity: 0.5;
-        border: 15px solid white;
-        border-bottom-width: 150px;
-        padding: 15px;
+        border: 1rem solid white;
+        padding: 1rem;
+      }
+      @media (min-width: ${ScreenXL}) {
+        .card {
+          border-bottom-width: 10rem;
+        }
+        .title_block {
+          font-size: 2rem;
+        }
+      }
+      @media (min-width: ${ScreenXXL}) {
+        .card {
+          border-bottom-width: 14rem;
+        }
+        .title_block {
+          font-size: 3rem;
+        }
       }
       .title_block {
-        padding: 0px 5px;
-        font-size: 30px;
+        padding: 0rem 1rem;
         color: white;
       }
       .year_title {
-        margin-bottom: -10px;
+        margin-bottom: -1rem;
       }
       .main_title {
-        font-size: 50px;
+        font-size: 1.5em;
         font-weight: bold;
       }
       .back_layer {
