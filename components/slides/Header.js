@@ -41,6 +41,7 @@ const Header = () => (
       </Col>
     </Row>
     <style jsx global>{`
+      // FIXME: 手機板的 header 要怎麼設計尚未討論
       .nav_item {
         padding-top: 30px;
         padding-bottom: 15px;
@@ -65,7 +66,6 @@ const Header = () => (
         font-size: 20px;
         padding-right: 20px;
       }
-      // FIXME: 中間的文字也變成半透明了
       .navbar_right .nav_item:hover {
         background-color: black;
         opacity: 0.5;

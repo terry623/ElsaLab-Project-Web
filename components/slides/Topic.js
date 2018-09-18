@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Parallax } from 'react-spring';
 
-import { ScreenXL, ScreenXXL } from '../size';
+import { ScreenSM, ScreenXXL } from '../size';
 
 import Header from './Header';
 
@@ -36,7 +36,31 @@ const Topic = ({ mainOffset, scroll }) => (
         border: 1rem solid white;
         padding: 1rem;
       }
-      @media (min-width: ${ScreenXL}) {
+      .title_block {
+        padding: 0rem 1rem;
+        color: white;
+      }
+      .year_title {
+        margin-bottom: -1rem;
+      }
+      .main_title {
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+      @media (max-width: ${ScreenSM}) {
+        .card {
+          margin: auto;
+          width: 70%;
+          border-bottom-width: 6rem;
+        }
+        .title_block {
+          font-size: 1.2rem;
+        }
+        .year_title {
+          margin-bottom: 0rem;
+        }
+      }
+      @media (min-width: ${ScreenSM}) {
         .card {
           border-bottom-width: 10rem;
         }
@@ -51,17 +75,6 @@ const Topic = ({ mainOffset, scroll }) => (
         .title_block {
           font-size: 3rem;
         }
-      }
-      .title_block {
-        padding: 0rem 1rem;
-        color: white;
-      }
-      .year_title {
-        margin-bottom: -1rem;
-      }
-      .main_title {
-        font-size: 1.5em;
-        font-weight: bold;
       }
       .back_layer {
         background: url(${BackgroundImage});
