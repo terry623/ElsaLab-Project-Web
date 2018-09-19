@@ -4,9 +4,9 @@ import { Parallax } from 'react-spring';
 import Abstract from '../components/slides/Abstract';
 // import Awarding from '../components/slides/Awarding';
 // import Content from '../components/slides/Content';
-// import ExperimentalResults from '../components/slides/ExperimentalResults';
+import ExperimentalResults from '../components/slides/ExperimentalResults';
 // import NextProject from '../components/slides/NextProject';
-// import ProposedMethodology from '../components/slides/ProposedMethodology';
+import ProposedMethodology from '../components/slides/ProposedMethodology';
 import SystemStructure from '../components/slides/SystemStructure';
 import Topic from '../components/slides/Topic';
 // import VideoOverview from '../components/slides/VideoOverview';
@@ -21,7 +21,7 @@ class ProjectPage extends Component {
 
   render() {
     return (
-      <Parallax ref={this.getRef} pages={3}>
+      <Parallax ref={this.getRef} pages={5}>
         <Parallax.Layer
           offset={0}
           speed={0}
@@ -34,9 +34,9 @@ class ProjectPage extends Component {
         <Topic mainOffset={0} scroll={this.scroll} />
         <SystemStructure mainOffset={1} scroll={this.scroll} />
         <Abstract mainOffset={2} scroll={this.scroll} />
-        {/* <ProposedMethodology mainOffset={3} />
-        <ExperimentalResults mainOffset={4} />
-        <Awarding mainOffset={5} />
+        <ProposedMethodology mainOffset={3} scroll={this.scroll} />
+        <ExperimentalResults mainOffset={4} scroll={this.scroll} />
+        {/* <Awarding mainOffset={5} />
         <VideoOverview mainOffset={6} />
         <Content mainOffset={7} />
         <NextProject mainOffset={8} /> */}

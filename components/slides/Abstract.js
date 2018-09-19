@@ -9,7 +9,7 @@ import { pinkColorLight } from '../color';
 const BackgroundImage = '/static/background_image.jpg';
 
 const Abstract = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(0)}>
+  <div onClick={() => scroll(3)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <div className="back_layer" />
     </Parallax.Layer>
@@ -52,9 +52,6 @@ const Abstract = ({ mainOffset, scroll }) => (
         background-size: cover;
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
         z-index: -100;
       }
       .abstract {
