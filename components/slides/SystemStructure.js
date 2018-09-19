@@ -3,6 +3,7 @@ import React from 'react';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
+import { ScreenSM, ScreenXXL } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const ProductImage = '/static/System_structure_img.jpg';
@@ -45,23 +46,56 @@ const SystemStructure = ({ mainOffset, scroll }) => (
         height: 100%;
         z-index: -100;
       }
-      .system {
-        margin-top: 30%;
-        height: 40rem;
-      }
       .media_title {
         background: url(${BackgroundImage});
         height: 100%;
-        width: 16rem;
       }
       .title {
-        font-size: 3rem;
         font-style: italic;
-        padding: 2rem;
         color: ${pinkColorDark};
       }
       .media {
         height: 100%;
+      }
+      @media (max-width: ${ScreenSM}) {
+        // FIXME: 設計要討論
+        .system {
+          margin-top: 25%;
+          height: 30rem;
+        }
+        .media_title {
+          width: 9rem;
+        }
+        .title {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+      }
+      @media (min-width: ${ScreenSM}) {
+        .system {
+          margin-top: 25%;
+          height: 30rem;
+        }
+        .media_title {
+          width: 9rem;
+        }
+        .title {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+      }
+      @media (min-width: ${ScreenXXL}) {
+        .system {
+          margin-top: 30%;
+          height: 40rem;
+        }
+        .media_title {
+          width: 16rem;
+        }
+        .title {
+          font-size: 3rem;
+          padding: 2rem;
+        }
       }
     `}</style>
   </div>

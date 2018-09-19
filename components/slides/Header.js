@@ -41,7 +41,7 @@ const Header = () => (
       </Col>
     </Row>
     <style jsx global>{`
-      // FIXME: 手機板的 header 要怎麼設計尚未討論
+      // FIXME: 設計要討論
       .nav_item {
         padding-top: 30px;
         padding-bottom: 15px;
