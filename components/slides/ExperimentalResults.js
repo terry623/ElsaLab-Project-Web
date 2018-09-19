@@ -54,7 +54,7 @@ const ExperimentalResults = ({ mainOffset, scroll }) => (
         font-style: italic;
       }
       .block_title {
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.4);
         background-size: cover;
         color: ${pinkColorLight};
         width: 100%;

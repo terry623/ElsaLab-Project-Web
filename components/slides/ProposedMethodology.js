@@ -54,7 +54,7 @@ const ProposedMethodology = ({ mainOffset, scroll }) => (
         font-style: italic;
       }
       .block_title {
-        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
           url(${BackgroundImage});
         background-size: cover;
         color: ${pinkColorLight};
