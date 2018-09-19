@@ -75,7 +75,7 @@ const Abstract = ({ mainOffset, scroll }) => (
       }
       @media (min-width: ${ScreenSM}) {
         .abstract {
-          margin-top: 5rem;
+          margin-top: 6rem;
         }
         .main_title {
           font-size: 3rem;
