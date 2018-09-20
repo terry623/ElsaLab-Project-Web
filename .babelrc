@@ -8,6 +8,14 @@
         "libraryName": "antd",
         "style": "css"
       }
+    ],
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
     ]
   ]
 }

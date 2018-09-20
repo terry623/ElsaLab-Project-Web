@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import styled from 'styled-components';
 import { Parallax } from 'react-spring';
 
 import { ScreenSM, ScreenXXL } from '../size';
@@ -8,6 +9,11 @@ import Header from './Header';
 
 const BackgroundImage = '/static/background_image.jpg';
 
+const Title = styled.h1`
+  color: white;
+  font-size: 50px;
+`;
+
 const Topic = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(1)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
@@ -15,6 +21,7 @@ const Topic = ({ mainOffset, scroll }) => (
       <div className="back_layer" />
     </Parallax.Layer>
     <Parallax.Layer offset={mainOffset + 0.3} speed={0.5}>
+      <Title>My page</Title>
       <div className="card">
         <div className="title_block">
           <div className="year_title">2017</div>
