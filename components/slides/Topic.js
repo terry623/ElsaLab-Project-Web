@@ -9,7 +9,7 @@ import Header from './Header';
 
 const BackgroundImage = '/static/background_image.jpg';
 
-const BackGround = styled.div`
+const Background = styled.div`
   background: url(${BackgroundImage});
   background-size: cover;
   width: 100%;
@@ -76,7 +76,7 @@ const Topic = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(1)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Header />
-      <BackGround />
+      <Background />
     </Parallax.Layer>
     <Parallax.Layer offset={mainOffset + 0.3} speed={0.5}>
       <Card>

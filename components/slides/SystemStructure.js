@@ -10,7 +10,7 @@ import { pinkColorDark, pinkColorLight } from '../color';
 const ProductImage = '/static/System_structure_img.jpg';
 const BackgroundImage = '/static/background_image.jpg';
 
-const BackGround = styled.div`
+const Background = styled.div`
   background-color: ${pinkColorLight};
   background-size: cover;
   width: 100%;
@@ -59,7 +59,7 @@ const Media = styled.img`
 const SystemStructure = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(2)}>
     <Parallax.Layer offset={mainOffset} speed={1}>
-      <BackGround />
+      <Background />
     </Parallax.Layer>
     <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
       <Row type="flex" justify="center">
