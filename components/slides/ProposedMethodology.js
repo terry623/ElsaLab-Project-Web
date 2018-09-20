@@ -13,7 +13,7 @@ const ProposedMethodology = ({ mainOffset, scroll }) => (
     <Parallax.Layer offset={mainOffset} speed={0}>
       <div className="back_layer" />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset} speed={0.5}>
+    <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
       <div className="proposedMethodology">
         <Row className="title_block">
           <Col span={15} offset={4}>
@@ -60,16 +60,13 @@ const ProposedMethodology = ({ mainOffset, scroll }) => (
         color: ${pinkColorLight};
         width: 100%;
         z-index: -100;
+        margin: 1rem 0;
       }
       @media (max-width: ${ScreenSM}) {
         // FIXME: 設計要討論
-        .proposedMethodology {
-          margin-top: 6rem;
-        }
         .block_title {
           height: 6rem;
           font-size: 2rem;
-          margin: 1rem 0;
           padding: 1.5rem;
         }
         .main_title {
@@ -78,13 +75,9 @@ const ProposedMethodology = ({ mainOffset, scroll }) => (
         }
       }
       @media (min-width: ${ScreenSM}) {
-        .proposedMethodology {
-          margin-top: 6rem;
-        }
         .block_title {
           height: 6rem;
           font-size: 2rem;
-          margin: 1rem 0;
           padding: 1.5rem;
         }
         .main_title {
@@ -93,13 +86,9 @@ const ProposedMethodology = ({ mainOffset, scroll }) => (
         }
       }
       @media (min-width: ${ScreenXXL}) {
-        .proposedMethodology {
-          margin-top: 10rem;
-        }
         .block_title {
           height: 8rem;
           font-size: 2.5rem;
-          margin: 1rem 0;
           padding: 2rem;
         }
         .main_title {

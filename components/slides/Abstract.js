@@ -13,7 +13,7 @@ const Abstract = ({ mainOffset, scroll }) => (
     <Parallax.Layer offset={mainOffset} speed={0}>
       <div className="back_layer" />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset} speed={0.5}>
+    <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
       <div className="abstract">
         <Row className="title_block">
           <Col span={12} offset={4}>
@@ -59,39 +59,28 @@ const Abstract = ({ mainOffset, scroll }) => (
       }
       .main_title {
         color: ${pinkColorLight};
+        margin-bottom: 1rem;
       }
       @media (max-width: ${ScreenSM}) {
         // FIXME: 設計要討論
-        .abstract {
-          margin-top: 5rem;
-        }
         .main_title {
           font-size: 3rem;
-          margin-bottom: 1rem;
         }
         .content_text {
           font-size: 1.2rem;
         }
       }
       @media (min-width: ${ScreenSM}) {
-        .abstract {
-          margin-top: 6rem;
-        }
         .main_title {
           font-size: 3rem;
-          margin-bottom: 1rem;
         }
         .content_text {
           font-size: 1.2rem;
         }
       }
       @media (min-width: ${ScreenXXL}) {
-        .abstract {
-          margin-top: 9rem;
-        }
         .main_title {
           font-size: 4rem;
-          margin-bottom: 1rem;
         }
         .content_text {
           font-size: 1.5rem;

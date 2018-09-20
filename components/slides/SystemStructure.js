@@ -14,7 +14,7 @@ const SystemStructure = ({ mainOffset, scroll }) => (
     <Parallax.Layer offset={mainOffset} speed={1}>
       <div className="back_layer_2" />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset} speed={0.5}>
+    <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
       <Row type="flex" justify="center">
         <Col span={8} offset={1}>
           <Row type="flex" justify="start">
@@ -60,7 +60,6 @@ const SystemStructure = ({ mainOffset, scroll }) => (
       @media (max-width: ${ScreenSM}) {
         // FIXME: 設計要討論
         .system {
-          margin-top: 25%;
           height: 30rem;
         }
         .media_title {
@@ -73,7 +72,6 @@ const SystemStructure = ({ mainOffset, scroll }) => (
       }
       @media (min-width: ${ScreenSM}) {
         .system {
-          margin-top: 25%;
           height: 30rem;
         }
         .media_title {
@@ -86,7 +84,6 @@ const SystemStructure = ({ mainOffset, scroll }) => (
       }
       @media (min-width: ${ScreenXXL}) {
         .system {
-          margin-top: 30%;
           height: 40rem;
         }
         .media_title {
