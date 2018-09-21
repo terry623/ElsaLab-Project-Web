@@ -65,12 +65,13 @@ const Media = styled.img`
 `;
 
 const Awarding = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(2)}>
-    <Parallax.Layer offset={mainOffset} speed={1}>
-      <AwardingTitleBlock>
-        <Title>Awarding</Title>
-      </AwardingTitleBlock>
-      <Background />
+  <div onClick={() => scroll(0)}>
+    <Parallax.Layer offset={mainOffset} speed={0}>
+      <Background>
+        <AwardingTitleBlock>
+          <Title>Awarding</Title>
+        </AwardingTitleBlock>
+      </Background>
     </Parallax.Layer>
     <Parallax.Layer offset={mainOffset + 0.1} speed={0.5}>
       <Row type="flex" justify="center">

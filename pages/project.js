@@ -25,18 +25,18 @@ class ProjectPage extends Component {
         <Parallax.Layer
           offset={0}
           speed={0}
-          factor={3}
+          factor={9}
           style={{
             backgroundColor: pinkColorLight,
             backgroundSize: 'cover',
           }}
         />
-        <Topic mainOffset={5} scroll={this.scroll} />
+        <Topic mainOffset={0} scroll={this.scroll} />
         <SystemStructure mainOffset={1} scroll={this.scroll} />
         <Abstract mainOffset={2} scroll={this.scroll} />
         <ProposedMethodology mainOffset={3} scroll={this.scroll} />
         <ExperimentalResults mainOffset={4} scroll={this.scroll} />
-        <Awarding mainOffset={0} />
+        <Awarding mainOffset={5} scroll={this.scroll} />
         {/* <VideoOverview mainOffset={6} />
         <Content mainOffset={7} />
         <NextProject mainOffset={8} /> */}

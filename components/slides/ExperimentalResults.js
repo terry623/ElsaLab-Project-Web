@@ -48,7 +48,7 @@ const BlockTitle = styled.div`
 `;
 
 const ExperimentalResults = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(0)}>
+  <div onClick={() => scroll(5)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background />
     </Parallax.Layer>
