@@ -25,50 +25,41 @@ const Card = styled.div`
   height: 60%;
   background-color: black;
   opacity: 0.5;
-  border: 1rem solid white;
+  border: 2vmin solid white;
   margin: auto;
-  padding: 1rem;
-  border-bottom-width: 7rem;
+  padding: 2vmin;
+  border-bottom-width: 20vmin;
 
   ${media.notebook`
     width: 50%;
     margin-left: 45%;
-    border-bottom-width: 10rem;
   `};
   ${media.desktop`
     width: 50%;
     margin-left: 45%;
-    border-bottom-width: 14rem;
   `};
 `;
 
 const Block = styled.div`
-  padding: 0rem 1rem;
+  padding: 0 2vmin;
   color: white;
-  font-size: 1.2rem;
-
-  ${media.notebook`
-    font-size: 2rem;
-  `};
-  ${media.desktop`
-    font-size: 3rem;
-  `};
+  font-size: 5vmin;
 `;
 
 const Year = styled.div`
   color: white;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 
   ${media.notebook`
-    margin-bottom: -1rem;
+    margin-bottom: -2vmin;
   `};
   ${media.desktop`
-    margin-bottom: -1rem;
+    margin-bottom: -2.5vmin;
   `};
 `;
 
 const Title = styled.div`
-  font-size: 1.5em;
+  font-size: 8vmin;
   font-weight: bold;
 `;
 
@@ -83,11 +74,7 @@ const Topic = ({ mainOffset, scroll }) => (
         <Block>
           <Year>2017</Year>
           <Title>Virtual-to-Real:</Title>
-          <div>
-            Learning to Control in Visual Semantic
-            <br />
-            Segmentation
-          </div>
+          <p>Learning to Control in Visual Semantic Segmentation</p>
         </Block>
       </Card>
     </Parallax.Layer>
