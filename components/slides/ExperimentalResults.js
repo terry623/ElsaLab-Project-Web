@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
-import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const BackgroundInvertImage = '/static/background_image_invert.jpg';
@@ -20,13 +19,8 @@ const Background = styled.div`
 const MainTitle = styled.div`
   color: ${pinkColorDark};
   font-style: italic;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-
-  ${media.desktop`
-    font-size: 4rem;
-    margin-bottom: 2rem;
-  `};
+  font-size: 6vmin;
+  margin-bottom: 2vmin;
 `;
 
 const BlockTitle = styled.div`
@@ -34,17 +28,11 @@ const BlockTitle = styled.div`
   background-size: cover;
   z-index: -100;
   color: ${pinkColorLight};
-  font-size: 2rem;
+  font-size: 4vmin;
   width: 100%;
-  height: 6rem;
-  margin: 1rem 0;
-  padding: 1.5rem;
-
-  ${media.desktop`
-    font-size: 2.5rem;
-    height: 8rem;
-    padding: 2rem;
-  `};
+  height: 12vmin;
+  margin: 2vmin 0;
+  padding: 3vmin;
 `;
 
 const ExperimentalResults = ({ mainOffset, scroll }) => (
