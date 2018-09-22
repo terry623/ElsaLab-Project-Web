@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
-import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const ProductImage = '/static/System_structure_img.jpg';
@@ -19,37 +18,20 @@ const Background = styled.div`
 `;
 
 const SystemCol = styled(Col)`
-  height: 30rem;
-
-  ${media.desktop`
-    height: 40rem;
-  `};
+  height: 65vmin;
 `;
 
 const MediaTitleBlock = styled.div`
   background: url(${BackgroundImage});
   height: 100%;
-  width: 9rem;
-
-  ${media.desktop`
-    width: 16rem;
-  `};
+  width: 27vmin;
 `;
 
 const Title = styled.div`
   color: ${pinkColorDark};
   font-style: italic;
-  font-size: 1.5rem;
-  padding: 1rem;
-
-  ${media.notebook`
-    font-size: 1.5rem;
-    padding: 1rem;
-  `};
-  ${media.desktop`
-    font-size: 3rem;
-    padding: 2rem;
-  `};
+  font-size: 5vmin;
+  padding: 4vmin;
 `;
 
 const Media = styled.img`
@@ -61,28 +43,20 @@ const SystemStructure = ({ mainOffset, scroll }) => (
     <Parallax.Layer offset={mainOffset} speed={1}>
       <Background />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
-      <Row type="flex" justify="center">
-        <Col span={8} offset={1}>
-          <Row type="flex" justify="start">
-            <SystemCol>
-              <MediaTitleBlock>
-                <Title>
-                  System
-                  <br />
-                  Structure
-                </Title>
-              </MediaTitleBlock>
-            </SystemCol>
-          </Row>
-        </Col>
-        <Col span={8}>
-          <Row type="flex" justify="end">
-            <SystemCol>
-              <Media src={ProductImage} />
-            </SystemCol>
-          </Row>
-        </Col>
+    <Parallax.Layer offset={mainOffset + 0.2} speed={0.5}>
+      <Row type="flex" justify="center" gutter={20}>
+        <SystemCol>
+          <MediaTitleBlock>
+            <Title>
+              System
+              <br />
+              Structure
+            </Title>
+          </MediaTitleBlock>
+        </SystemCol>
+        <SystemCol>
+          <Media src={ProductImage} />
+        </SystemCol>
       </Row>
     </Parallax.Layer>
   </div>

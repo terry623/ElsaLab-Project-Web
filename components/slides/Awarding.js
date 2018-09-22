@@ -19,6 +19,7 @@ const Background = styled.div`
   z-index: -100;
 `;
 
+// FIXME: margin-left 改用 %
 const AwardingTitleBlock = styled.div`
   background: url(${BackgroundImage});
   height: 100%;
