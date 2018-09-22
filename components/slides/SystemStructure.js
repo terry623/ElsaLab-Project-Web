@@ -31,7 +31,7 @@ const Title = styled.div`
   color: ${pinkColorDark};
   font-style: italic;
   font-size: 5vmin;
-  padding: 4vmin;
+  padding: 3vmin;
 `;
 
 const Media = styled.img`

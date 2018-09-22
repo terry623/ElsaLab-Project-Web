@@ -39,7 +39,7 @@ const Media = styled.img`
 `;
 
 const Awarding = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(0)}>
+  <div onClick={() => scroll(6)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background>
         <AwardingTitleBlock>

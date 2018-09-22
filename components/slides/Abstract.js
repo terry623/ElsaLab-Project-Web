@@ -34,7 +34,7 @@ const Abstract = ({ mainOffset, scroll }) => (
       <Background />
     </Parallax.Layer>
     <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
-      <Row className="title_block">
+      <Row>
         <Col span={12} offset={4}>
           <Title>Abstract</Title>
         </Col>
