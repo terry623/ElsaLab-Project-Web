@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
-import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const AwardingImage1 = '/static/award_1.png';
@@ -19,50 +18,24 @@ const Background = styled.div`
   z-index: -100;
 `;
 
-// FIXME: margin-left 改用 %
 const AwardingTitleBlock = styled.div`
   background: url(${BackgroundImage});
   height: 100%;
   z-index: -50;
-  width: 18rem;
-  margin-left: 13rem;
-
-  ${media.notebook`
-    width: 18rem;
-    margin-left: 13rem;
-  `};
-  ${media.desktop`
-    width: 23rem;
-    margin-left: 18rem;
-  `};
+  width: 40vmin;
+  margin-left: 30vmin;
 `;
 
 const Title = styled.div`
   color: ${pinkColorDark};
   font-style: italic;
-  font-size: 1.5rem;
-  padding: 10rem 2rem 2rem;
-
-  ${media.notebook`
-    font-size: 2.5rem;
-    padding: 10rem 2rem 2rem;
-  `};
-  ${media.desktop`
-    font-size: 3rem;
-    padding: 12rem 2rem 2rem;
-  `};
+  font-size: 6vmin;
+  padding: 20vmin 5vmin 5vmin;
 `;
 
 const Media = styled.img`
-  width: 50%;
-  margin: 0 0 1.5rem 27rem;
-
-  ${media.notebook`
-    margin: 0 0 1.5rem 27rem;
-  `};
-  ${media.desktop`
-    margin: 0 0 2rem 35rem;
-  `};
+  width: 70vmin;
+  margin: 0 0 3vmin 60vmin;
 `;
 
 const Awarding = ({ mainOffset, scroll }) => (

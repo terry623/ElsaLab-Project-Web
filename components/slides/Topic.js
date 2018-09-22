@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
+import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
 import { media } from '../size';
@@ -21,23 +22,13 @@ const Background = styled.div`
 `;
 
 const Card = styled.div`
-  width: 70%;
-  height: 60%;
+  width: 100%;
+  height: 60vmin;
   background-color: black;
   opacity: 0.5;
   border: 2vmin solid white;
-  margin: auto;
   padding: 2vmin;
   border-bottom-width: 20vmin;
-
-  ${media.notebook`
-    width: 50%;
-    margin-left: 45%;
-  `};
-  ${media.desktop`
-    width: 50%;
-    margin-left: 45%;
-  `};
 `;
 
 const Block = styled.div`
@@ -70,13 +61,17 @@ const Topic = ({ mainOffset, scroll }) => (
       <Background />
     </Parallax.Layer>
     <Parallax.Layer offset={mainOffset + 0.3} speed={0.5}>
-      <Card>
-        <Block>
-          <Year>2017</Year>
-          <Title>Virtual-to-Real:</Title>
-          <p>Learning to Control in Visual Semantic Segmentation</p>
-        </Block>
-      </Card>
+      <Row>
+        <Col span={11} offset={11}>
+          <Card>
+            <Block>
+              <Year>2017</Year>
+              <Title>Virtual-to-Real:</Title>
+              <p>Learning to Control in Visual Semantic Segmentation</p>
+            </Block>
+          </Card>
+        </Col>
+      </Row>
     </Parallax.Layer>
   </div>
 );
