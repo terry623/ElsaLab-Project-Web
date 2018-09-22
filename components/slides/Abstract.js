@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
-import { media } from '../size';
 import { pinkColorLight } from '../color';
 
 const BackgroundImage = '/static/background_image.jpg';
@@ -20,21 +19,13 @@ const Background = styled.div`
 
 const Content = styled.p`
   color: white;
-  font-size: 1.2rem;
-
-  ${media.desktop`
-    font-size: 1.5rem;
-  `};
+  font-size: 2.5vmin;
 `;
 
 const Title = styled.div`
   color: ${pinkColorLight};
-  font-size: 3rem;
-  margin-bottom: 1rem;
-
-  ${media.desktop`
-    font-size: 4rem;
-  `};
+  font-size: 6vmin;
+  margin-bottom: 2vmin;
 `;
 
 const Abstract = ({ mainOffset, scroll }) => (
