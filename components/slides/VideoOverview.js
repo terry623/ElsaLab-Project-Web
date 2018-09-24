@@ -3,11 +3,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
-import { Player } from 'video-react';
 
 import { pinkColorDark, pinkColorLight } from '../color';
 
-const DemoVideo = 'https://www.youtube.com/embed/8osw3ElPAvY';
+const DemoVideo =
+  'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&amp;controls=0&amp;showinfo=0';
 const BackgroundImage = '/static/background_image.jpg';
 
 const Background = styled.div`
@@ -36,7 +36,8 @@ const Title = styled.div`
   padding: 3vmin;
 `;
 
-const MediaPlayer = styled(Player)`
+const MediaPlayer = styled.iframe`
+  width: 100vmin;
   height: 100%;
 `;
 
@@ -49,18 +50,17 @@ const VideoOverview = ({ mainOffset, scroll }) => (
       <Row type="flex" justify="center" gutter={20}>
         <SystemCol>
           <MediaTitleBlock>
-            <Title>
-              Video
-              <br />
-              Overview
-            </Title>
+            <Title>Video Overview</Title>
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol>
-          {/* FIXME: 參考 https://video-react.js.org/components/player/ */}
-          <MediaPlayer>
-            <source src={DemoVideo} />
-          </MediaPlayer>
+          <MediaPlayer
+            title="demo video"
+            src={DemoVideo}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
         </SystemCol>
       </Row>
     </Parallax.Layer>

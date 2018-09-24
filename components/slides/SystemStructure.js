@@ -47,11 +47,7 @@ const SystemStructure = ({ mainOffset, scroll }) => (
       <Row type="flex" justify="center" gutter={20}>
         <SystemCol>
           <MediaTitleBlock>
-            <Title>
-              System
-              <br />
-              Structure
-            </Title>
+            <Title>System Structure</Title>
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol>
