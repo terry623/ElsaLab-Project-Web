@@ -3,7 +3,7 @@ import { Parallax } from 'react-spring';
 
 import Abstract from '../components/slides/Abstract';
 import Awarding from '../components/slides/Awarding';
-// import Content from '../components/slides/Content';
+import Conclusion from '../components/slides/Conclusion';
 import ExperimentalResults from '../components/slides/ExperimentalResults';
 // import NextProject from '../components/slides/NextProject';
 import ProposedMethodology from '../components/slides/ProposedMethodology';
@@ -21,7 +21,7 @@ class ProjectPage extends Component {
 
   render() {
     return (
-      <Parallax ref={this.getRef} pages={7}>
+      <Parallax ref={this.getRef} pages={8}>
         <Parallax.Layer
           offset={0}
           speed={0}
@@ -38,7 +38,7 @@ class ProjectPage extends Component {
         <ExperimentalResults mainOffset={4} scroll={this.scroll} />
         <Awarding mainOffset={5} scroll={this.scroll} />
         <VideoOverview mainOffset={6} scroll={this.scroll} />
-        {/* <Content mainOffset={7} /> */}
+        <Conclusion mainOffset={7} scroll={this.scroll} />
         {/* <NextProject mainOffset={8} /> */}
       </Parallax>
     );

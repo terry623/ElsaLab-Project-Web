@@ -42,7 +42,7 @@ const MediaPlayer = styled.iframe`
 `;
 
 const VideoOverview = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(0)}>
+  <div onClick={() => scroll(7)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background />
     </Parallax.Layer>
