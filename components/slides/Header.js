@@ -10,8 +10,8 @@ const IconImg = '/static/icon.png';
 // FIXME: 還沒改成 vmin
 
 const NabItemCol = styled(Col)`
-  padding-top: 30px;
-  padding-bottom: 15px;
+  padding-top: 4vmin;
+  padding-bottom: 2vmin;
   color: ${pinkColorDark};
 `;
 
@@ -23,16 +23,16 @@ const NabItemColRight = styled(NabItemCol)`
 `;
 
 const Icon = styled.img`
-  width: 50px;
+  width: 6vmin;
 `;
 
 const NavBarLeftCol = styled(Col)`
-  margin-top: -10px;
+  margin-top: -1vmin;
 `;
 
 const NavBarRightCol = styled(Col)`
-  font-size: 20px;
-  padding-right: 20px;
+  font-size: 2.5vmin;
+  padding-right: 2vmin;
 `;
 
 const Entry = styled.a`
@@ -56,8 +56,8 @@ const Header = () => (
           <Icon src={IconImg} />
         </NabItemCol>
         <NabItemCol>
-          <Title size="16px">NTHU</Title>
-          <Title size="20px">ELSA</Title>
+          <Title size="2vmin">NTHU</Title>
+          <Title size="2.5vmin">ELSA</Title>
         </NabItemCol>
       </Row>
     </NavBarLeftCol>
