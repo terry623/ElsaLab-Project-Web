@@ -1,79 +1,85 @@
 import Link from 'next/link';
 import React from 'react';
+import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 import { pinkColorDark } from '../color';
 
 const IconImg = '/static/icon.png';
 
+const NabItemCol = styled(Col)`
+  padding-top: 30px;
+  padding-bottom: 15px;
+  color: ${pinkColorDark};
+`;
+
+const NabItemColRight = styled(NabItemCol)`
+  :hover {
+    background-color: black;
+    opacity: 0.5;
+  }
+`;
+
+const Icon = styled.img`
+  width: 50px;
+`;
+
+const NavBarLeftCol = styled(Col)`
+  margin-top: -10px;
+`;
+
+const NavBarRightCol = styled(Col)`
+  font-size: 20px;
+  padding-right: 20px;
+`;
+
+const Entry = styled.a`
+  color: ${pinkColorDark};
+
+  ${NabItemColRight}:hover & {
+    color: white;
+  }
+`;
+
+const Title = styled.p`
+  font-size: ${props => props.size};
+  margin: 0;
+`;
+
 const Header = () => (
   <div>
     <Row>
-      <Col span={8} offset={1} className="navbar_left">
+      <NavBarLeftCol span={8} offset={1}>
         <Row type="flex" justify="start" align="top" gutter={8}>
-          <Col className="nav_item">
-            <img src={IconImg} alt="icon" />
-          </Col>
-          <Col className="nav_item">
-            <div id="NTHU">NTHU</div>
-            <div id="ELSA">ELSA</div>
-          </Col>
+          <NabItemCol>
+            <Icon src={IconImg} />
+          </NabItemCol>
+          <NabItemCol>
+            <Title size={'16px'}>NTHU</Title>
+            <Title size={'20px'}>ELSA</Title>
+          </NabItemCol>
         </Row>
-      </Col>
-      <Col span={8} offset={6} className="navbar_right">
+      </NavBarLeftCol>
+      <NavBarRightCol span={8} offset={6}>
         <Row type="flex" justify="end" align="top" gutter={64}>
-          <Col className="nav_item">
+          <NabItemColRight>
             <Link href="/">
-              <a>Home</a>
+              <Entry>Home</Entry>
             </Link>
-          </Col>
-          <Col className="nav_item">
+          </NabItemColRight>
+          <NabItemColRight>
             <Link href="/project">
-              <a>Project</a>
+              <Entry>Project</Entry>
             </Link>
-          </Col>
-          <Col className="nav_item">
+          </NabItemColRight>
+          <NabItemColRight>
             <Link href="/about">
-              <a>About</a>
+              <Entry>About</Entry>
             </Link>
-          </Col>
+          </NabItemColRight>
         </Row>
-      </Col>
+      </NavBarRightCol>
     </Row>
-    <style jsx global>{`
-      // FIXME: 設計要討論
-      .nav_item {
-        padding-top: 30px;
-        padding-bottom: 15px;
-        color: ${pinkColorDark};
-      }
-      .navbar_left {
-        margin-top: -10px;
-      }
-      .nav_item img {
-        width: 50px;
-      }
-      #NTHU {
-        font-size: 16px;
-      }
-      #ELSA {
-        font-size: 20px;
-      }
-      .navbar_right a {
-        color: ${pinkColorDark};
-      }
-      .navbar_right {
-        font-size: 20px;
-        padding-right: 20px;
-      }
-      .navbar_right .nav_item:hover {
-        background-color: black;
-        opacity: 0.5;
-      }
-      .navbar_right .nav_item:hover a {
-        color: white;
-      }
-    `}</style>
   </div>
 );
 
