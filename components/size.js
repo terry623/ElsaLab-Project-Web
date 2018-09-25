@@ -1,18 +1,8 @@
-import { css } from 'styled-components';
+import { generateMedia } from 'styled-media-query';
 
-const sizes = {
-  desktop: 1600,
-  notebook: 1200,
-};
-
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (min-width: ${sizes[label]}px) {
-      ${css(...args)};
-    }
-  `;
-
-  return acc;
-}, {});
+const media = generateMedia({
+  desktop: '1600px',
+  notebook: '1200px',
+});
 
 export { media };

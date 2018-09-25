@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
-import { media } from '../size';
-
 import Header from './Header';
 
 const BackgroundImage = '/static/background_image.jpg';
@@ -39,14 +37,7 @@ const Block = styled.div`
 
 const Year = styled.div`
   color: white;
-  margin-bottom: 0;
-
-  ${media.notebook`
-    margin-bottom: -2vmin;
-  `};
-  ${media.desktop`
-    margin-bottom: -2.5vmin;
-  `};
+  margin-bottom: -1.5vmin;
 `;
 
 const Title = styled.div`

@@ -7,6 +7,8 @@ import { pinkColorDark } from '../color';
 
 const IconImg = '/static/icon.png';
 
+// FIXME: 還沒改成 vmin
+
 const NabItemCol = styled(Col)`
   padding-top: 30px;
   padding-bottom: 15px;
@@ -47,40 +49,38 @@ const Title = styled.p`
 `;
 
 const Header = () => (
-  <div>
-    <Row>
-      <NavBarLeftCol span={8} offset={1}>
-        <Row type="flex" justify="start" align="top" gutter={8}>
-          <NabItemCol>
-            <Icon src={IconImg} />
-          </NabItemCol>
-          <NabItemCol>
-            <Title size={'16px'}>NTHU</Title>
-            <Title size={'20px'}>ELSA</Title>
-          </NabItemCol>
-        </Row>
-      </NavBarLeftCol>
-      <NavBarRightCol span={8} offset={6}>
-        <Row type="flex" justify="end" align="top" gutter={64}>
-          <NabItemColRight>
-            <Link href="/">
-              <Entry>Home</Entry>
-            </Link>
-          </NabItemColRight>
-          <NabItemColRight>
-            <Link href="/project">
-              <Entry>Project</Entry>
-            </Link>
-          </NabItemColRight>
-          <NabItemColRight>
-            <Link href="/about">
-              <Entry>About</Entry>
-            </Link>
-          </NabItemColRight>
-        </Row>
-      </NavBarRightCol>
-    </Row>
-  </div>
+  <Row>
+    <NavBarLeftCol span={8} offset={1}>
+      <Row type="flex" justify="start" align="top" gutter={8}>
+        <NabItemCol>
+          <Icon src={IconImg} />
+        </NabItemCol>
+        <NabItemCol>
+          <Title size="16px">NTHU</Title>
+          <Title size="20px">ELSA</Title>
+        </NabItemCol>
+      </Row>
+    </NavBarLeftCol>
+    <NavBarRightCol span={8} offset={6}>
+      <Row type="flex" justify="end" align="top" gutter={64}>
+        <NabItemColRight>
+          <Link href="/">
+            <Entry>Home</Entry>
+          </Link>
+        </NabItemColRight>
+        <NabItemColRight>
+          <Link href="/project">
+            <Entry>Project</Entry>
+          </Link>
+        </NabItemColRight>
+        <NabItemColRight>
+          <Link href="/about">
+            <Entry>About</Entry>
+          </Link>
+        </NabItemColRight>
+      </Row>
+    </NavBarRightCol>
+  </Row>
 );
 
 export default Header;
