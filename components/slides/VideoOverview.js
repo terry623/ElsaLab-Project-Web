@@ -8,11 +8,12 @@ import { pinkColorMid } from '../color';
 
 const DemoVideo =
   'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&amp;controls=0&amp;showinfo=0';
-const BackgroundImage = '/static/background_image.jpg';
+const BackgroundInvertVerticalVerticalImage =
+  '/static/background_image_invert_vertical_2.jpg';
 
 const Background = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${BackgroundImage});
+    url(${BackgroundInvertVerticalVerticalImage});
   background-size: cover;
   width: 100%;
   height: 100%;

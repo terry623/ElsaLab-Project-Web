@@ -6,11 +6,12 @@ import { Parallax } from 'react-spring';
 
 import { pinkColorLight } from '../color';
 
-const BackgroundImage = '/static/background_image.jpg';
+const BackgroundInvertVerticalImage =
+  '/static/background_image_invert_vertical.jpg';
 
 const Background = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(${BackgroundImage});
+    url(${BackgroundInvertVerticalImage});
   background-size: cover;
   width: 100%;
   height: 100%;
