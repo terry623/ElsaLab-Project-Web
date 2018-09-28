@@ -8,7 +8,7 @@ import { pinkColorDark, pinkColorLight } from '../color';
 
 const AwardingImage1 = '/static/award_1.png';
 const AwardingImage2 = '/static/award_2.png';
-const BackgroundImage = '/static/background_image.jpg';
+const BackgroundInvertImage = '/static/background_image_invert.jpg';
 
 const Background = styled.div`
   background-color: ${pinkColorLight};
@@ -19,7 +19,9 @@ const Background = styled.div`
 `;
 
 const AwardingTitleBlock = styled.div`
-  background: url(${BackgroundImage});
+  background: url(${BackgroundInvertImage});
+  background-position: right center;
+  background-size: 180vmin 100vmin;
   height: 100%;
   z-index: -50;
   width: 40vmin;
@@ -38,12 +40,21 @@ const Media = styled.img`
   margin: 0 0 3vmin 60vmin;
 `;
 
+const Square = styled.div`
+  width: 5vmin;
+  height: 5vmin;
+  background-color: ${pinkColorDark};
+  margin-top: 52vmin;
+  margin-left: 4vmin;
+`;
+
 const Awarding = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(6)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background>
         <AwardingTitleBlock>
           <Title>Awarding</Title>
+          <Square />
         </AwardingTitleBlock>
       </Background>
     </Parallax.Layer>

@@ -7,7 +7,7 @@ import { Parallax } from 'react-spring';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const ProductImage = '/static/System_structure_img.jpg';
-const BackgroundImage = '/static/background_image.jpg';
+const BackgroundInvertImage = '/static/background_image_invert.jpg';
 
 const Background = styled.div`
   background-color: ${pinkColorLight};
@@ -22,7 +22,9 @@ const SystemCol = styled(Col)`
 `;
 
 const MediaTitleBlock = styled.div`
-  background: url(${BackgroundImage});
+  background: url(${BackgroundInvertImage});
+  background-position: left center;
+  background-size: 170vmin 100vmin;
   height: 100%;
   width: 27vmin;
 `;
