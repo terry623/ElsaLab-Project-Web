@@ -35,6 +35,15 @@ const Square = styled.div`
   margin-bottom: 1.5vmin;
 `;
 
+const Bar = styled.div`
+  width: 2vmin;
+  height: 150vmin;
+  background-color: ${pinkColorLight};
+  float: right;
+  margin-right: 3vmin;
+  margin-top: 1vmin;
+`;
+
 const Abstract = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(3)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
@@ -54,7 +63,10 @@ const Abstract = ({ mainOffset, scroll }) => (
         </Col>
       </Row>
       <Row>
-        <Col span={12} offset={4}>
+        <Col span={1} offset={3}>
+          <Bar />
+        </Col>
+        <Col span={12} offset={0}>
           <Content>
             Collecting training data from the physical world is usually
             time-consuming and even dangerous for fragile robots, and therefore,
