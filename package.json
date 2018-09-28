@@ -2,11 +2,15 @@
   "name": "elsa-project",
   "version": "1.0.0",
   "description": "ElsaLab Project Website",
+  "now": {
+    "alias": "elsa-basic-1.now.sh"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "analyze": "cross-env ANALYZE=1 next build"
+    "analyze": "cross-env ANALYZE=1 next build",
+    "deploy": "now && now alias --yes"
   },
   "license": "MIT",
   "author": "Terry Lin",
