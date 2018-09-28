@@ -27,7 +27,7 @@ const Bar = styled.div`
 
 const Conclusion = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(0)}>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
+    <Parallax.Layer offset={mainOffset + 0.18} speed={0.3}>
       <Row>
         <Col span={12} offset={4}>
           <Title>Conclusion</Title>

@@ -54,7 +54,7 @@ const VideoOverview = ({ mainOffset, scroll }) => (
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
+    <Parallax.Layer offset={mainOffset + 0.18} speed={0.3}>
       <Row type="flex" justify="center">
         <SystemCol>
           <MediaTitleBlock>

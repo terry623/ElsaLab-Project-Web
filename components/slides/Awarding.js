@@ -58,7 +58,7 @@ const Awarding = ({ mainOffset, scroll }) => (
         </AwardingTitleBlock>
       </Background>
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.1} speed={0.5}>
+    <Parallax.Layer offset={mainOffset + 0.1} speed={0.3}>
       <Row type="flex" justify="center">
         <Col span={18}>
           <Row>

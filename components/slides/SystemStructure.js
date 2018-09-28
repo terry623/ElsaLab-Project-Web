@@ -54,7 +54,7 @@ const SystemStructure = ({ mainOffset, scroll }) => (
     <Parallax.Layer offset={mainOffset} speed={1}>
       <Background />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.2} speed={0.5}>
+    <Parallax.Layer offset={mainOffset + 0.2} speed={0.3}>
       <Row type="flex" justify="center" gutter={20}>
         <SystemCol>
           <MediaTitleBlock>
