@@ -38,6 +38,15 @@ const Media = styled.img`
   height: 100%;
 `;
 
+const Square = styled.div`
+  width: 5vmin;
+  height: 5vmin;
+  background-color: white;
+  float: right;
+  margin-top: 37vmin;
+  margin-right: 2vmin;
+`;
+
 const SystemStructure = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(2)}>
     <Parallax.Layer offset={mainOffset} speed={1}>
@@ -48,6 +57,7 @@ const SystemStructure = ({ mainOffset, scroll }) => (
         <SystemCol>
           <MediaTitleBlock>
             <Title>System Structure</Title>
+            <Square />
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol>
