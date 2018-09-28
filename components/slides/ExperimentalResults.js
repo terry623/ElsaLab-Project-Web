@@ -35,6 +35,14 @@ const BlockTitle = styled.div`
   padding: 3vmin;
 `;
 
+const Square = styled.div`
+  width: 5vmin;
+  height: 5vmin;
+  background-color: ${pinkColorDark};
+  float: right;
+  margin-top: 3vmin;
+`;
+
 const ExperimentalResults = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(5)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
@@ -43,7 +51,10 @@ const ExperimentalResults = ({ mainOffset, scroll }) => (
     <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
       <Row>
         <Col span={15} offset={4}>
-          <MainTitle>Experimental Results</MainTitle>
+          <MainTitle>
+            Experimental Results
+            <Square />
+          </MainTitle>
         </Col>
       </Row>
       <Row>
