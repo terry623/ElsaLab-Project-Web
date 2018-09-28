@@ -19,6 +19,7 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <link rel="stylesheet" href="/_next/static/style.css" />
+          <link rel="stylesheet" href="css/perfect-scrollbar.css" />
           <title>Elsa Lab</title>
           {this.props.styleTags}
         </Head>
@@ -27,9 +28,9 @@ export default class MyDocument extends Document {
           body {
             padding: 0;
             margin: 0;
+            width: 100%;
+            height: 100%;
           }
-          width: 100%;
-          height: 100%;
         `}</style>
         <body>
           <Main />
