@@ -36,7 +36,7 @@ const Square = styled.div`
 `;
 
 const Bar = styled.div`
-  width: 2vmin;
+  width: 1.5vmin;
   height: 150vmin;
   background-color: ${pinkColorLight};
   float: right;

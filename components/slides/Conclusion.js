@@ -17,6 +17,14 @@ const Title = styled.div`
   margin-bottom: 2vmin;
 `;
 
+const Bar = styled.div`
+  width: 1.5vmin;
+  height: 150vmin;
+  background-color: ${pinkColorDark};
+  margin-top: -10vmin;
+  margin-left: 2vmin;
+`;
+
 const Conclusion = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(0)}>
     <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
@@ -26,7 +34,7 @@ const Conclusion = ({ mainOffset, scroll }) => (
         </Col>
       </Row>
       <Row>
-        <Col span={12} offset={4}>
+        <Col span={16} offset={4}>
           <Content>
             We presented a new modular architecture for transferring policies
             learned in simulation to the real world for vision-based
@@ -42,6 +50,9 @@ const Conclusion = ({ mainOffset, scroll }) => (
             state, and show that this structured form of representations does
             improve the learning speed of our model
           </Content>
+        </Col>
+        <Col span={3}>
+          <Bar />
         </Col>
       </Row>
     </Parallax.Layer>
