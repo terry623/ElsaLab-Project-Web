@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
-import { pinkColorDark, pinkColorLight } from '../color';
+import { pinkColorMid } from '../color';
 
 const DemoVideo =
   'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&amp;controls=0&amp;showinfo=0';
@@ -24,21 +24,29 @@ const SystemCol = styled(Col)`
 `;
 
 const MediaTitleBlock = styled.div`
-  background-color: ${pinkColorLight};
+  background-color: ${pinkColorMid};
   height: 100%;
   width: 27vmin;
 `;
 
 const Title = styled.div`
-  color: ${pinkColorDark};
+  color: white;
   font-style: italic;
   font-size: 5vmin;
   padding: 3vmin;
 `;
 
 const MediaPlayer = styled.iframe`
-  width: 100vmin;
+  width: 115vmin;
   height: 100%;
+`;
+
+const Square = styled.div`
+  width: 5vmin;
+  height: 5vmin;
+  background-color: white;
+  margin-top: 37vmin;
+  margin-left: 2vmin;
 `;
 
 const VideoOverview = ({ mainOffset, scroll }) => (
@@ -47,10 +55,11 @@ const VideoOverview = ({ mainOffset, scroll }) => (
       <Background />
     </Parallax.Layer>
     <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
-      <Row type="flex" justify="center" gutter={20}>
+      <Row type="flex" justify="center">
         <SystemCol>
           <MediaTitleBlock>
             <Title>Video Overview</Title>
+            <Square />
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol>
