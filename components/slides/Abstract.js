@@ -28,6 +28,13 @@ const Title = styled.div`
   margin-bottom: 2vmin;
 `;
 
+const Square = styled.div`
+  width: 5vmin;
+  height: 5vmin;
+  background-color: ${pinkColorLight};
+  margin-bottom: 1.5vmin;
+`;
+
 const Abstract = ({ mainOffset, scroll }) => (
   <div onClick={() => scroll(3)}>
     <Parallax.Layer offset={mainOffset} speed={0}>
@@ -36,7 +43,14 @@ const Abstract = ({ mainOffset, scroll }) => (
     <Parallax.Layer offset={mainOffset + 0.18} speed={0.5}>
       <Row>
         <Col span={12} offset={4}>
-          <Title>Abstract</Title>
+          <Title>
+            <Row type="flex" justify="space-between" align="bottom">
+              <Col span={2}>Abstract</Col>
+              <Col span={2}>
+                <Square />
+              </Col>
+            </Row>
+          </Title>
         </Col>
       </Row>
       <Row>
