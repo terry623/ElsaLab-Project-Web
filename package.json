@@ -15,7 +15,6 @@
   "license": "MIT",
   "author": "Terry Lin",
   "dependencies": {
-    "@fullpage/react-fullpage": "^0.1.0",
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.9.2",
     "cross-env": "^5.2.0",
