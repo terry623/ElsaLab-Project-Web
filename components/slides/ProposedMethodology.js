@@ -48,9 +48,18 @@ const Square = styled.div`
 `;
 
 const allTitles = [
-  'Bridge the Gap between Simulation and Reality',
-  'Training in Simulated Enviorments',
-  'Visual Guidance Module and Target Switching',
+  {
+    id: 1,
+    title: 'Bridge the Gap between Simulation and Reality',
+  },
+  {
+    id: 2,
+    title: 'Training in Simulated Enviorments',
+  },
+  {
+    id: 3,
+    title: 'Visual Guidance Module and Target Switching',
+  },
 ];
 
 class ProposedMethodology extends Component {
@@ -95,27 +104,15 @@ class ProposedMethodology extends Component {
               </MainTitle>
             </Col>
           </Row>
-          <Row>
-            <Col span={15} offset={4}>
-              <BlockTitle onClick={() => this.openModal(allTitles[0])}>
-                {allTitles[0]}
-              </BlockTitle>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={15} offset={4}>
-              <BlockTitle onClick={() => this.openModal(allTitles[1])}>
-                {allTitles[1]}
-              </BlockTitle>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={15} offset={4}>
-              <BlockTitle onClick={() => this.openModal(allTitles[2])}>
-                {allTitles[2]}
-              </BlockTitle>
-            </Col>
-          </Row>
+          {allTitles.map(({ id, title }) => (
+            <Row key={id}>
+              <Col span={15} offset={4}>
+                <BlockTitle onClick={() => this.openModal(title)}>
+                  {title}
+                </BlockTitle>
+              </Col>
+            </Row>
+          ))}
         </Parallax.Layer>
       </div>
     );

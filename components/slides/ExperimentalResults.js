@@ -47,9 +47,18 @@ const Square = styled.div`
 `;
 
 const allTitles = [
-  'Model Settings and Robotic Platform',
-  'Learning Curves of the Two Tasks',
-  'Comparison in the Simulated and Real Worlds',
+  {
+    id: 1,
+    title: 'Model Settings and Robotic Platform',
+  },
+  {
+    id: 2,
+    title: 'Learning Curves of the Two Tasks',
+  },
+  {
+    id: 3,
+    title: 'Comparison in the Simulated and Real Worlds',
+  },
 ];
 
 class ExperimentalResults extends Component {
@@ -94,27 +103,15 @@ class ExperimentalResults extends Component {
               </MainTitle>
             </Col>
           </Row>
-          <Row>
-            <Col span={15} offset={4}>
-              <BlockTitle onClick={() => this.openModal(allTitles[0])}>
-                {allTitles[0]}
-              </BlockTitle>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={15} offset={4}>
-              <BlockTitle onClick={() => this.openModal(allTitles[1])}>
-                {allTitles[1]}
-              </BlockTitle>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={15} offset={4}>
-              <BlockTitle onClick={() => this.openModal(allTitles[1])}>
-                {allTitles[1]}
-              </BlockTitle>
-            </Col>
-          </Row>
+          {allTitles.map(({ id, title }) => (
+            <Row key={id}>
+              <Col span={15} offset={4}>
+                <BlockTitle onClick={() => this.openModal(title)}>
+                  {title}
+                </BlockTitle>
+              </Col>
+            </Row>
+          ))}
         </Parallax.Layer>
       </div>
     );
