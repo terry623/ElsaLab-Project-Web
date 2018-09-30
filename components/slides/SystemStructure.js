@@ -49,8 +49,8 @@ const Square = styled.div`
   margin-right: 2vmin;
 `;
 
-const SystemStructure = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(2)}>
+const SystemStructure = ({ mainOffset }) => (
+  <div>
     <Parallax.Layer offset={mainOffset} speed={1}>
       <Background />
     </Parallax.Layer>
@@ -72,7 +72,6 @@ const SystemStructure = ({ mainOffset, scroll }) => (
 
 SystemStructure.propTypes = {
   mainOffset: PropTypes.number.isRequired,
-  scroll: PropTypes.func.isRequired,
 };
 
 export default SystemStructure;

@@ -56,8 +56,8 @@ const Square = styled.div`
   background-color: ${pinkColorLight};
 `;
 
-const Topic = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(1)}>
+const Topic = ({ mainOffset }) => (
+  <div>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Header />
       <Background />
@@ -81,7 +81,6 @@ const Topic = ({ mainOffset, scroll }) => (
 
 Topic.propTypes = {
   mainOffset: PropTypes.number.isRequired,
-  scroll: PropTypes.func.isRequired,
 };
 
 export default Topic;

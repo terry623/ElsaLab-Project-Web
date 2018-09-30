@@ -7,8 +7,6 @@ import { pinkColorDark } from '../color';
 
 const IconImg = '/static/icon.png';
 
-// FIXME: 還沒改成 vmin
-
 const NabItemCol = styled(Col)`
   padding-top: 4vmin;
   padding-bottom: 2vmin;
@@ -17,6 +15,7 @@ const NabItemCol = styled(Col)`
 
 const NabItemColRight = styled(NabItemCol)`
   :hover {
+    cursor: pointer;
     background-color: black;
     opacity: 0.5;
   }

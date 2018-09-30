@@ -25,8 +25,8 @@ const Bar = styled.div`
   margin-left: 2vmin;
 `;
 
-const Conclusion = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(0)}>
+const Conclusion = ({ mainOffset }) => (
+  <div>
     <Parallax.Layer offset={mainOffset + 0.18} speed={0.3}>
       <Row>
         <Col span={12} offset={4}>
@@ -61,7 +61,6 @@ const Conclusion = ({ mainOffset, scroll }) => (
 
 Conclusion.propTypes = {
   mainOffset: PropTypes.number.isRequired,
-  scroll: PropTypes.func.isRequired,
 };
 
 export default Conclusion;

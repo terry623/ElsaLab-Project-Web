@@ -13,8 +13,6 @@ import VideoOverview from '../components/slides/VideoOverview';
 import { pinkColorLight } from '../components/color';
 
 class ProjectPage extends Component {
-  scroll = to => this.DOMnode.scrollTo(to);
-
   getRef = node => {
     this.DOMnode = node;
   };
@@ -31,14 +29,14 @@ class ProjectPage extends Component {
             backgroundSize: 'cover',
           }}
         />
-        <Topic mainOffset={0} scroll={this.scroll} />
-        <SystemStructure mainOffset={1} scroll={this.scroll} />
-        <Abstract mainOffset={2} scroll={this.scroll} />
-        <ProposedMethodology mainOffset={3} scroll={this.scroll} />
-        <ExperimentalResults mainOffset={4} scroll={this.scroll} />
-        <Awarding mainOffset={5} scroll={this.scroll} />
-        <VideoOverview mainOffset={6} scroll={this.scroll} />
-        <Conclusion mainOffset={7} scroll={this.scroll} />
+        <Topic mainOffset={0} />
+        <SystemStructure mainOffset={1} />
+        <Abstract mainOffset={2} />
+        <ProposedMethodology mainOffset={3} />
+        <ExperimentalResults mainOffset={4} />
+        <Awarding mainOffset={5} />
+        <VideoOverview mainOffset={6} />
+        <Conclusion mainOffset={7} />
         {/* <NextProject mainOffset={8} /> */}
       </Parallax>
     );

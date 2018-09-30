@@ -48,8 +48,8 @@ const Square = styled.div`
   margin-left: 4vmin;
 `;
 
-const Awarding = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(6)}>
+const Awarding = ({ mainOffset }) => (
+  <div>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background>
         <AwardingTitleBlock>
@@ -79,7 +79,6 @@ const Awarding = ({ mainOffset, scroll }) => (
 
 Awarding.propTypes = {
   mainOffset: PropTypes.number.isRequired,
-  scroll: PropTypes.func.isRequired,
 };
 
 export default Awarding;

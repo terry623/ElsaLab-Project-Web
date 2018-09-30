@@ -43,8 +43,8 @@ const Square = styled.div`
   margin-top: 3vmin;
 `;
 
-const ExperimentalResults = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(5)}>
+const ExperimentalResults = ({ mainOffset }) => (
+  <div>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background />
     </Parallax.Layer>
@@ -78,7 +78,6 @@ const ExperimentalResults = ({ mainOffset, scroll }) => (
 
 ExperimentalResults.propTypes = {
   mainOffset: PropTypes.number.isRequired,
-  scroll: PropTypes.func.isRequired,
 };
 
 export default ExperimentalResults;

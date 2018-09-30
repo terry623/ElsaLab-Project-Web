@@ -50,8 +50,8 @@ const Square = styled.div`
   margin-left: 2vmin;
 `;
 
-const VideoOverview = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(7)}>
+const VideoOverview = ({ mainOffset }) => (
+  <div>
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background />
     </Parallax.Layer>
@@ -79,7 +79,6 @@ const VideoOverview = ({ mainOffset, scroll }) => (
 
 VideoOverview.propTypes = {
   mainOffset: PropTypes.number.isRequired,
-  scroll: PropTypes.func.isRequired,
 };
 
 export default VideoOverview;

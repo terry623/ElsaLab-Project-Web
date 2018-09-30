@@ -45,8 +45,9 @@ const Bar = styled.div`
   margin-top: 1vmin;
 `;
 
-const Abstract = ({ mainOffset, scroll }) => (
-  <div onClick={() => scroll(3)}>
+const Abstract = ({ mainOffset }) => (
+  <div>
+    {' '}
     <Parallax.Layer offset={mainOffset} speed={0}>
       <Background />
     </Parallax.Layer>
@@ -94,7 +95,6 @@ const Abstract = ({ mainOffset, scroll }) => (
 
 Abstract.propTypes = {
   mainOffset: PropTypes.number.isRequired,
-  scroll: PropTypes.func.isRequired,
 };
 
 export default Abstract;
