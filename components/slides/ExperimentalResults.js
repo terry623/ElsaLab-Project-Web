@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Parallax } from 'react-spring';
 
 import { pinkColorDark, pinkColorLight } from '../color';
+
+import ResultsModal from './ResultsModal';
 
 const BackgroundInvertImage = '/static/background_image_invert.jpg';
 
@@ -24,6 +26,7 @@ const MainTitle = styled.div`
 `;
 
 const BlockTitle = styled.div`
+  cursor: pointer;
   background: rgba(0, 0, 0, 0.4);
   background-size: cover;
   z-index: -100;
@@ -43,38 +46,80 @@ const Square = styled.div`
   margin-top: 3vmin;
 `;
 
-const ExperimentalResults = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset} speed={0}>
-      <Background />
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.3}>
-      <Row>
-        <Col span={15} offset={4}>
-          <MainTitle>
-            Experimental Results
-            <Square />
-          </MainTitle>
-        </Col>
-      </Row>
-      <Row>
-        <Col span={15} offset={4}>
-          <BlockTitle>Model Settings and Robotic Platform</BlockTitle>
-        </Col>
-      </Row>
-      <Row>
-        <Col span={15} offset={4}>
-          <BlockTitle>Learning Curves of the Two Tasks</BlockTitle>
-        </Col>
-      </Row>
-      <Row>
-        <Col span={15} offset={4}>
-          <BlockTitle>Comparison in the Simulated and Real Worlds</BlockTitle>
-        </Col>
-      </Row>
-    </Parallax.Layer>
-  </div>
-);
+const allTitles = [
+  'Model Settings and Robotic Platform',
+  'Learning Curves of the Two Tasks',
+  'Comparison in the Simulated and Real Worlds',
+];
+
+class ExperimentalResults extends Component {
+  state = {
+    modalVisible: false,
+    modalTitle: '',
+  };
+
+  openModal = title => {
+    this.setState({
+      modalVisible: true,
+      modalTitle: title,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalVisible: false,
+    });
+  };
+
+  render() {
+    const { mainOffset } = this.props;
+    const { modalVisible, modalTitle } = this.state;
+
+    return (
+      <div>
+        <Parallax.Layer offset={mainOffset} speed={0}>
+          <Background />
+          <ResultsModal
+            visible={modalVisible}
+            title={modalTitle}
+            closeModal={this.closeModal}
+          />
+        </Parallax.Layer>
+        <Parallax.Layer offset={mainOffset + 0.18} speed={0.3}>
+          <Row>
+            <Col span={15} offset={4}>
+              <MainTitle>
+                Experimental Results
+                <Square />
+              </MainTitle>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={15} offset={4}>
+              <BlockTitle onClick={() => this.openModal(allTitles[0])}>
+                {allTitles[0]}
+              </BlockTitle>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={15} offset={4}>
+              <BlockTitle onClick={() => this.openModal(allTitles[1])}>
+                {allTitles[1]}
+              </BlockTitle>
+            </Col>
+          </Row>
+          <Row>
+            <Col span={15} offset={4}>
+              <BlockTitle onClick={() => this.openModal(allTitles[1])}>
+                {allTitles[1]}
+              </BlockTitle>
+            </Col>
+          </Row>
+        </Parallax.Layer>
+      </div>
+    );
+  }
+}
 
 ExperimentalResults.propTypes = {
   mainOffset: PropTypes.number.isRequired,
