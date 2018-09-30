@@ -5,7 +5,7 @@ import Abstract from '../components/slides/Abstract';
 import Awarding from '../components/slides/Awarding';
 import Conclusion from '../components/slides/Conclusion';
 import ExperimentalResults from '../components/slides/ExperimentalResults';
-// import NextProject from '../components/slides/NextProject';
+import NextProject from '../components/slides/NextProject';
 import ProposedMethodology from '../components/slides/ProposedMethodology';
 import SystemStructure from '../components/slides/SystemStructure';
 import Topic from '../components/slides/Topic';
@@ -19,7 +19,7 @@ class ProjectPage extends Component {
 
   render() {
     return (
-      <Parallax ref={this.getRef} pages={8}>
+      <Parallax ref={this.getRef} pages={8.6}>
         <Parallax.Layer
           offset={0}
           speed={0}
@@ -37,7 +37,7 @@ class ProjectPage extends Component {
         <Awarding mainOffset={5} />
         <VideoOverview mainOffset={6} />
         <Conclusion mainOffset={7} />
-        {/* <NextProject mainOffset={8} /> */}
+        <NextProject mainOffset={8} />
       </Parallax>
     );
   }

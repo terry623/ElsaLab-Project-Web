@@ -12,7 +12,7 @@ const BackgroundInvertVerticalVerticalImage =
   '/static/background_image_invert_vertical_2.jpg';
 
 const Background = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(${BackgroundInvertVerticalVerticalImage});
   background-size: cover;
   width: 100%;

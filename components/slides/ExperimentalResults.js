@@ -27,7 +27,7 @@ const MainTitle = styled.div`
 
 const BlockTitle = styled.div`
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
   background-size: cover;
   z-index: -100;
   color: ${pinkColorLight};

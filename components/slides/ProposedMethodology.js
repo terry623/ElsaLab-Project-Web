@@ -27,7 +27,7 @@ const MainTitle = styled.div`
 
 const BlockTitle = styled.div`
   cursor: pointer;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(${BackgroundImage});
   background-size: cover;
   z-index: -100;

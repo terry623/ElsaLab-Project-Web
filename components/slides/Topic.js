@@ -31,7 +31,7 @@ const Card = styled.div`
 const Block = styled.div`
   width: 100%;
   height: 38vmin;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   color: ${pinkColorLight};
   padding: 2vmin 4vmin 2vmin;
   font-size: 5vmin;
