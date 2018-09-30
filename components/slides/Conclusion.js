@@ -27,7 +27,7 @@ const Bar = styled.div`
 
 const Conclusion = ({ mainOffset }) => (
   <div>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.3}>
+    <Parallax.Layer offset={mainOffset + 0.18} speed={0.2}>
       <Row>
         <Col span={12} offset={4}>
           <Title>Conclusion</Title>

@@ -62,7 +62,7 @@ const Topic = ({ mainOffset }) => (
       <Header />
       <Background />
     </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.3} speed={0.3}>
+    <Parallax.Layer offset={mainOffset + 0.3} speed={0.2}>
       <Row>
         <Col span={11} offset={11}>
           <Card>

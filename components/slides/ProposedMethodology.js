@@ -95,7 +95,7 @@ class ProposedMethodology extends Component {
             closeModal={this.closeModal}
           />
         </Parallax.Layer>
-        <Parallax.Layer offset={mainOffset + 0.18} speed={0.3}>
+        <Parallax.Layer offset={mainOffset + 0.18} speed={0.2}>
           <Row>
             <Col span={15} offset={4}>
               <MainTitle>
