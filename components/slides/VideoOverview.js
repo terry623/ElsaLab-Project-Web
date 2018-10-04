@@ -20,12 +20,14 @@ const Background = styled.div`
 
 const SystemCol = styled(Col)`
   height: 65vmin;
+  margin-top: 18vmin;
 `;
 
 const MediaTitleBlock = styled.div`
   background-color: ${pinkColorMid};
   height: 100%;
   width: 27vmin;
+  margin-left: 8vmin;
 `;
 
 const Title = styled.div`
@@ -48,6 +50,7 @@ const Square = styled.div`
   margin-left: 2vmin;
 `;
 
+// FIXME: 滑鼠在影片上，會不能滑動
 const VideoOverview = () => (
   <div className="section">
     <Background>

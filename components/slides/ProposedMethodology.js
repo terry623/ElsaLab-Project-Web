@@ -20,6 +20,7 @@ const MainTitle = styled.div`
   color: ${pinkColorDark};
   font-style: italic;
   font-size: 6vmin;
+  margin-top: 18vmin;
   margin-bottom: 2vmin;
 `;
 

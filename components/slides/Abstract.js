@@ -24,6 +24,7 @@ const Content = styled.p`
 const Title = styled.div`
   color: ${pinkColorLight};
   font-size: 6vmin;
+  margin-top: 18vmin;
   margin-bottom: 2vmin;
 `;
 
@@ -36,11 +37,10 @@ const Square = styled.div`
 
 const Bar = styled.div`
   width: 1.5vmin;
-  /* height: 150vmin; */
+  height: 72vmin;
   background-color: ${pinkColorLight};
   float: right;
   margin-right: 3vmin;
-  margin-top: 1vmin;
 `;
 
 const Abstract = () => (

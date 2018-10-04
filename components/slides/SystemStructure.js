@@ -17,6 +17,7 @@ const Background = styled.div`
 
 const SystemCol = styled(Col)`
   height: 65vmin;
+  margin-top: 18vmin;
 `;
 
 const MediaTitleBlock = styled.div`

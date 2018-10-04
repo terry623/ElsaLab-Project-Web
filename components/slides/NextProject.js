@@ -17,6 +17,7 @@ const Card = styled.div`
   width: 100%;
   height: 35vmin;
   border: 2vmin solid white;
+  margin: 12vmin 0;
 `;
 
 const Block = styled.div`

@@ -24,6 +24,7 @@ const Card = styled.div`
   height: 60vmin;
   border: 2vmin solid white;
   border-bottom-width: 20vmin;
+  margin-top: 16vmin;
 `;
 
 const Block = styled.div`
@@ -49,7 +50,7 @@ const Square = styled.div`
   width: 5vmin;
   height: 5vmin;
   position: absolute;
-  top: 4vmin;
+  top: 20vmin;
   right: 4vmin;
   background-color: ${pinkColorLight};
 `;
