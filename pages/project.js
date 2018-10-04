@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Parallax } from 'react-spring';
+import ReactFullpage from '@fullpage/react-fullpage/dist/react-fullpage-commonjs';
 
 import Abstract from '../components/slides/Abstract';
 import Awarding from '../components/slides/Awarding';
@@ -10,35 +10,33 @@ import ProposedMethodology from '../components/slides/ProposedMethodology';
 import SystemStructure from '../components/slides/SystemStructure';
 import Topic from '../components/slides/Topic';
 import VideoOverview from '../components/slides/VideoOverview';
-import { pinkColorLight } from '../components/color';
 
 class ProjectPage extends Component {
-  getRef = node => {
-    this.DOMnode = node;
-  };
-
   render() {
     return (
-      <Parallax ref={this.getRef} pages={8.6}>
-        <Parallax.Layer
-          offset={0}
-          speed={0}
-          factor={9}
-          style={{
-            backgroundColor: pinkColorLight,
-            backgroundSize: 'cover',
-          }}
-        />
-        <Topic mainOffset={0} />
-        <SystemStructure mainOffset={1} />
-        <Abstract mainOffset={2} />
-        <ProposedMethodology mainOffset={3} />
-        <ExperimentalResults mainOffset={4} />
-        <Awarding mainOffset={5} />
-        <VideoOverview mainOffset={6} />
-        <Conclusion mainOffset={7} />
-        <NextProject mainOffset={8} />
-      </Parallax>
+      <ReactFullpage
+        licenseKey="OPEN-SOURCE-GPLV3-LICENSE"
+        // TODO: 放每個 Section 的名字
+        // anchors={['firstPage', 'secondPage', 'thirdPage']}
+        render={({ state, fullpageApi }) => {
+          console.log('render prop change', state);
+          console.log({ fullpageApi });
+
+          return (
+            <div id="fullpage-wrapper">
+              <Topic />
+              <SystemStructure />
+              <Abstract />
+              <ProposedMethodology />
+              <ExperimentalResults />
+              <Awarding />
+              <VideoOverview />
+              <Conclusion />
+              <NextProject />
+            </div>
+          );
+        }}
+      />
     );
   }
 }

@@ -1,13 +1,11 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
+// import { Col, Row } from 'antd';
 
 import { pinkColorDark, pinkColorLight } from '../color';
 
-const AwardingImage1 = '/static/award_1.png';
-const AwardingImage2 = '/static/award_2.png';
+// const AwardingImage1 = '/static/award_1.png';
+// const AwardingImage2 = '/static/award_2.png';
 const BackgroundInvertImage = '/static/background_image_invert.jpg';
 
 const Background = styled.div`
@@ -35,10 +33,10 @@ const Title = styled.div`
   padding: 20vmin 5vmin 5vmin;
 `;
 
-const Media = styled.img`
-  width: 70vmin;
-  margin: 0 0 3vmin 60vmin;
-`;
+// const Media = styled.img`
+//   width: 70vmin;
+//   margin: 0 0 3vmin 60vmin;
+// `;
 
 const Square = styled.div`
   width: 5vmin;
@@ -48,37 +46,29 @@ const Square = styled.div`
   margin-left: 4vmin;
 `;
 
-const Awarding = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset} speed={0}>
-      <Background>
-        <AwardingTitleBlock>
-          <Title>Awarding</Title>
-          <Square />
-        </AwardingTitleBlock>
-      </Background>
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.1} speed={0.2}>
-      <Row type="flex" justify="center">
-        <Col span={18}>
-          <Row>
-            <Col>
-              <Media src={AwardingImage1} />
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Media src={AwardingImage2} />
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Parallax.Layer>
+const Awarding = () => (
+  <div className="section">
+    <Background>
+      <AwardingTitleBlock>
+        <Title>Awarding</Title>
+        <Square />
+      </AwardingTitleBlock>
+    </Background>
+    {/* <Row type="flex" justify="center">
+      <Col span={18}>
+        <Row>
+          <Col>
+            <Media src={AwardingImage1} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Media src={AwardingImage2} />
+          </Col>
+        </Row>
+      </Col>
+    </Row> */}
   </div>
 );
-
-Awarding.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default Awarding;

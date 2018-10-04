@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
 import { pinkColorDark, pinkColorLight } from '../color';
 
@@ -49,12 +47,9 @@ const Square = styled.div`
   margin-right: 2vmin;
 `;
 
-const SystemStructure = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset} speed={1}>
-      <Background />
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.2} speed={0.2}>
+const SystemStructure = () => (
+  <div className="section">
+    <Background>
       <Row type="flex" justify="center" gutter={20}>
         <SystemCol>
           <MediaTitleBlock>
@@ -66,12 +61,8 @@ const SystemStructure = ({ mainOffset }) => (
           <Media src={ProductImage} />
         </SystemCol>
       </Row>
-    </Parallax.Layer>
+    </Background>
   </div>
 );
-
-SystemStructure.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default SystemStructure;

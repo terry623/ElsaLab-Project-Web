@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
 import { pinkColorDark, pinkColorLight } from '../color';
 
@@ -82,20 +80,11 @@ class ProposedMethodology extends Component {
   };
 
   render() {
-    const { mainOffset } = this.props;
     const { modalVisible, modalTitle } = this.state;
 
     return (
-      <div>
-        <Parallax.Layer offset={mainOffset} speed={0}>
-          <Background />
-          <ResultsModal
-            visible={modalVisible}
-            title={modalTitle}
-            closeModal={this.closeModal}
-          />
-        </Parallax.Layer>
-        <Parallax.Layer offset={mainOffset + 0.18} speed={0.2}>
+      <div className="section">
+        <Background>
           <Row>
             <Col span={15} offset={4}>
               <MainTitle>
@@ -113,14 +102,15 @@ class ProposedMethodology extends Component {
               </Col>
             </Row>
           ))}
-        </Parallax.Layer>
+        </Background>
+        <ResultsModal
+          visible={modalVisible}
+          title={modalTitle}
+          closeModal={this.closeModal}
+        />
       </div>
     );
   }
 }
-
-ProposedMethodology.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default ProposedMethodology;

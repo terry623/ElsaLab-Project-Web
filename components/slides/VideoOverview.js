@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
 import { pinkColorMid } from '../color';
 
@@ -50,12 +48,9 @@ const Square = styled.div`
   margin-left: 2vmin;
 `;
 
-const VideoOverview = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset} speed={0}>
-      <Background />
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.2}>
+const VideoOverview = () => (
+  <div className="section">
+    <Background>
       <Row type="flex" justify="center">
         <SystemCol>
           <MediaTitleBlock>
@@ -73,12 +68,8 @@ const VideoOverview = ({ mainOffset }) => (
           />
         </SystemCol>
       </Row>
-    </Parallax.Layer>
+    </Background>
   </div>
 );
-
-VideoOverview.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default VideoOverview;

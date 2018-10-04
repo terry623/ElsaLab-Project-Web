@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
 import { pinkColorLight } from '../color';
 
@@ -38,20 +36,16 @@ const Square = styled.div`
 
 const Bar = styled.div`
   width: 1.5vmin;
-  height: 150vmin;
+  /* height: 150vmin; */
   background-color: ${pinkColorLight};
   float: right;
   margin-right: 3vmin;
   margin-top: 1vmin;
 `;
 
-const Abstract = ({ mainOffset }) => (
-  <div>
-    {' '}
-    <Parallax.Layer offset={mainOffset} speed={0}>
-      <Background />
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.2}>
+const Abstract = () => (
+  <div className="section">
+    <Background>
       <Row>
         <Col span={12} offset={4}>
           <Title>
@@ -89,12 +83,8 @@ const Abstract = ({ mainOffset }) => (
           </Content>
         </Col>
       </Row>
-    </Parallax.Layer>
+    </Background>
   </div>
 );
-
-Abstract.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default Abstract;

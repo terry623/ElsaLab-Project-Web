@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
 import { pinkColorLight } from '../color';
 
@@ -56,13 +54,10 @@ const Square = styled.div`
   background-color: ${pinkColorLight};
 `;
 
-const Topic = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset} speed={0}>
+const Topic = () => (
+  <div className="section">
+    <Background>
       <Header />
-      <Background />
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.3} speed={0.2}>
       <Row>
         <Col span={11} offset={11}>
           <Card>
@@ -75,12 +70,8 @@ const Topic = ({ mainOffset }) => (
           </Card>
         </Col>
       </Row>
-    </Parallax.Layer>
+    </Background>
   </div>
 );
-
-Topic.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default Topic;
