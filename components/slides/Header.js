@@ -47,6 +47,7 @@ const Title = styled.p`
   margin: 0;
 `;
 
+// FIXME: 現在 hover 不到
 const Header = () => (
   <Row>
     <NavBarLeftCol span={8} offset={1}>
