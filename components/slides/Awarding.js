@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { Col, Row } from 'antd';
+import { Col, Row } from 'antd';
 
 import { pinkColorDark, pinkColorLight } from '../color';
 
-// const AwardingImage1 = '/static/award_1.png';
-// const AwardingImage2 = '/static/award_2.png';
+const AwardingImage1 = '/static/award_1.png';
+const AwardingImage2 = '/static/award_2.png';
 const BackgroundInvertImage = '/static/background_image_invert.jpg';
 
 const Background = styled.div`
@@ -20,10 +20,9 @@ const AwardingTitleBlock = styled.div`
   background: url(${BackgroundInvertImage});
   background-position: right center;
   background-size: 180vmin 100vmin;
-  height: 100%;
+  height: 100vmin;
   z-index: -50;
   width: 40vmin;
-  margin-left: 30vmin;
 `;
 
 const Title = styled.div`
@@ -33,10 +32,11 @@ const Title = styled.div`
   padding: 20vmin 5vmin 5vmin;
 `;
 
-// const Media = styled.img`
-//   width: 70vmin;
-//   margin: 0 0 3vmin 60vmin;
-// `;
+const Media = styled.img`
+  width: 70vmin;
+  margin: 8vmin 0 0 0;
+  margin-top: 4vmin;
+`;
 
 const Square = styled.div`
   width: 5vmin;
@@ -49,25 +49,27 @@ const Square = styled.div`
 const Awarding = () => (
   <div className="section">
     <Background>
-      <AwardingTitleBlock>
-        <Title>Awarding</Title>
-        <Square />
-      </AwardingTitleBlock>
+      <Row type="flex" justify="center" align="middle">
+        <Col span={6} offset={1}>
+          <AwardingTitleBlock>
+            <Title>Awarding</Title>
+            <Square />
+          </AwardingTitleBlock>
+        </Col>
+        <Col span={10}>
+          <Row>
+            <Col>
+              <Media src={AwardingImage1} />
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Media src={AwardingImage2} />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </Background>
-    {/* <Row type="flex" justify="center">
-      <Col span={18}>
-        <Row>
-          <Col>
-            <Media src={AwardingImage1} />
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            <Media src={AwardingImage2} />
-          </Col>
-        </Row>
-      </Col>
-    </Row> */}
   </div>
 );
 
