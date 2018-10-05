@@ -3,13 +3,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
-import { pinkColorDark } from '../color';
+import { pinkColorDark } from './color';
 
 const IconImg = '/static/icon.png';
 
 const NabItemCol = styled(Col)`
-  padding-top: 4vmin;
-  padding-bottom: 2vmin;
+  padding: 4vmin 4vmin 2vmin 4vmin;
   color: ${pinkColorDark};
 `;
 
@@ -61,22 +60,28 @@ const Header = () => (
       </Row>
     </NavBarLeftCol>
     <NavBarRightCol span={8} offset={6}>
-      <Row type="flex" justify="end" align="top" gutter={64}>
-        <NabItemColRight>
+      <Row type="flex" justify="end" align="top">
+        <Col>
           <Link href="/">
-            <Entry>Home</Entry>
+            <NabItemColRight>
+              <Entry>Home</Entry>
+            </NabItemColRight>
           </Link>
-        </NabItemColRight>
-        <NabItemColRight>
+        </Col>
+        <Col>
           <Link href="/project">
-            <Entry>Project</Entry>
+            <NabItemColRight>
+              <Entry>Project</Entry>
+            </NabItemColRight>
           </Link>
-        </NabItemColRight>
-        <NabItemColRight>
+        </Col>
+        <Col>
           <Link href="/about">
-            <Entry>About</Entry>
+            <NabItemColRight>
+              <Entry>About</Entry>
+            </NabItemColRight>
           </Link>
-        </NabItemColRight>
+        </Col>
       </Row>
     </NavBarRightCol>
   </Row>

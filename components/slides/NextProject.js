@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
 const BackgroundImageFooter = '/static/background_image_footer.jpg';
 
@@ -19,6 +17,7 @@ const Card = styled.div`
   width: 100%;
   height: 35vmin;
   border: 2vmin solid white;
+  margin: 12vmin 0 10vmin 0;
 `;
 
 const Block = styled.div`
@@ -45,12 +44,9 @@ const Title2 = styled(Title1)`
   margin-top: -2vmin;
 `;
 
-const Topic = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer factor={0.6} offset={mainOffset} speed={0}>
-      <Background />
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.075} speed={0.2}>
+const Topic = () => (
+  <div className="section fp-auto-height">
+    <Background>
       <Row type="flex" justify="end">
         <Col span={12}>
           <Card>
@@ -62,12 +58,8 @@ const Topic = ({ mainOffset }) => (
           </Card>
         </Col>
       </Row>
-    </Parallax.Layer>
+    </Background>
   </div>
 );
-
-Topic.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default Topic;

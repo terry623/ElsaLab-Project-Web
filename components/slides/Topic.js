@@ -1,12 +1,9 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
+import Header from '../Header';
 import { pinkColorLight } from '../color';
-
-import Header from './Header';
 
 const BackgroundImage = '/static/background_image.jpg';
 
@@ -15,9 +12,6 @@ const Background = styled.div`
   background-size: cover;
   width: 100%;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: -100;
 `;
 
@@ -26,6 +20,7 @@ const Card = styled.div`
   height: 60vmin;
   border: 2vmin solid white;
   border-bottom-width: 20vmin;
+  margin-top: 16vmin;
 `;
 
 const Block = styled.div`
@@ -51,18 +46,15 @@ const Square = styled.div`
   width: 5vmin;
   height: 5vmin;
   position: absolute;
-  top: 4vmin;
+  top: 20vmin;
   right: 4vmin;
   background-color: ${pinkColorLight};
 `;
 
-const Topic = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset} speed={0}>
+const Topic = () => (
+  <div className="section">
+    <Background>
       <Header />
-      <Background />
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.3} speed={0.2}>
       <Row>
         <Col span={11} offset={11}>
           <Card>
@@ -75,12 +67,8 @@ const Topic = ({ mainOffset }) => (
           </Card>
         </Col>
       </Row>
-    </Parallax.Layer>
+    </Background>
   </div>
 );
-
-Topic.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default Topic;

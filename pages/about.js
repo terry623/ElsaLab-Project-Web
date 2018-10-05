@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../components/slides/Header';
+import Header from '../components/Header';
 
 const AboutPage = () => (
   <div>

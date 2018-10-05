@@ -1,15 +1,26 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { Component } from 'react';
+import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
 import { pinkColorMid } from '../color';
 
-const DemoVideo =
-  'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&amp;controls=0&amp;showinfo=0';
+const VideoURL =
+  'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&controls=0showinfo=0';
+
 const BackgroundInvertVerticalVerticalImage =
   '/static/background_image_invert_vertical_2.jpg';
+
+const videoConfig = {
+  youtube: {
+    frameBorder: '0',
+    allowFullScreen: true,
+    playerVars: {
+      rel: 0,
+      showinfo: 0,
+    },
+  },
+};
 
 const Background = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -22,12 +33,14 @@ const Background = styled.div`
 
 const SystemCol = styled(Col)`
   height: 65vmin;
+  margin-top: 18vmin;
 `;
 
 const MediaTitleBlock = styled.div`
   background-color: ${pinkColorMid};
   height: 100%;
   width: 27vmin;
+  margin-left: 8vmin;
 `;
 
 const Title = styled.div`
@@ -35,11 +48,6 @@ const Title = styled.div`
   font-style: italic;
   font-size: 5vmin;
   padding: 3vmin;
-`;
-
-const MediaPlayer = styled.iframe`
-  width: 115vmin;
-  height: 100%;
 `;
 
 const Square = styled.div`
@@ -50,35 +58,74 @@ const Square = styled.div`
   margin-left: 2vmin;
 `;
 
-const VideoOverview = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset} speed={0}>
-      <Background />
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.2}>
-      <Row type="flex" justify="center">
-        <SystemCol>
-          <MediaTitleBlock>
-            <Title>Video Overview</Title>
-            <Square />
-          </MediaTitleBlock>
-        </SystemCol>
-        <SystemCol>
-          <MediaPlayer
-            title="demo video"
-            src={DemoVideo}
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
-        </SystemCol>
-      </Row>
-    </Parallax.Layer>
-  </div>
-);
-
-VideoOverview.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
+const videoSize = {
+  width: '115vmin',
+  height: '100%',
 };
+
+const Wrapper = styled.div`
+  position: relative;
+  ${videoSize};
+`;
+
+const TransparentLayer = styled.div`
+  background-color: rgba(255, 255, 255, 0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+`;
+
+class VideoOverview extends Component {
+  state = {
+    isPlaying: false,
+  };
+
+  playVideo = () => {
+    this.setState({
+      isPlaying: true,
+    });
+  };
+
+  onPause = () => {
+    this.setState({ isPlaying: false });
+  };
+
+  render() {
+    const { isPlaying } = this.state;
+
+    return (
+      <div className="section">
+        <Background>
+          <Row type="flex" justify="center">
+            <SystemCol>
+              <MediaTitleBlock>
+                <Title>Video Overview</Title>
+                <Square />
+              </MediaTitleBlock>
+            </SystemCol>
+            <SystemCol>
+              <Wrapper>
+                <ReactPlayer
+                  url={VideoURL}
+                  playing={isPlaying}
+                  width={videoSize.width}
+                  height={videoSize.height}
+                  config={videoConfig}
+                  onPause={this.onPause}
+                />
+                {!isPlaying ? (
+                  <TransparentLayer onClick={this.playVideo} />
+                ) : null}
+              </Wrapper>
+            </SystemCol>
+          </Row>
+        </Background>
+      </div>
+    );
+  }
+}
 
 export default VideoOverview;

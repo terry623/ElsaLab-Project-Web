@@ -1,10 +1,16 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
-import { pinkColorDark } from '../color';
+import { pinkColorDark, pinkColorLight } from '../color';
+
+const Background = styled.div`
+  background-color: ${pinkColorLight};
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+`;
 
 const Content = styled.p`
   color: gray;
@@ -14,20 +20,20 @@ const Content = styled.p`
 const Title = styled.div`
   color: ${pinkColorDark};
   font-size: 6vmin;
-  margin-bottom: 2vmin;
+  margin-top: 22vmin;
 `;
 
 const Bar = styled.div`
   width: 1.5vmin;
-  height: 150vmin;
+  height: 77vmin;
   background-color: ${pinkColorDark};
-  margin-top: -10vmin;
+  margin-top: -8vmin;
   margin-left: 2vmin;
 `;
 
-const Conclusion = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset + 0.18} speed={0.2}>
+const Conclusion = () => (
+  <div className="section">
+    <Background>
       <Row>
         <Col span={12} offset={4}>
           <Title>Conclusion</Title>
@@ -55,12 +61,8 @@ const Conclusion = ({ mainOffset }) => (
           <Bar />
         </Col>
       </Row>
-    </Parallax.Layer>
+    </Background>
   </div>
 );
-
-Conclusion.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default Conclusion;

@@ -1,8 +1,6 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
-import { Parallax } from 'react-spring';
 
 import { pinkColorDark, pinkColorLight } from '../color';
 
@@ -22,10 +20,9 @@ const AwardingTitleBlock = styled.div`
   background: url(${BackgroundInvertImage});
   background-position: right center;
   background-size: 180vmin 100vmin;
-  height: 100%;
+  height: 100vmin;
   z-index: -50;
   width: 40vmin;
-  margin-left: 30vmin;
 `;
 
 const Title = styled.div`
@@ -37,7 +34,8 @@ const Title = styled.div`
 
 const Media = styled.img`
   width: 70vmin;
-  margin: 0 0 3vmin 60vmin;
+  margin: 8vmin 0 0 0;
+  margin-top: 4vmin;
 `;
 
 const Square = styled.div`
@@ -48,37 +46,31 @@ const Square = styled.div`
   margin-left: 4vmin;
 `;
 
-const Awarding = ({ mainOffset }) => (
-  <div>
-    <Parallax.Layer offset={mainOffset} speed={0}>
-      <Background>
-        <AwardingTitleBlock>
-          <Title>Awarding</Title>
-          <Square />
-        </AwardingTitleBlock>
-      </Background>
-    </Parallax.Layer>
-    <Parallax.Layer offset={mainOffset + 0.1} speed={0.2}>
-      <Row type="flex" justify="center">
-        <Col span={18}>
+const Awarding = () => (
+  <div className="section">
+    <Background>
+      <Row type="flex" justify="center" align="middle">
+        <Col span={6} offset={1}>
+          <AwardingTitleBlock>
+            <Title>Awarding</Title>
+            <Square />
+          </AwardingTitleBlock>
+        </Col>
+        <Col span={10}>
           <Row>
             <Col>
-              <Media src={AwardingImage1} />
+              <Media data-src={AwardingImage1} />
             </Col>
           </Row>
           <Row>
             <Col>
-              <Media src={AwardingImage2} />
+              <Media data-src={AwardingImage2} />
             </Col>
           </Row>
         </Col>
       </Row>
-    </Parallax.Layer>
+    </Background>
   </div>
 );
-
-Awarding.propTypes = {
-  mainOffset: PropTypes.number.isRequired,
-};
 
 export default Awarding;
