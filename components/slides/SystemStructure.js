@@ -59,7 +59,7 @@ const SystemStructure = () => (
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol>
-          <Media src={ProductImage} />
+          <Media data-src={ProductImage} />
         </SystemCol>
       </Row>
     </Background>

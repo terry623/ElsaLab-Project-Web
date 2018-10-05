@@ -5,7 +5,8 @@ import { Col, Row } from 'antd';
 import { pinkColorMid } from '../color';
 
 const DemoVideo =
-  'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&amp;controls=0&amp;showinfo=0';
+  'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&controls=0&showinfo=0&autoplay=1';
+
 const BackgroundInvertVerticalVerticalImage =
   '/static/background_image_invert_vertical_2.jpg';
 

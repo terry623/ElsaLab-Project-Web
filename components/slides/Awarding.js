@@ -59,12 +59,12 @@ const Awarding = () => (
         <Col span={10}>
           <Row>
             <Col>
-              <Media src={AwardingImage1} />
+              <Media data-src={AwardingImage1} />
             </Col>
           </Row>
           <Row>
             <Col>
-              <Media src={AwardingImage2} />
+              <Media data-src={AwardingImage2} />
             </Col>
           </Row>
         </Col>
