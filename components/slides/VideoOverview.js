@@ -1,11 +1,21 @@
 import React from 'react';
+import YouTube from 'react-youtube';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 import { pinkColorMid } from '../color';
 
-const DemoVideo =
-  'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&controls=0&showinfo=0&autoplay=1';
+const videoId = '8osw3ElPAvY';
+
+const opts = {
+  frameBorder: '0',
+  allowFullScreen: true,
+  playerVars: {
+    rel: 0,
+    showinfo: 0,
+    autoplay: 1,
+  },
+};
 
 const BackgroundInvertVerticalVerticalImage =
   '/static/background_image_invert_vertical_2.jpg';
@@ -38,8 +48,8 @@ const Title = styled.div`
   padding: 3vmin;
 `;
 
-const MediaPlayer = styled.iframe`
-  width: 115vmin;
+const YoutubePlayer = styled(YouTube)`
+  width: 100%;
   height: 100%;
 `;
 
@@ -49,6 +59,11 @@ const Square = styled.div`
   background-color: white;
   margin-top: 37vmin;
   margin-left: 2vmin;
+`;
+
+const Wrapper = styled.div`
+  width: 115vmin;
+  height: 100%;
 `;
 
 // FIXME: 滑鼠在影片上，會不能滑動
@@ -63,13 +78,9 @@ const VideoOverview = () => (
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol>
-          <MediaPlayer
-            title="demo video"
-            src={DemoVideo}
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
+          <Wrapper>
+            <YoutubePlayer videoId={videoId} opts={opts} />
+          </Wrapper>
         </SystemCol>
       </Row>
     </Background>
