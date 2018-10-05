@@ -25,11 +25,11 @@ class ProjectPage extends Component {
           return (
             <div id="fullpage-wrapper">
               <Topic />
-              {/* <SystemStructure />
+              <SystemStructure />
               <Abstract />
               <ProposedMethodology />
               <ExperimentalResults />
-              <Awarding /> */}
+              <Awarding />
               <VideoOverview />
               <Conclusion />
               <NextProject />
