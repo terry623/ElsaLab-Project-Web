@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "ElsaLab Project Website",
   "now": {
-    "alias": "elsa-basic-1.now.sh"
+    "alias": "elsa-basic-project.now.sh"
   },
   "scripts": {
     "dev": "next",
