@@ -69,14 +69,14 @@ const Header = () => (
           </Link>
         </Col>
         <Col>
-          <Link href="/project">
+          <Link href="/project/">
             <NabItemColRight>
               <Entry>Project</Entry>
             </NabItemColRight>
           </Link>
         </Col>
         <Col>
-          <Link href="/about">
+          <Link href="/about/">
             <NabItemColRight>
               <Entry>About</Entry>
             </NabItemColRight>

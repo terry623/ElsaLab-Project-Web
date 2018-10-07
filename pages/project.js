@@ -11,13 +11,24 @@ import SystemStructure from '../components/slides/SystemStructure';
 import Topic from '../components/slides/Topic';
 import VideoOverview from '../components/slides/VideoOverview';
 
+const eachBlockTag = [
+  'topic',
+  'systemStructure',
+  'abstract',
+  'proposedMethodology',
+  'experimentalResults',
+  'awarding',
+  'videoOverview',
+  'conclusion',
+  'nextProject',
+];
+
 class ProjectPage extends Component {
   render() {
     return (
       <ReactFullpage
         licenseKey="OPEN-SOURCE-GPLV3-LICENSE"
-        // TODO: 放每個 Section 的名字
-        // anchors={['firstPage', 'secondPage', 'thirdPage']}
+        anchors={eachBlockTag}
         render={({ state, fullpageApi }) => {
           console.log('render prop change', state);
           console.log({ fullpageApi });
