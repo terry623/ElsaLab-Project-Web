@@ -56,7 +56,7 @@ const Topic = () => (
     <Background>
       <Header />
       <Row>
-        <Col span={11} offset={11}>
+        <Col xs={{ span: 24 }} xl={{ span: 11, offset: 11 }}>
           <Card>
             <Block>
               <Square />
