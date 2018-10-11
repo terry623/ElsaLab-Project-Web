@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const ProductImage = '/static/System_structure_img.jpg';
@@ -18,6 +19,11 @@ const Background = styled.div`
 const SystemCol = styled(Col)`
   height: 65vmin;
   margin-top: 18vmin;
+  margin-right: 2vmin;
+
+  ${media.lessThan('notebook')`
+    margin-top: -2vmin;
+  `};
 `;
 
 const MediaTitleBlock = styled.div`
@@ -25,7 +31,12 @@ const MediaTitleBlock = styled.div`
   background-position: left center;
   background-size: 170vmin 100vmin;
   height: 100%;
-  width: 27vmin;
+  width: 100%;
+
+  ${media.lessThan('notebook')`
+    height: 27vmin;
+    margin-top: 40vmin;
+  `};
 `;
 
 const Title = styled.div`
@@ -33,10 +44,16 @@ const Title = styled.div`
   font-style: italic;
   font-size: 5vmin;
   padding: 3vmin;
+
+  ${media.lessThan('notebook')`
+    padding: 5vmin;
+  `};
 `;
 
 const Media = styled.img`
+  width: 100%;
   height: 100%;
+  z-index: 0;
 `;
 
 const Square = styled.div`
@@ -46,19 +63,28 @@ const Square = styled.div`
   float: right;
   margin-top: 37vmin;
   margin-right: 2vmin;
+
+  ${media.lessThan('notebook')`
+    margin-top: -22vmin;
+    margin-right: 5vmin;
+  `};
 `;
 
 const SystemStructure = () => (
   <div className="section">
     <Background>
-      <Row type="flex" justify="center" gutter={20}>
-        <SystemCol>
+      <Row type="flex" justify="center">
+        <SystemCol xs={{ span: 24 }} xl={{ span: 3 }}>
           <MediaTitleBlock>
-            <Title>System Structure</Title>
+            <Title>
+              System
+              <br />
+              Structure
+            </Title>
             <Square />
           </MediaTitleBlock>
         </SystemCol>
-        <SystemCol>
+        <SystemCol xs={{ span: 24 }} xl={{ span: 12 }}>
           <Media data-src={ProductImage} />
         </SystemCol>
       </Row>
