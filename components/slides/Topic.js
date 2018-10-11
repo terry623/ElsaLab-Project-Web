@@ -24,6 +24,7 @@ const Card = styled.div`
   margin-top: 16vmin;
 
   ${media.lessThan('notebook')`
+    margin-top: 30vmin;
     height: 70vmin;
   `};
 `;

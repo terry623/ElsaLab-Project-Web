@@ -8,7 +8,7 @@ import { pinkColorDark } from './color';
 const IconImg = '/static/icon.png';
 
 const NabItemCol = styled(Col)`
-  padding: 4vmin 4vmin 2vmin 4vmin;
+  padding: 5vmin 4vmin 2vmin 4vmin;
   color: ${pinkColorDark};
 `;
 
@@ -25,7 +25,7 @@ const Icon = styled.img`
 `;
 
 const NavBarLeftCol = styled(Col)`
-  margin-top: -1vmin;
+  margin-top: -2vmin;
 `;
 
 const NavBarRightCol = styled(Col)`
@@ -48,7 +48,7 @@ const Title = styled.p`
 
 const Header = () => (
   <Row>
-    <NavBarLeftCol span={8} offset={1}>
+    <NavBarLeftCol xs={{ span: 8, offset: 1 }} xl={{ span: 8, offset: 1 }}>
       <Row type="flex" justify="start" align="top" gutter={8}>
         <NabItemCol>
           <Icon src={IconImg} />
@@ -59,7 +59,7 @@ const Header = () => (
         </NabItemCol>
       </Row>
     </NavBarLeftCol>
-    <NavBarRightCol span={8} offset={6}>
+    <NavBarRightCol xs={{ span: 15 }} xl={{ span: 8, offset: 6 }}>
       <Row type="flex" justify="end" align="top">
         <Col>
           <Link href="/">
