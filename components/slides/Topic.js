@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 import Header from '../Header';
+import { media } from '../size';
 import { pinkColorLight } from '../color';
 
 const BackgroundImage = '/static/background_image.jpg';
@@ -21,6 +22,10 @@ const Card = styled.div`
   border: 2vmin solid white;
   border-bottom-width: 20vmin;
   margin-top: 16vmin;
+
+  ${media.lessThan('notebook')`
+    height: 70vmin;
+  `};
 `;
 
 const Block = styled.div`
@@ -30,6 +35,11 @@ const Block = styled.div`
   color: ${pinkColorLight};
   padding: 2vmin 4vmin 2vmin;
   font-size: 5vmin;
+
+  ${media.lessThan('notebook')`
+    font-size: 6vmin;
+    height: 48vmin;
+  `};
 `;
 
 const Year = styled.div`
@@ -40,6 +50,10 @@ const Title = styled.div`
   font-size: 8vmin;
   font-weight: bold;
   color: white;
+
+  ${media.lessThan('notebook')`
+    font-size: 10vmin;
+  `};
 `;
 
 const Square = styled.div`
