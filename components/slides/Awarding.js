@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const AwardingImage1 = '/static/award_1.png';
@@ -21,8 +22,14 @@ const AwardingTitleBlock = styled.div`
   background-position: right center;
   background-size: 180vmin 100vmin;
   height: 100vmin;
-  z-index: -50;
   width: 40vmin;
+  z-index: -50;
+
+  ${media.lessThan('notebook')`
+    height: 22vmin;
+    width:100%;
+    margin-top:18vmin;
+  `};
 `;
 
 const Title = styled.div`
@@ -30,39 +37,54 @@ const Title = styled.div`
   font-style: italic;
   font-size: 6vmin;
   padding: 20vmin 5vmin 5vmin;
+
+  ${media.lessThan('notebook')`
+    padding-top:6vmin;
+  `};
 `;
 
 const Media = styled.img`
   width: 70vmin;
   margin: 8vmin 0 0 0;
   margin-top: 4vmin;
+
+  ${media.lessThan('notebook')`
+    width:100vmin;
+    margin:0;
+  `};
 `;
 
 const Square = styled.div`
   width: 5vmin;
   height: 5vmin;
   background-color: ${pinkColorDark};
-  margin-top: 52vmin;
   margin-left: 4vmin;
+  margin-top: 52vmin;
+
+  ${media.lessThan('notebook')`
+    float: right;
+  margin-right: 4vmin;
+  margin-top: -17vmin;
+  `};
 `;
 
 const Awarding = () => (
   <div className="section">
     <Background>
       <Row type="flex" justify="center" align="middle">
-        <Col span={6} offset={1}>
+        <Col xs={{ span: 24 }} xl={{ span: 6, offset: 1 }}>
           <AwardingTitleBlock>
             <Title>Awarding</Title>
             <Square />
           </AwardingTitleBlock>
         </Col>
-        <Col span={10}>
-          <Row>
+        <Col xs={{ span: 24 }} xl={{ span: 10 }}>
+          <Row type="flex" justify="center">
             <Col>
               <Media data-src={AwardingImage1} />
             </Col>
           </Row>
-          <Row>
+          <Row type="flex" justify="center">
             <Col>
               <Media data-src={AwardingImage2} />
             </Col>
