@@ -102,9 +102,7 @@ class ProposedMethodology extends Component {
           <Row>
             <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
               <MainTitle>
-                Proposed
-                <br />
-                Methodology
+                Proposed Methodology
                 <Square />
               </MainTitle>
             </Col>

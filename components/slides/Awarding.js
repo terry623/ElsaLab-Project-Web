@@ -62,9 +62,10 @@ const Square = styled.div`
   margin-top: 52vmin;
 
   ${media.lessThan('notebook')`
+    background-color: ${pinkColorLight};
     float: right;
-  margin-right: 4vmin;
-  margin-top: -17vmin;
+    margin-right: 4vmin;
+    margin-top: -17vmin;
   `};
 `;
 
