@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const Background = styled.div`
@@ -21,22 +22,56 @@ const Title = styled.div`
   color: ${pinkColorDark};
   font-size: 6vmin;
   margin-top: 22vmin;
+
+  ${media.lessThan('notebook')`
+    margin-top: 4vmin;
+  `};
+`;
+
+const Square = styled.div`
+  visibility: hidden;
+  width: 5vmin;
+  height: 5vmin;
+  float: right;
+  margin-top: 2vmin;
+  margin-right: -12vmin;
+  background-color: ${pinkColorDark};
+
+  ${media.lessThan('notebook')`
+    visibility: visible;
+  `};
 `;
 
 const Bar = styled.div`
   width: 1.5vmin;
   height: 77vmin;
   background-color: ${pinkColorDark};
-  margin-top: -8vmin;
-  margin-left: 2vmin;
+  position: absolute;
+  margin-left: 28vmin;
+  margin-top: 28vmin;
+
+  ${media.lessThan('notebook')`
+    position: relative;
+    float:left;
+    margin-left: 0;
+    margin-top:30vmin;
+    width: 45vmin;
+    height: 1.5vmin;
+  `};
 `;
 
 const Conclusion = () => (
   <div className="section">
     <Background>
+      <Bar />
       <Row>
         <Col span={12} offset={4}>
-          <Title>Conclusion</Title>
+          <Title>
+            <Col span={12}>Conclusion</Col>
+            <Col span={12}>
+              <Square />
+            </Col>
+          </Title>
         </Col>
       </Row>
       <Row>
@@ -56,9 +91,6 @@ const Conclusion = () => (
             state, and show that this structured form of representations does
             improve the learning speed of our model
           </Content>
-        </Col>
-        <Col span={3}>
-          <Bar />
         </Col>
       </Row>
     </Background>
