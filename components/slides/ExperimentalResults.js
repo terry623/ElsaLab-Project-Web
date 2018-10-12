@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 import ResultsModal from './ResultsModal';
@@ -22,6 +23,10 @@ const MainTitle = styled.div`
   font-size: 6vmin;
   margin-top: 18vmin;
   margin-bottom: 2vmin;
+
+  ${media.lessThan('notebook')`
+    margin-top: 30vmin;
+  `};
 `;
 
 const BlockTitle = styled.div`
@@ -35,6 +40,10 @@ const BlockTitle = styled.div`
   height: 12vmin;
   margin: 2vmin 0;
   padding: 3vmin;
+
+  ${media.lessThan('notebook')`
+    height: 18vmin;
+  `};
 `;
 
 const Square = styled.div`
@@ -43,6 +52,10 @@ const Square = styled.div`
   background-color: ${pinkColorDark};
   float: right;
   margin-top: 3vmin;
+
+  ${media.lessThan('notebook')`
+    margin-top: -3vmin;
+  `};
 `;
 
 const allTitles = [
@@ -86,7 +99,7 @@ class ExperimentalResults extends Component {
       <div className="section">
         <Background>
           <Row>
-            <Col span={15} offset={4}>
+            <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
               <MainTitle>
                 Experimental Results
                 <Square />
@@ -95,7 +108,7 @@ class ExperimentalResults extends Component {
           </Row>
           {allTitles.map(({ id, title }) => (
             <Row key={id}>
-              <Col span={15} offset={4}>
+              <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
                 <BlockTitle onClick={() => this.openModal(title)}>
                   {title}
                 </BlockTitle>
