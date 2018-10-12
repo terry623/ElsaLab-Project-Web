@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import { media } from '../size';
 import { pinkColorMid } from '../color';
 
 const VideoURL =
@@ -31,16 +32,36 @@ const Background = styled.div`
   z-index: -100;
 `;
 
+const SystemColMedia = styled(Col)`
+  height: 65vmin;
+  margin-top: 18vmin;
+
+  ${media.lessThan('notebook')`
+    height: 27vmin;
+    margin-top: 30vmin;
+  `};
+`;
+
 const SystemCol = styled(Col)`
   height: 65vmin;
   margin-top: 18vmin;
+
+  ${media.lessThan('notebook')`
+    margin-top: 0;
+  `};
 `;
 
 const MediaTitleBlock = styled.div`
   background-color: ${pinkColorMid};
   height: 100%;
   width: 27vmin;
-  margin-left: 8vmin;
+
+  ${media.lessThan('notebook')`
+    background-color: rgba(255, 255, 255, 0);
+    margin-top:6vmin;
+    height: 20vmin;
+    width: 100%;
+  `};
 `;
 
 const Title = styled.div`
@@ -48,6 +69,11 @@ const Title = styled.div`
   font-style: italic;
   font-size: 5vmin;
   padding: 3vmin;
+
+  ${media.lessThan('notebook')`
+    font-size: 8vmin;
+    color:  ${pinkColorMid};
+  `};
 `;
 
 const Square = styled.div`
@@ -56,10 +82,17 @@ const Square = styled.div`
   background-color: white;
   margin-top: 37vmin;
   margin-left: 2vmin;
+
+  ${media.lessThan('notebook')`
+    float:right;
+    margin-top:-10vmin;
+    margin-right:3vmin;
+    background-color: ${pinkColorMid};
+  `};
 `;
 
 const videoSize = {
-  width: '115vmin',
+  width: '100%',
   height: '100%',
 };
 
@@ -99,14 +132,14 @@ class VideoOverview extends Component {
     return (
       <div className="section">
         <Background>
-          <Row type="flex" justify="center">
-            <SystemCol>
+          <Row type="flex" justify="center" gutter={24}>
+            <SystemColMedia xs={{ span: 24 }} xl={{ span: 2, offset: 1 }}>
               <MediaTitleBlock>
                 <Title>Video Overview</Title>
                 <Square />
               </MediaTitleBlock>
-            </SystemCol>
-            <SystemCol>
+            </SystemColMedia>
+            <SystemCol xs={{ span: 24 }} xl={{ span: 15, offset: 1 }}>
               <Wrapper>
                 <ReactPlayer
                   url={VideoURL}
