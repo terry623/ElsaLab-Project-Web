@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage/dist/react-fullpage-commonjs';
 
@@ -25,6 +26,11 @@ const eachBlockTag = [
 
 class SingleProjectPage extends Component {
   render() {
+    const { name } = this.props;
+
+    // 到時候要根據專案名稱去置換內文
+    console.log({ name });
+
     return (
       <ReactFullpage
         licenseKey="OPEN-SOURCE-GPLV3-LICENSE"
@@ -34,7 +40,7 @@ class SingleProjectPage extends Component {
           console.log({ fullpageApi });
 
           return (
-            <div id="fullpage-wrapper">
+            <div>
               <Topic />
               <SystemStructure />
               <Abstract />
@@ -51,5 +57,9 @@ class SingleProjectPage extends Component {
     );
   }
 }
+
+SingleProjectPage.propTypes = {
+  name: PropTypes.string.isRequired,
+};
 
 export default SingleProjectPage;

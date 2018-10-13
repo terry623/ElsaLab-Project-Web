@@ -67,7 +67,7 @@ const Header = () => (
     <NavBarRightCol xs={{ span: 15 }} xl={{ span: 8, offset: 6 }}>
       <Row type="flex" justify="end" align="top">
         <Col>
-          <Link href="/">
+          <Link href="/index">
             <NabItemColRight>
               <Entry>Home</Entry>
             </NabItemColRight>

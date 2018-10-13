@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
@@ -17,8 +18,10 @@ const Background = styled.div`
 const Card = styled.div`
   width: 100%;
   height: 30vmin;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.5);
   margin-top: 2vmin;
+  color: white;
+  padding: 12vmin;
 `;
 
 const Title = styled.div`
@@ -40,7 +43,11 @@ const Topic = () => (
       </Row>
       <Row type="flex" justify="center" gutter={32}>
         <Col span={6}>
-          <Card />
+          <Link
+            href={{ pathname: '/project', query: { name: 'Virtual-to-Real' } }}
+          >
+            <Card>Click Here !!</Card>
+          </Link>
         </Col>
         <Col span={6}>
           <Card />
