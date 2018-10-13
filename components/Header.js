@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import { media } from './size';
 import { pinkColorDark } from './color';
 
 const IconImg = '/static/icon.png';
@@ -30,7 +31,11 @@ const NavBarLeftCol = styled(Col)`
 
 const NavBarRightCol = styled(Col)`
   font-size: 2.5vmin;
-  padding-right: 2vmin;
+
+  ${media.lessThan('notebook')`
+    font-size: 4vmin;
+    padding-right: 2vmin;
+  `};
 `;
 
 const Entry = styled.a`
