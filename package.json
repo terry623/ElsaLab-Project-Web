@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "analyze": "cross-env ANALYZE=1 next build",
-    "deploy": "now --public && now alias"
+    "deploy": "now --public --no-verify && now alias"
   },
   "license": "MIT",
   "author": "Terry Lin",
