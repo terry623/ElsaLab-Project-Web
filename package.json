@@ -13,7 +13,8 @@
     "deploy": "now --public --no-verify && now alias"
   },
   "license": "MIT",
-  "author": "Terry Lin",
+  "private": true,
+  "author": "terry623 <terry92516@gmail.com>",
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.0",
     "@zeit/next-css": "^1.0.1",
