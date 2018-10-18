@@ -8,7 +8,7 @@ class Main extends Component {
     return (
       <div>
         <Route exact path="/" component={Home} />
-        <Route path="/project" component={Project} />
+        <Route path="/project/:name?" component={Project} />
         <Route path="/about" component={About} />
       </div>
     );
