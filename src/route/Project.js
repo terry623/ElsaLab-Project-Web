@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 // import ReactFullpage from '@fullpage/react-fullpage';
 
@@ -29,12 +29,6 @@ class Project extends Component {
   }
 }
 
-Project.propTypes = {
-  router: PropTypes.shape({
-    query: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-};
+// Project.propTypes = {};
 
 export default Project;
