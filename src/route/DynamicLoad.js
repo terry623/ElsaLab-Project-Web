@@ -4,17 +4,17 @@ import React from 'react';
 const Loading = () => <div>Loading...</div>;
 
 const Home = Loadable({
-  loader: () => import('../route/Home'),
+  loader: () => import('./Home'),
   loading: Loading,
 });
 
 const Project = Loadable({
-  loader: () => import('../route/Project'),
+  loader: () => import('./Project'),
   loading: Loading,
 });
 
 const About = Loadable({
-  loader: () => import('../route/About'),
+  loader: () => import('./About'),
   loading: Loading,
 });
 

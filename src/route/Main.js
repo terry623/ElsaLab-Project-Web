@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
-import { About, Home, Project } from '../components/DynamicLoad';
+import { About, Home, Project } from './DynamicLoad';
 
 class Main extends Component {
   render() {
