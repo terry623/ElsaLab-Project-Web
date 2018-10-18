@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 import BackgroundImage from '../static/background_image.jpg';
-import Header from '../Header';
 import { media } from '../size';
 import { pinkColorLight } from '../color';
 
@@ -68,7 +67,6 @@ const Square = styled.div`
 const Topic = () => (
   <div className="section">
     <Background>
-      <Header />
       <Row>
         <Col xs={{ span: 24 }} xl={{ span: 11, offset: 11 }}>
           <Card>

@@ -1,30 +1,12 @@
-import Loadable from 'react-loadable';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 
+import IconImg from './static/icon.png';
+import { About, Home, Project } from './DynamicLoad';
 import { media } from './size';
 import { pinkColorDark } from './color';
-
-const Loading = () => <div>Loading...</div>;
-
-const Home = Loadable({
-  loader: () => import('../route/Home'),
-  loading: Loading,
-});
-
-const Project = Loadable({
-  loader: () => import('../route/Project'),
-  loading: Loading,
-});
-
-const About = Loadable({
-  loader: () => import('../route/About'),
-  loading: Loading,
-});
-
-const IconImg = '/static/icon.png';
 
 const NabItemCol = styled(Col)`
   padding: 5vmin 4vmin 2vmin 4vmin;
@@ -56,7 +38,7 @@ const NavBarRightCol = styled(Col)`
   `};
 `;
 
-const Entry = styled.a`
+const Entry = styled.div`
   color: ${pinkColorDark};
 
   ${NabItemColRight}:hover & {
@@ -67,6 +49,10 @@ const Entry = styled.a`
 const Title = styled.p`
   font-size: ${props => props.size};
   margin: 0;
+`;
+
+const EachLink = styled(Link)`
+  text-decoration: none !important;
 `;
 
 const Header = () => (
@@ -87,25 +73,25 @@ const Header = () => (
         <NavBarRightCol xs={{ span: 15 }} xl={{ span: 8, offset: 6 }}>
           <Row type="flex" justify="end" align="top">
             <Col>
-              <Link to="/">
+              <EachLink to="/">
                 <NabItemColRight>
                   <Entry>Home</Entry>
                 </NabItemColRight>
-              </Link>
+              </EachLink>
             </Col>
             <Col>
-              <Link to="/project">
+              <EachLink to="/project">
                 <NabItemColRight>
                   <Entry>Project</Entry>
                 </NabItemColRight>
-              </Link>
+              </EachLink>
             </Col>
             <Col>
-              <Link to="/about">
+              <EachLink to="/about">
                 <NabItemColRight>
                   <Entry>About</Entry>
                 </NabItemColRight>
-              </Link>
+              </EachLink>
             </Col>
           </Row>
         </NavBarRightCol>
