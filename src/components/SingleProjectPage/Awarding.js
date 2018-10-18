@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import AwardingImage1 from '../static/award_1.png';
+import AwardingImage2 from '../static/award_2.png';
+import BackgroundInvertImage from '../static/background_image_invert.jpg';
 import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
-
-const AwardingImage1 = '/static/award_1.png';
-const AwardingImage2 = '/static/award_2.png';
-const BackgroundInvertImage = '/static/background_image_invert.jpg';
 
 const Background = styled.div`
   background-color: ${pinkColorLight};

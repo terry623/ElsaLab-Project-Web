@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundImage from '../static/background_image.jpg';
 import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 import ResultsModal from './ResultsModal';
-
-const BackgroundImage = '/static/background_image.jpg';
 
 const Background = styled.div`
   background-color: ${pinkColorLight};

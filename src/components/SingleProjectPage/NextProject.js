@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundImageFooter from '../static/background_image_footer.jpg';
 import { media } from '../size';
-
-const BackgroundImageFooter = '/static/background_image_footer.jpg';
 
 const Background = styled.div`
   background: url(${BackgroundImageFooter});

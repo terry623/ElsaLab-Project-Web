@@ -2,11 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundInvertVerticalImage from '../static/background_image_invert_vertical.jpg';
 import { media } from '../size';
 import { pinkColorLight } from '../color';
-
-const BackgroundInvertVerticalImage =
-  '/static/background_image_invert_vertical.jpg';
 
 const Background = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),

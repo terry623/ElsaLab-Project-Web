@@ -3,14 +3,11 @@ import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundInvertVerticalVerticalImage from '../static/background_image_invert_vertical_2.jpg';
 import { media } from '../size';
 import { pinkColorMid } from '../color';
 
-const VideoURL =
-  'https://www.youtube.com/embed/8osw3ElPAvY?rel=0&controls=0showinfo=0';
-
-const BackgroundInvertVerticalVerticalImage =
-  '/static/background_image_invert_vertical_2.jpg';
+const VideoURL = 'https://www.youtube.com/embed/8osw3ElPAvY';
 
 const videoConfig = {
   youtube: {
@@ -18,6 +15,7 @@ const videoConfig = {
     allowFullScreen: true,
     playerVars: {
       rel: 0,
+      controls: 0,
       showinfo: 0,
     },
   },

@@ -3,10 +3,9 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 // import Header from '../Header';
+import BackgroundImage from '../static/background_image.jpg';
 import { media } from '../size';
 import { pinkColorLight } from '../color';
-
-const BackgroundImage = '/static/background_image.jpg';
 
 const Background = styled.div`
   background: url(${BackgroundImage});
