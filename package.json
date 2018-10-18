@@ -14,12 +14,19 @@
     "deploy": "now --public && now alias"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.2",
+    "antd": "^3.10.1",
     "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-loadable": "^5.5.0",
+    "react-player": "^1.6.6",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "styled-components": "^4.0.2",
+    "styled-media-query": "^2.0.2"
   },
   "devDependencies": {
     "eslint-config-yoctol": "^0.18.1",
