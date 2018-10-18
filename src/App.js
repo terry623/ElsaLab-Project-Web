@@ -1,29 +1,39 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+// import ReactFullpage from '@fullpage/react-fullpage';
 
-import logo from './logo.svg';
-import './App.css';
+// import Gallery from './components/Gallery';
+import SingleProjectPage from './components/SingleProjectPage';
 
-class App extends Component {
+class ProjectPage extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <SingleProjectPage name="NOTYET" />
+        {/* <ReactFullpage
+          licenseKey="OPEN-SOURCE-GPLV3-LICENSE"
+          render={({ state, fullpageApi }) => {
+            console.log('render prop change', state);
+            console.log({ fullpageApi });
+
+            return (
+              <ReactFullpage.Wrapper>
+                <Gallery />
+              </ReactFullpage.Wrapper>
+            );
+          }}
+        /> */}
       </div>
     );
   }
 }
 
-export default App;
+ProjectPage.propTypes = {
+  router: PropTypes.shape({
+    query: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
+export default ProjectPage;

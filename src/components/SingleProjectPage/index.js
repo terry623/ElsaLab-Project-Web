@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import ReactFullpage from '@fullpage/react-fullpage/dist/react-fullpage-commonjs';
+import ReactFullpage from '@fullpage/react-fullpage';
 
 import Abstract from './Abstract';
 import Awarding from './Awarding';
@@ -40,7 +40,7 @@ class SingleProjectPage extends Component {
           console.log({ fullpageApi });
 
           return (
-            <div>
+            <ReactFullpage.Wrapper>
               <Topic />
               <SystemStructure />
               <Abstract />
@@ -50,7 +50,7 @@ class SingleProjectPage extends Component {
               <VideoOverview />
               <Conclusion />
               <NextProject />
-            </div>
+            </ReactFullpage.Wrapper>
           );
         }}
       />

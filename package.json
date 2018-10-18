@@ -2,16 +2,12 @@
   "name": "elsa",
   "version": "0.1.0",
   "description": "ElsaLab Project Website",
-  "now": {
-    "alias": "elsa-lab.now.sh"
-  },
   "private": true,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "now --public && now alias"
+    "eject": "react-scripts eject"
   },
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.2",
