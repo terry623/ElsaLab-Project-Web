@@ -1,4 +1,4 @@
-# ElsaLab Web (Project)
+# ElsaLab Web
 
 Base on [ELSA-Lab-Website](https://github.com/andykao1213/ELSA-Lab-Website/tree/develop)
 
