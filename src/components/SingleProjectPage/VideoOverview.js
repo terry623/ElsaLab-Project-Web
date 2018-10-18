@@ -16,7 +16,6 @@ const videoConfig = {
     playerVars: {
       rel: 0,
       controls: 0,
-      showinfo: 0,
     },
   },
 };
