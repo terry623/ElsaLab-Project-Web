@@ -41,15 +41,15 @@ class SingleProjectPage extends Component {
 
           return (
             <ReactFullpage.Wrapper>
-              <Topic />
+              {/* <Topic />
               <SystemStructure />
-              <Abstract />
+              <Abstract /> */}
               <ProposedMethodology />
               <ExperimentalResults />
-              <Awarding />
+              {/* <Awarding />
               <VideoOverview />
               <Conclusion />
-              <NextProject />
+              <NextProject /> */}
             </ReactFullpage.Wrapper>
           );
         }}

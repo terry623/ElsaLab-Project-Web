@@ -1,24 +1,44 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-// import styled from 'styled-components';
-// import { Button, Col, Modal, Row } from 'antd';
+import styled from 'styled-components';
 import { Modal } from 'antd';
+
+import './ResultsModal.css';
+
+const BodyCSS = {
+  height: '50vmin',
+};
+
+const ModalBlock = styled(Modal)``;
+
+const width = '150vmin';
+
+const Title = styled.div`
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 10vmin;
+  font-size: 4vmin;
+  padding: 2vmin;
+  padding-left: 3vmin;
+`;
 
 class ResultsModal extends Component {
   render() {
     const { visible, title, closeModal } = this.props;
 
     return (
-      <Modal
-        title={title}
+      <ModalBlock
         visible={visible}
+        centered
+        bodyStyle={BodyCSS}
+        width={width}
         onCancel={closeModal}
         footer={null}
+        wrapClassName="block"
       >
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-      </Modal>
+        <Title>{title}</Title>
+      </ModalBlock>
     );
   }
 }
