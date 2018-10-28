@@ -1,13 +1,3 @@
-// 'topic',
-// 'systemStructure',
-// 'abstract',
-// 'proposedMethodology',
-// 'experimentalResults',
-// 'awarding',
-// 'videoOverview',
-// 'conclusion',
-// 'nextProject',
-
 const topic = [
   '2017',
   'Virtual-to-Real:',

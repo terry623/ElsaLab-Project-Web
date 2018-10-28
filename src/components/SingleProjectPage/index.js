@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 
+import DynamicVideoSegmentationNetwork from '../Content/DynamicVideo';
 import VirtualToReal from '../Content/VirtualToReal';
 
 import Abstract from './Abstract';
@@ -28,6 +29,7 @@ const eachBlockTag = [
 
 const projectNameMap = {
   'Virtual-to-Real': VirtualToReal,
+  'Dynamic-Video-Segmentation-Network': DynamicVideoSegmentationNetwork,
 };
 
 class SingleProjectPage extends Component {

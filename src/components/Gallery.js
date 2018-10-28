@@ -48,7 +48,9 @@ const Gallery = () => (
           </Link>
         </Col>
         <Col span={6}>
-          <Card />
+          <Link to="/project/Dynamic-Video-Segmentation-Network">
+            <Card>Click Here !!</Card>
+          </Link>
         </Col>
         <Col span={6}>
           <Card />

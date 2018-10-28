@@ -4,12 +4,18 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 import BackgroundImage from '../static/background_image.jpg';
+import BackgroundImageGreen from '../static/background_image_green.jpg';
 import Header from '../Header';
+import {
+  greenColorDark,
+  greenColorLight,
+  pinkColorDark,
+  pinkColorLight,
+} from '../color';
 import { media } from '../size';
-import { pinkColorDark, pinkColorLight } from '../color';
 
 const Background = styled.div`
-  background: url(${BackgroundImage});
+  background: url(${props => props.background});
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -33,7 +39,7 @@ const Block = styled.div`
   width: 100%;
   height: 38vmin;
   background: rgba(0, 0, 0, 0.6);
-  color: ${pinkColorLight};
+  color: ${props => props.color};
   padding: 2vmin 4vmin 2vmin;
   font-size: 5vmin;
 
@@ -48,12 +54,12 @@ const Year = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 8vmin;
+  font-size: 7vmin;
   font-weight: bold;
   color: white;
 
   ${media.lessThan('notebook')`
-    font-size: 10vmin;
+    font-size: 9vmin;
   `};
 `;
 
@@ -63,18 +69,33 @@ const Square = styled.div`
   position: absolute;
   top: 20vmin;
   right: 4vmin;
-  background-color: ${pinkColorLight};
+  background-color: ${props => props.color};
 `;
+
+const imageMap = {
+  'Virtual-to-Real:': BackgroundImage,
+  'Dynamic Video Segmentation Network': BackgroundImageGreen,
+};
+
+const colorMap = {
+  'Virtual-to-Real:': pinkColorDark,
+  'Dynamic Video Segmentation Network': greenColorDark,
+};
+
+const colorTextMap = {
+  'Virtual-to-Real:': pinkColorLight,
+  'Dynamic Video Segmentation Network': greenColorLight,
+};
 
 const Topic = ({ content }) => (
   <div className="section">
-    <Background>
-      <Header color={pinkColorDark} />
+    <Background background={imageMap[content[1]]}>
+      <Header color={colorMap[content[1]]} />
       <Row>
         <Col xs={{ span: 24 }} xl={{ span: 11, offset: 11 }}>
           <Card>
-            <Block>
-              <Square />
+            <Block color={colorTextMap[content[1]]}>
+              <Square color={colorTextMap[content[1]]} />
               <Year>{content[0]}</Year>
               <Title>{content[1]}</Title>
               <p>{content[2]}</p>
