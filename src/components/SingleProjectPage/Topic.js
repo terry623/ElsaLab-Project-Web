@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
@@ -65,7 +66,7 @@ const Square = styled.div`
   background-color: ${pinkColorLight};
 `;
 
-const Topic = () => (
+const Topic = ({ content }) => (
   <div className="section">
     <Background>
       <Header />
@@ -74,9 +75,9 @@ const Topic = () => (
           <Card>
             <Block>
               <Square />
-              <Year>2017</Year>
-              <Title>Virtual-to-Real:</Title>
-              <p>Learning to Control in Visual Semantic Segmentation</p>
+              <Year>{content[0]}</Year>
+              <Title>{content[1]}</Title>
+              <p>{content[2]}</p>
             </Block>
           </Card>
         </Col>
@@ -84,5 +85,9 @@ const Topic = () => (
     </Background>
   </div>
 );
+
+Topic.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Topic;

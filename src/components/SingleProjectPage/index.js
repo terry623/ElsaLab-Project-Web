@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
 
+import VirtualToReal from '../Content/VirtualToReal';
+
 import Abstract from './Abstract';
 import Awarding from './Awarding';
 import Conclusion from './Conclusion';
@@ -24,12 +26,14 @@ const eachBlockTag = [
   'nextProject',
 ];
 
+const projectNameMap = {
+  'Virtual-to-Real': VirtualToReal,
+};
+
 class SingleProjectPage extends Component {
   render() {
     const { name } = this.props;
-
-    // 到時候要根據專案名稱去置換內文
-    console.log({ name });
+    const content = projectNameMap[name];
 
     return (
       <ReactFullpage
@@ -41,9 +45,9 @@ class SingleProjectPage extends Component {
 
           return (
             <ReactFullpage.Wrapper>
-              <Topic />
-              <SystemStructure />
-              <Abstract />
+              <Topic content={content.topic} />
+              <SystemStructure content={content.systemStructure} />
+              <Abstract content={content.abstract} />
               <ProposedMethodology />
               <ExperimentalResults />
               <Awarding />

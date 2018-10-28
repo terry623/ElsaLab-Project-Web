@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
@@ -6,6 +7,10 @@ import BackgroundInvertImage from '../static/background_image_invert.jpg';
 import ProductImage from '../static/System_structure_img.jpg';
 import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
+
+const imageMap = {
+  'System Structure': ProductImage,
+};
 
 const Background = styled.div`
   background-color: ${pinkColorLight};
@@ -69,26 +74,26 @@ const Square = styled.div`
   `};
 `;
 
-const SystemStructure = () => (
+const SystemStructure = ({ content }) => (
   <div className="section">
     <Background>
       <Row type="flex" justify="center">
         <SystemCol xs={{ span: 24 }} xl={{ span: 3 }}>
           <MediaTitleBlock>
-            <Title>
-              System
-              <br />
-              Structure
-            </Title>
+            <Title>{content[0]}</Title>
             <Square />
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol xs={{ span: 24 }} xl={{ span: 12 }}>
-          <Media data-src={ProductImage} />
+          <Media data-src={imageMap[content[0]]} />
         </SystemCol>
       </Row>
     </Background>
   </div>
 );
+
+SystemStructure.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default SystemStructure;
