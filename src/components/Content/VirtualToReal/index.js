@@ -15,7 +15,6 @@ const topic = [
 ];
 
 const abstract = [
-  'Abstract',
   `Collecting training data from the physical world is usually
 time-consuming and even dangerous for fragile robots, and
 therefore, recent advances in robot learning propose to use
@@ -36,39 +35,33 @@ learns faster than them.`,
 ];
 
 const proposedMethodology = [
-  'Proposed Methodology',
-  [
-    {
-      id: 1,
-      title: 'Bridge the Gap between Simulation and Reality',
-    },
-    {
-      id: 2,
-      title: 'Training in Simulated Enviorments',
-    },
-    {
-      id: 3,
-      title: 'Visual Guidance Module and Target Switching',
-    },
-  ],
+  {
+    id: 1,
+    title: 'Bridge the Gap between Simulation and Reality',
+  },
+  {
+    id: 2,
+    title: 'Training in Simulated Enviorments',
+  },
+  {
+    id: 3,
+    title: 'Visual Guidance Module and Target Switching',
+  },
 ];
 
 const experimentalResults = [
-  'Experimental Results',
-  [
-    {
-      id: 1,
-      title: 'Model Settings and Robotic Platform',
-    },
-    {
-      id: 2,
-      title: 'Learning Curves of the Two Tasks',
-    },
-    {
-      id: 3,
-      title: 'Comparison in the Simulated and Real Worlds',
-    },
-  ],
+  {
+    id: 1,
+    title: 'Model Settings and Robotic Platform',
+  },
+  {
+    id: 2,
+    title: 'Learning Curves of the Two Tasks',
+  },
+  {
+    id: 3,
+    title: 'Comparison in the Simulated and Real Worlds',
+  },
 ];
 
 const VirtualToReal = {

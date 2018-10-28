@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
@@ -58,21 +59,6 @@ const Square = styled.div`
   `};
 `;
 
-const allTitles = [
-  {
-    id: 1,
-    title: 'Bridge the Gap between Simulation and Reality',
-  },
-  {
-    id: 2,
-    title: 'Training in Simulated Enviorments',
-  },
-  {
-    id: 3,
-    title: 'Visual Guidance Module and Target Switching',
-  },
-];
-
 class ProposedMethodology extends Component {
   state = {
     modalVisible: false,
@@ -94,6 +80,7 @@ class ProposedMethodology extends Component {
 
   render() {
     const { modalVisible, modalTitle } = this.state;
+    const { content } = this.props;
 
     return (
       <div className="section">
@@ -106,7 +93,7 @@ class ProposedMethodology extends Component {
               </MainTitle>
             </Col>
           </Row>
-          {allTitles.map(({ id, title }) => (
+          {content.map(({ id, title }) => (
             <Row key={id}>
               <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
                 <BlockTitle onClick={() => this.openModal(title)}>
@@ -125,5 +112,9 @@ class ProposedMethodology extends Component {
     );
   }
 }
+
+ProposedMethodology.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default ProposedMethodology;

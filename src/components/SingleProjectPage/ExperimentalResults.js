@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
@@ -57,21 +58,6 @@ const Square = styled.div`
   `};
 `;
 
-const allTitles = [
-  {
-    id: 1,
-    title: 'Model Settings and Robotic Platform',
-  },
-  {
-    id: 2,
-    title: 'Learning Curves of the Two Tasks',
-  },
-  {
-    id: 3,
-    title: 'Comparison in the Simulated and Real Worlds',
-  },
-];
-
 class ExperimentalResults extends Component {
   state = {
     modalVisible: false,
@@ -93,6 +79,7 @@ class ExperimentalResults extends Component {
 
   render() {
     const { modalVisible, modalTitle } = this.state;
+    const { content } = this.props;
 
     return (
       <div className="section">
@@ -105,7 +92,7 @@ class ExperimentalResults extends Component {
               </MainTitle>
             </Col>
           </Row>
-          {allTitles.map(({ id, title }) => (
+          {content.map(({ id, title }) => (
             <Row key={id}>
               <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
                 <BlockTitle onClick={() => this.openModal(title)}>
@@ -124,5 +111,9 @@ class ExperimentalResults extends Component {
     );
   }
 }
+
+ExperimentalResults.propTypes = {
+  content: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default ExperimentalResults;

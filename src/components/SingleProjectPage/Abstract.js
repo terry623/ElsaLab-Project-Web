@@ -67,13 +67,13 @@ const Abstract = ({ content }) => (
         <Col xs={{ span: 16, offset: 4 }} xl={{ span: 12, offset: 4 }}>
           <Row>
             <Title>
-              <Col span={12}>{content[0]}</Col>
+              <Col span={12}>Abstract</Col>
               <Col span={12}>
                 <Square />
               </Col>
             </Title>
             <Col span={24}>
-              <Content>{content[1]}</Content>
+              <Content>{content[0]}</Content>
             </Col>
           </Row>
         </Col>
