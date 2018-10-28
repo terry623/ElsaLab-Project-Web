@@ -73,29 +73,29 @@ const Square = styled.div`
 `;
 
 const imageMap = {
-  'Virtual-to-Real:': BackgroundImage,
-  'Dynamic Video Segmentation Network': BackgroundImageGreen,
+  'Virtual-to-Real': BackgroundImage,
+  'Dynamic-Video-Segmentation-Network': BackgroundImageGreen,
 };
 
 const colorMap = {
-  'Virtual-to-Real:': pinkColorDark,
-  'Dynamic Video Segmentation Network': greenColorDark,
+  'Virtual-to-Real': pinkColorDark,
+  'Dynamic-Video-Segmentation-Network': greenColorDark,
 };
 
 const colorTextMap = {
-  'Virtual-to-Real:': pinkColorLight,
-  'Dynamic Video Segmentation Network': greenColorLight,
+  'Virtual-to-Real': pinkColorLight,
+  'Dynamic-Video-Segmentation-Network': greenColorLight,
 };
 
-const Topic = ({ content }) => (
+const Topic = ({ projectName, content }) => (
   <div className="section">
-    <Background background={imageMap[content[1]]}>
-      <Header color={colorMap[content[1]]} />
+    <Background background={imageMap[projectName]}>
+      <Header color={colorMap[projectName]} />
       <Row>
         <Col xs={{ span: 24 }} xl={{ span: 11, offset: 11 }}>
           <Card>
-            <Block color={colorTextMap[content[1]]}>
-              <Square color={colorTextMap[content[1]]} />
+            <Block color={colorTextMap[projectName]}>
+              <Square color={colorTextMap[projectName]} />
               <Year>{content[0]}</Year>
               <Title>{content[1]}</Title>
               <p>{content[2]}</p>
@@ -109,6 +109,7 @@ const Topic = ({ content }) => (
 
 Topic.propTypes = {
   content: PropTypes.arrayOf(PropTypes.string).isRequired,
+  projectName: PropTypes.string.isRequired,
 };
 
 export default Topic;
