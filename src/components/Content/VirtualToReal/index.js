@@ -64,11 +64,28 @@ const experimentalResults = [
   },
 ];
 
+const conclusion = [
+  `We presented a new modular architecture for transferring policies
+learned in simulation to the real world for vision-based
+roboticcontrol. We proposed to separate the model in to a perception
+module and a control policy module, and introduce the concept of
+using semantic image segmentation as the meta state for relating
+these two modules. We trained our model with a standard RL
+algorithm, and did not apply any domain randomization technique. We
+performed experiments in two benchmark tasks: an obstacle avoidance
+task and a target following task, and demonstrated that our proposed
+method outperforms the baseline models in both virtual and real
+environments. We analyzed the use of scene semantics as the meta
+state, and show that this structured form of representations does
+improve the learning speed of our model`,
+];
+
 const VirtualToReal = {
   topic,
   abstract,
   proposedMethodology,
   experimentalResults,
+  conclusion,
 };
 
 export default VirtualToReal;
