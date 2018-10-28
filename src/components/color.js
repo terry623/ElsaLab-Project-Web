@@ -4,3 +4,4 @@ export const pinkColorDark = '#ff75a8';
 export const transparentBlack = 'rgba(0, 0, 0, 0.6)';
 export const greenColorLight = '#6fe8cd';
 export const greenColorDark = '#32685d';
+export const greenColorBackGround = '#beede4';

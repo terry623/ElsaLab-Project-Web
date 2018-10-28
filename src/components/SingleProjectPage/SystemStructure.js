@@ -3,17 +3,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundImageGreen from '../static/background_image_green.jpg';
 import BackgroundInvertImage from '../static/background_image_invert.jpg';
+import DynamicVideoImage from '../static/System_structure_img_green.png';
 import VirtualToRealImage from '../static/System_structure_img.jpg';
+import {
+  greenColorBackGround,
+  greenColorDark,
+  pinkColorDark,
+  pinkColorLight,
+} from '../color';
 import { media } from '../size';
-import { pinkColorDark, pinkColorLight } from '../color';
-
-const imageMap = {
-  'Virtual-to-Real': VirtualToRealImage,
-};
 
 const Background = styled.div`
-  background-color: ${pinkColorLight};
+  background-color: ${props => props.color};
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -31,7 +34,7 @@ const SystemCol = styled(Col)`
 `;
 
 const MediaTitleBlock = styled.div`
-  background: url(${BackgroundInvertImage});
+  background: url(${props => props.image});
   background-position: left center;
   background-size: 170vmin 100vmin;
   height: 100%;
@@ -44,7 +47,7 @@ const MediaTitleBlock = styled.div`
 `;
 
 const Title = styled.div`
-  color: ${pinkColorDark};
+  color: ${props => props.color};
   font-style: italic;
   font-size: 5vmin;
   padding: 3vmin;
@@ -63,7 +66,7 @@ const Media = styled.img`
 const Square = styled.div`
   width: 5vmin;
   height: 5vmin;
-  background-color: white;
+  background-color: ${props => props.color};
   float: right;
   margin-top: 37vmin;
   margin-right: 2vmin;
@@ -74,18 +77,43 @@ const Square = styled.div`
   `};
 `;
 
+const imageMap = {
+  'Virtual-to-Real': VirtualToRealImage,
+  'Dynamic-Video-Segmentation-Network': DynamicVideoImage,
+};
+
+const colorBackgroundMap = {
+  'Virtual-to-Real': pinkColorLight,
+  'Dynamic-Video-Segmentation-Network': greenColorBackGround,
+};
+
+const colorMap = {
+  'Virtual-to-Real': pinkColorDark,
+  'Dynamic-Video-Segmentation-Network': greenColorDark,
+};
+
+const colorImageMap = {
+  'Virtual-to-Real': BackgroundInvertImage,
+  'Dynamic-Video-Segmentation-Network': BackgroundImageGreen,
+};
+
+const colorSquareMap = {
+  'Virtual-to-Real': 'white',
+  'Dynamic-Video-Segmentation-Network': greenColorDark,
+};
+
 const SystemStructure = ({ projectName }) => (
   <div className="section">
-    <Background>
+    <Background color={colorBackgroundMap[projectName]}>
       <Row type="flex" justify="center">
         <SystemCol xs={{ span: 24 }} xl={{ span: 3 }}>
-          <MediaTitleBlock>
-            <Title>
+          <MediaTitleBlock image={colorImageMap[projectName]}>
+            <Title color={colorMap[projectName]}>
               System
               <br />
               Structure
             </Title>
-            <Square />
+            <Square color={colorSquareMap[projectName]} />
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol xs={{ span: 24 }} xl={{ span: 12 }}>
