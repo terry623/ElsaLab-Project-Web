@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
@@ -5,11 +6,10 @@ import { Link } from 'react-router-dom';
 
 import IconImg from './static/icon.png';
 import { media } from './size';
-import { pinkColorDark } from './color';
 
 const NabItemCol = styled(Col)`
   padding: 5vmin 4vmin 2vmin 4vmin;
-  color: ${pinkColorDark};
+  color: ${props => props.color};
 `;
 
 const NabItemColRight = styled(NabItemCol)`
@@ -38,7 +38,7 @@ const NavBarRightCol = styled(Col)`
 `;
 
 const Entry = styled.div`
-  color: ${pinkColorDark};
+  color: ${props => props.color};
 
   ${NabItemColRight}:hover & {
     color: white;
@@ -54,15 +54,15 @@ const EachLink = styled(Link)`
   text-decoration: none !important;
 `;
 
-const Header = () => (
+const Header = ({ color }) => (
   <div>
     <Row>
       <NavBarLeftCol xs={{ span: 8, offset: 1 }} xl={{ span: 8, offset: 1 }}>
         <Row type="flex" justify="start" align="top" gutter={8}>
-          <NabItemCol>
+          <NabItemCol color={color}>
             <Icon src={IconImg} />
           </NabItemCol>
-          <NabItemCol>
+          <NabItemCol color={color}>
             <Title size="2vmin">NTHU</Title>
             <Title size="2.5vmin">ELSA</Title>
           </NabItemCol>
@@ -73,21 +73,21 @@ const Header = () => (
           <Col>
             <EachLink to="/">
               <NabItemColRight>
-                <Entry>Home</Entry>
+                <Entry color={color}>Home</Entry>
               </NabItemColRight>
             </EachLink>
           </Col>
           <Col>
             <EachLink to="/project">
               <NabItemColRight>
-                <Entry>Project</Entry>
+                <Entry color={color}>Project</Entry>
               </NabItemColRight>
             </EachLink>
           </Col>
           <Col>
             <EachLink to="/about">
               <NabItemColRight>
-                <Entry>About</Entry>
+                <Entry color={color}>About</Entry>
               </NabItemColRight>
             </EachLink>
           </Col>
@@ -96,5 +96,9 @@ const Header = () => (
     </Row>
   </div>
 );
+
+Header.propTypes = {
+  color: PropTypes.string.isRequired,
+};
 
 export default Header;
