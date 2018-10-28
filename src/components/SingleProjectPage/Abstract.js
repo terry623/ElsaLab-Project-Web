@@ -3,13 +3,14 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundImageGreen from '../static/background_image_green.jpg';
 import BackgroundInvertVerticalImage from '../static/background_image_invert_vertical.jpg';
+import { greenColorLight, pinkColorLight } from '../color';
 import { media } from '../size';
-import { pinkColorLight } from '../color';
 
 const Background = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(${BackgroundInvertVerticalImage});
+    url(${props => props.background});
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -22,7 +23,7 @@ const Content = styled.p`
 `;
 
 const Title = styled.div`
-  color: ${pinkColorLight};
+  color: ${props => props.color};
   font-size: 7vmin;
   margin-top: 18vmin;
   margin-bottom: 2vmin;
@@ -38,13 +39,13 @@ const Square = styled.div`
   float: right;
   margin-top: 2vmin;
   margin-right: 2vmin;
-  background-color: ${pinkColorLight};
+  background-color: ${props => props.color};
 `;
 
 const Bar = styled.div`
   width: 1.5vmin;
   height: 72vmin;
-  background-color: ${pinkColorLight};
+  background-color: ${props => props.color};
   position: absolute;
   margin-left: 28vmin;
   margin-top: 28vmin;
@@ -59,17 +60,27 @@ const Bar = styled.div`
   `};
 `;
 
-const Abstract = ({ content }) => (
+const colorBackgroundMap = {
+  'Virtual-to-Real': BackgroundInvertVerticalImage,
+  'Dynamic-Video-Segmentation-Network': BackgroundImageGreen,
+};
+
+const colorMap = {
+  'Virtual-to-Real': pinkColorLight,
+  'Dynamic-Video-Segmentation-Network': greenColorLight,
+};
+
+const Abstract = ({ projectName, content }) => (
   <div className="section">
-    <Background>
-      <Bar />
+    <Background background={colorBackgroundMap[projectName]}>
+      <Bar color={colorMap[projectName]} />
       <Row>
         <Col xs={{ span: 16, offset: 4 }} xl={{ span: 12, offset: 4 }}>
           <Row>
-            <Title>
+            <Title color={colorMap[projectName]}>
               <Col span={12}>Abstract</Col>
               <Col span={12}>
-                <Square />
+                <Square color={colorMap[projectName]} />
               </Col>
             </Title>
             <Col span={24}>
@@ -84,6 +95,7 @@ const Abstract = ({ content }) => (
 
 Abstract.propTypes = {
   content: PropTypes.arrayOf(PropTypes.string).isRequired,
+  projectName: PropTypes.string.isRequired,
 };
 
 export default Abstract;
