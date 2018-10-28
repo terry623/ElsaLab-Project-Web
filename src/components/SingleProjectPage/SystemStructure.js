@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 import BackgroundInvertImage from '../static/background_image_invert.jpg';
-import ProductImage from '../static/System_structure_img.jpg';
+import VirtualToRealImage from '../static/System_structure_img.jpg';
 import { media } from '../size';
 import { pinkColorDark, pinkColorLight } from '../color';
 
 const imageMap = {
-  'System Structure': ProductImage,
+  'Virtual-to-Real': VirtualToRealImage,
 };
 
 const Background = styled.div`
@@ -74,18 +74,22 @@ const Square = styled.div`
   `};
 `;
 
-const SystemStructure = ({ content }) => (
+const SystemStructure = ({ projectName }) => (
   <div className="section">
     <Background>
       <Row type="flex" justify="center">
         <SystemCol xs={{ span: 24 }} xl={{ span: 3 }}>
           <MediaTitleBlock>
-            <Title>{content[0]}</Title>
+            <Title>
+              System
+              <br />
+              Structure
+            </Title>
             <Square />
           </MediaTitleBlock>
         </SystemCol>
         <SystemCol xs={{ span: 24 }} xl={{ span: 12 }}>
-          <Media data-src={imageMap[content[0]]} />
+          <Media data-src={imageMap[projectName]} />
         </SystemCol>
       </Row>
     </Background>
@@ -93,7 +97,7 @@ const SystemStructure = ({ content }) => (
 );
 
 SystemStructure.propTypes = {
-  content: PropTypes.arrayOf(PropTypes.string).isRequired,
+  projectName: PropTypes.string.isRequired,
 };
 
 export default SystemStructure;
