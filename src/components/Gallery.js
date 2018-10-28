@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
-import BackgroundImage from './static/background_image.jpg';
+import GalleryBackgroundImage from './static/gallery_background_image.jpg';
 import Header from './Header';
 
 const Background = styled.div`
-  background: url(${BackgroundImage});
+  background: url(${GalleryBackgroundImage});
   background-size: cover;
   width: 100%;
   height: 100%;
