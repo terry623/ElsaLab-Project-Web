@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundImageGreen from '../static/background_image_green.jpg';
 import BackgroundInvertImage from '../static/background_image_invert.jpg';
+import { greenColorDark, pinkColorDark, pinkColorLight } from '../color';
 import { media } from '../size';
-import { pinkColorDark, pinkColorLight } from '../color';
 
 import ResultsModal from './ResultsModal';
 
 const Background = styled.div`
-  background: url(${BackgroundInvertImage});
+  background: url(${props => props.background});
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -18,7 +19,7 @@ const Background = styled.div`
 `;
 
 const MainTitle = styled.div`
-  color: ${pinkColorDark};
+  color: ${props => props.color};
   font-style: italic;
   font-size: 6vmin;
   margin-top: 18vmin;
@@ -34,7 +35,7 @@ const BlockTitle = styled.div`
   background: rgba(0, 0, 0, 0.6);
   background-size: cover;
   z-index: -100;
-  color: ${pinkColorLight};
+  color: ${props => props.color};
   font-size: 4vmin;
   width: 100%;
   height: 12vmin;
@@ -49,7 +50,7 @@ const BlockTitle = styled.div`
 const Square = styled.div`
   width: 5vmin;
   height: 5vmin;
-  background-color: ${pinkColorDark};
+  background-color: ${props => props.color};
   float: right;
   margin-top: 3vmin;
 
@@ -57,6 +58,21 @@ const Square = styled.div`
     margin-top: -3vmin;
   `};
 `;
+
+const backgroundMap = {
+  'Virtual-to-Real': BackgroundInvertImage,
+  'Dynamic-Video-Segmentation-Network': BackgroundImageGreen,
+};
+
+const colorMap = {
+  'Virtual-to-Real': pinkColorDark,
+  'Dynamic-Video-Segmentation-Network': greenColorDark,
+};
+
+const colorBlockTitleMap = {
+  'Virtual-to-Real': pinkColorLight,
+  'Dynamic-Video-Segmentation-Network': 'white',
+};
 
 class ExperimentalResults extends Component {
   state = {
@@ -79,23 +95,26 @@ class ExperimentalResults extends Component {
 
   render() {
     const { modalVisible, modalTitle } = this.state;
-    const { content } = this.props;
+    const { projectName, content } = this.props;
 
     return (
       <div className="section">
-        <Background>
+        <Background background={backgroundMap[projectName]}>
           <Row>
             <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
-              <MainTitle>
+              <MainTitle color={colorMap[projectName]}>
                 Experimental Results
-                <Square />
+                <Square color={colorMap[projectName]} />
               </MainTitle>
             </Col>
           </Row>
           {content.map(({ id, title }) => (
             <Row key={id}>
               <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
-                <BlockTitle onClick={() => this.openModal(title)}>
+                <BlockTitle
+                  color={colorBlockTitleMap[projectName]}
+                  onClick={() => this.openModal(title)}
+                >
                   {title}
                 </BlockTitle>
               </Col>
@@ -114,6 +133,7 @@ class ExperimentalResults extends Component {
 
 ExperimentalResults.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
+  projectName: PropTypes.string.isRequired,
 };
 
 export default ExperimentalResults;

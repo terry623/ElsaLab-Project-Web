@@ -50,8 +50,14 @@ class SingleProjectPage extends Component {
               <Topic projectName={name} content={content.topic} />
               <SystemStructure projectName={name} />
               <Abstract projectName={name} content={content.abstract} />
-              <ProposedMethodology content={content.proposedMethodology} />
-              <ExperimentalResults content={content.experimentalResults} />
+              <ProposedMethodology
+                projectName={name}
+                content={content.proposedMethodology}
+              />
+              <ExperimentalResults
+                projectName={name}
+                content={content.experimentalResults}
+              />
               <Awarding />
               <VideoOverview />
               <Conclusion content={content.conclusion} />

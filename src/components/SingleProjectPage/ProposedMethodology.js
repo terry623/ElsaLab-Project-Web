@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 import BackgroundImage from '../static/background_image.jpg';
+import BackgroundImageGreen from '../static/background_image_green.jpg';
+import { greenColorBackGround, pinkColorDark, pinkColorLight } from '../color';
 import { media } from '../size';
-import { pinkColorDark, pinkColorLight } from '../color';
 
 import ResultsModal from './ResultsModal';
 
 const Background = styled.div`
-  background-color: ${pinkColorLight};
+  background-color: ${props => props.color};
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -18,7 +19,7 @@ const Background = styled.div`
 `;
 
 const MainTitle = styled.div`
-  color: ${pinkColorDark};
+  color: ${props => props.color};
   font-style: italic;
   font-size: 6vmin;
   margin-top: 18vmin;
@@ -32,10 +33,10 @@ const MainTitle = styled.div`
 const BlockTitle = styled.div`
   cursor: pointer;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(${BackgroundImage});
+    url(${props => props.background});
   background-size: cover;
   z-index: -100;
-  color: ${pinkColorLight};
+  color: ${props => props.color};
   font-size: 4vmin;
   width: 100%;
   height: 12vmin;
@@ -50,7 +51,7 @@ const BlockTitle = styled.div`
 const Square = styled.div`
   width: 5vmin;
   height: 5vmin;
-  background-color: ${pinkColorDark};
+  background-color: ${props => props.color};
   float: right;
   margin-top: 3vmin;
 
@@ -58,6 +59,26 @@ const Square = styled.div`
     margin-top: -3vmin;
   `};
 `;
+
+const colorBackgroundMap = {
+  'Virtual-to-Real': pinkColorLight,
+  'Dynamic-Video-Segmentation-Network': greenColorBackGround,
+};
+
+const colorMap = {
+  'Virtual-to-Real': pinkColorDark,
+  'Dynamic-Video-Segmentation-Network': 'white',
+};
+
+const colorBlockTitleMap = {
+  'Virtual-to-Real': pinkColorLight,
+  'Dynamic-Video-Segmentation-Network': 'white',
+};
+
+const colorImageMap = {
+  'Virtual-to-Real': BackgroundImage,
+  'Dynamic-Video-Segmentation-Network': BackgroundImageGreen,
+};
 
 class ProposedMethodology extends Component {
   state = {
@@ -80,23 +101,27 @@ class ProposedMethodology extends Component {
 
   render() {
     const { modalVisible, modalTitle } = this.state;
-    const { content } = this.props;
+    const { projectName, content } = this.props;
 
     return (
       <div className="section">
-        <Background>
+        <Background color={colorBackgroundMap[projectName]}>
           <Row>
             <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
-              <MainTitle>
+              <MainTitle color={colorMap[projectName]}>
                 Proposed Methodology
-                <Square />
+                <Square color={colorMap[projectName]} />
               </MainTitle>
             </Col>
           </Row>
           {content.map(({ id, title }) => (
             <Row key={id}>
               <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
-                <BlockTitle onClick={() => this.openModal(title)}>
+                <BlockTitle
+                  color={colorBlockTitleMap[projectName]}
+                  background={colorImageMap[projectName]}
+                  onClick={() => this.openModal(title)}
+                >
                   {title}
                 </BlockTitle>
               </Col>
@@ -115,6 +140,7 @@ class ProposedMethodology extends Component {
 
 ProposedMethodology.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
+  projectName: PropTypes.string.isRequired,
 };
 
 export default ProposedMethodology;

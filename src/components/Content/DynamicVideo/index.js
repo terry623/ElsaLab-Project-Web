@@ -23,30 +23,34 @@ const abstract = [
 const proposedMethodology = [
   {
     id: 1,
-    title: 'Bridge the Gap between Simulation and Reality',
+    title: 'Adaptive Key Frame Scheduling Policy',
   },
   {
     id: 2,
-    title: 'Training in Simulated Enviorments',
+    title: 'Decision Network & Training Methodology',
   },
   {
     id: 3,
-    title: 'Visual Guidance Module and Target Switching',
+    title: 'Frame Region Based Execution',
   },
 ];
 
 const experimentalResults = [
   {
     id: 1,
-    title: 'Model Settings and Robotic Platform',
+    title: 'Dataset & Experiment Settings',
   },
   {
     id: 2,
-    title: 'Learning Curves of the Two Tasks',
+    title: 'Validation of DVSNet',
   },
   {
     id: 3,
-    title: 'Comparison in the Simulated and Real Worlds',
+    title: 'Various DVSNet Configurations',
+  },
+  {
+    id: 4,
+    title: 'Frame Division',
   },
 ];
 
