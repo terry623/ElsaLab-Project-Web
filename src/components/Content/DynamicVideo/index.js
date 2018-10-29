@@ -55,19 +55,16 @@ const experimentalResults = [
 ];
 
 const conclusion = [
-  `We presented a new modular architecture for transferring policies
-  learned in simulation to the real world for vision-based
-  roboticcontrol. We proposed to separate the model in to a perception
-  module and a control policy module, and introduce the concept of
-  using semantic image segmentation as the meta state for relating
-  these two modules. We trained our model with a standard RL
-  algorithm, and did not apply any domain randomization technique. We
-  performed experiments in two benchmark tasks: an obstacle avoidance
-  task and a target following task, and demonstrated that our proposed
-  method outperforms the baseline models in both virtual and real
-  environments. We analyzed the use of scene semantics as the meta
-  state, and show that this structured form of representations does
-  improve the learning speed of our model`,
+  `We present a DVSNet framework to strike a balance between quality and efficiency for semantic video
+segmentation. The DVSNet framework consists of two major parts: a segmentation path and a spatial
+warping path. The former is deeper and slower but highly accurate, while the latter is faster but less
+accurate.  We propose to divide video frames into frame regions, and perform semantic segmentation for
+different frame regions by different DVSNet paths. We explore the use of DN to determine which frame
+regions should be forwarded to which DVSNet paths based on a metric called expected confidence score.
+We further propose an adaptive key frame scheduling policy to adaptively adjust the update period of key
+frames at runtime. We have performed extensive experiments for various configurations of DVSNet, and
+showed that DVSNet outperforms contemporary state-of-the-art semantic segmentation models in terms of
+efficiency and flexibility.`,
 ];
 
 const DynamicVideo = {

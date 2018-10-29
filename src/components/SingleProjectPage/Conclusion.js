@@ -3,11 +3,17 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import {
+  greenColorBackGround,
+  greenColorDark,
+  greenColorMid,
+  pinkColorDark,
+  pinkColorLight,
+} from '../color';
 import { media } from '../size';
-import { pinkColorDark, pinkColorLight } from '../color';
 
 const Background = styled.div`
-  background-color: ${pinkColorLight};
+  background-color: ${props => props.background};
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -20,7 +26,7 @@ const Content = styled.p`
 `;
 
 const Title = styled.div`
-  color: ${pinkColorDark};
+  color: ${props => props.color};
   font-size: 6vmin;
   margin-top: 22vmin;
 
@@ -36,7 +42,7 @@ const Square = styled.div`
   float: right;
   margin-top: 2vmin;
   margin-right: -12vmin;
-  background-color: ${pinkColorDark};
+  background-color: ${props => props.color};
 
   ${media.lessThan('notebook')`
     visibility: visible;
@@ -46,7 +52,7 @@ const Square = styled.div`
 const Bar = styled.div`
   width: 1.5vmin;
   height: 77vmin;
-  background-color: ${pinkColorDark};
+  background-color: ${props => props.color};
   position: absolute;
   margin-left: 28vmin;
   margin-top: 28vmin;
@@ -61,16 +67,31 @@ const Bar = styled.div`
   `};
 `;
 
-const Conclusion = ({ content }) => (
+const backgroundMap = {
+  'Virtual-to-Real': pinkColorLight,
+  'Dynamic-Video-Segmentation-Network': greenColorBackGround,
+};
+
+const colorMap = {
+  'Virtual-to-Real': pinkColorDark,
+  'Dynamic-Video-Segmentation-Network': greenColorDark,
+};
+
+const colorMapLight = {
+  'Virtual-to-Real': pinkColorDark,
+  'Dynamic-Video-Segmentation-Network': greenColorMid,
+};
+
+const Conclusion = ({ projectName, content }) => (
   <div className="section">
-    <Background>
-      <Bar />
+    <Background background={backgroundMap[projectName]}>
+      <Bar color={colorMap[projectName]} />
       <Row>
         <Col span={12} offset={4}>
-          <Title>
+          <Title color={colorMapLight[projectName]}>
             <Col span={12}>Conclusion</Col>
             <Col span={12}>
-              <Square />
+              <Square color={colorMapLight[projectName]} />
             </Col>
           </Title>
         </Col>
@@ -86,6 +107,7 @@ const Conclusion = ({ content }) => (
 
 Conclusion.propTypes = {
   content: PropTypes.arrayOf(PropTypes.object).isRequired,
+  projectName: PropTypes.string.isRequired,
 };
 
 export default Conclusion;
