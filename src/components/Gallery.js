@@ -21,7 +21,19 @@ const Card = styled.div`
   background: rgba(0, 0, 0, 0.5);
   margin-top: 2vmin;
   color: white;
-  padding: 12vmin;
+  padding: 4vmin 4vmin 2vmin;
+  font-size: 3vmin;
+`;
+
+const Year = styled.div`
+  font-size: 3vmin;
+  margin-bottom: -1vmin;
+`;
+
+const ContentTitle = styled.div`
+  font-size: 4vmin;
+  font-weight: bold;
+  color: white;
 `;
 
 const Title = styled.div`
@@ -44,12 +56,19 @@ const Gallery = () => (
       <Row type="flex" justify="center" gutter={32}>
         <Col span={6}>
           <Link to="/project/Virtual-to-Real">
-            <Card>Click Here !!</Card>
+            <Card>
+              <Year>2017</Year>
+              <ContentTitle>Virtual-to-Real:</ContentTitle>
+              <p>Learning to Control in Visual Semantic Segmentation</p>
+            </Card>
           </Link>
         </Col>
         <Col span={6}>
           <Link to="/project/Dynamic-Video-Segmentation-Network">
-            <Card>Click Here !!</Card>
+            <Card>
+              <Year>2017</Year>
+              <ContentTitle>Dynamic Video Segmentation Network</ContentTitle>
+            </Card>
           </Link>
         </Col>
         <Col span={6}>
