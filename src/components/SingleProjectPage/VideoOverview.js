@@ -1,11 +1,13 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundImageGreen from '../static/background_image_green.jpg';
 import BackgroundInvertVerticalVerticalImage from '../static/background_image_invert_vertical_2.jpg';
+import { greenColorBackGround, pinkColorMid } from '../color';
 import { media } from '../size';
-import { pinkColorMid } from '../color';
 
 const VideoURL = 'https://www.youtube.com/embed/8osw3ElPAvY';
 
@@ -22,7 +24,7 @@ const videoConfig = {
 
 const Background = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(${BackgroundInvertVerticalVerticalImage});
+    url(${props => props.background});
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -49,7 +51,7 @@ const SystemCol = styled(Col)`
 `;
 
 const MediaTitleBlock = styled.div`
-  background-color: ${pinkColorMid};
+  background-color: ${props => props.color};
   height: 100%;
   width: 27vmin;
 
@@ -69,7 +71,7 @@ const Title = styled.div`
 
   ${media.lessThan('notebook')`
     font-size: 8vmin;
-    color:  ${pinkColorMid};
+    color:${props => props.color};
   `};
 `;
 
@@ -84,7 +86,7 @@ const Square = styled.div`
     float:right;
     margin-top:-10vmin;
     margin-right:3vmin;
-    background-color: ${pinkColorMid};
+    background-color:${props => props.color};
   `};
 `;
 
@@ -108,6 +110,16 @@ const TransparentLayer = styled.div`
   z-index: 10;
 `;
 
+const backgroundMap = {
+  'Virtual-to-Real': BackgroundInvertVerticalVerticalImage,
+  'Dynamic-Video-Segmentation-Network': BackgroundImageGreen,
+};
+
+const colorMap = {
+  'Virtual-to-Real': pinkColorMid,
+  'Dynamic-Video-Segmentation-Network': greenColorBackGround,
+};
+
 class VideoOverview extends Component {
   state = {
     isPlaying: false,
@@ -125,15 +137,16 @@ class VideoOverview extends Component {
 
   render() {
     const { isPlaying } = this.state;
+    const { projectName } = this.props;
 
     return (
       <div className="section">
-        <Background>
+        <Background background={backgroundMap[projectName]}>
           <Row type="flex" justify="center" gutter={24}>
             <SystemColMedia xs={{ span: 24 }} xl={{ span: 2, offset: 1 }}>
-              <MediaTitleBlock>
-                <Title>Video Overview</Title>
-                <Square />
+              <MediaTitleBlock color={colorMap[projectName]}>
+                <Title color={colorMap[projectName]}>Video Overview</Title>
+                <Square color={colorMap[projectName]} />
               </MediaTitleBlock>
             </SystemColMedia>
             <SystemCol xs={{ span: 24 }} xl={{ span: 15, offset: 1 }}>
@@ -157,5 +170,9 @@ class VideoOverview extends Component {
     );
   }
 }
+
+VideoOverview.propTypes = {
+  projectName: PropTypes.string.isRequired,
+};
 
 export default VideoOverview;

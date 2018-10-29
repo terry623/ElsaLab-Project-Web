@@ -59,7 +59,7 @@ class SingleProjectPage extends Component {
                 content={content.experimentalResults}
               />
               <Awarding projectName={name} />
-              <VideoOverview />
+              <VideoOverview projectName={name} />
               <Conclusion content={content.conclusion} />
               <NextProject />
             </ReactFullpage.Wrapper>
