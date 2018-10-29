@@ -58,7 +58,7 @@ class SingleProjectPage extends Component {
                 projectName={name}
                 content={content.experimentalResults}
               />
-              <Awarding />
+              <Awarding projectName={name} />
               <VideoOverview />
               <Conclusion content={content.conclusion} />
               <NextProject />

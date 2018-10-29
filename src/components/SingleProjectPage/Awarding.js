@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
@@ -68,31 +69,43 @@ const Square = styled.div`
   `};
 `;
 
-const Awarding = () => (
-  <div className="section">
-    <Background>
-      <Row type="flex" justify="center" align="middle">
-        <Col xs={{ span: 24 }} xl={{ span: 6, offset: 1 }}>
-          <AwardingTitleBlock>
-            <Title>Awarding</Title>
-            <Square />
-          </AwardingTitleBlock>
-        </Col>
-        <Col xs={{ span: 24 }} xl={{ span: 10 }}>
-          <Row type="flex" justify="center">
-            <Col>
-              <Media data-src={AwardingImage1} />
-            </Col>
-          </Row>
-          <Row type="flex" justify="center">
-            <Col>
-              <Media data-src={AwardingImage2} />
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Background>
-  </div>
-);
+const visableMap = {
+  'Virtual-to-Real': true,
+  'Dynamic-Video-Segmentation-Network': false,
+};
+
+const Awarding = ({ projectName }) =>
+  !visableMap[projectName] ? (
+    <></>
+  ) : (
+    <div className="section">
+      <Background>
+        <Row type="flex" justify="center" align="middle">
+          <Col xs={{ span: 24 }} xl={{ span: 6, offset: 1 }}>
+            <AwardingTitleBlock>
+              <Title>Awarding</Title>
+              <Square />
+            </AwardingTitleBlock>
+          </Col>
+          <Col xs={{ span: 24 }} xl={{ span: 10 }}>
+            <Row type="flex" justify="center">
+              <Col>
+                <Media data-src={AwardingImage1} />
+              </Col>
+            </Row>
+            <Row type="flex" justify="center">
+              <Col>
+                <Media data-src={AwardingImage2} />
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Background>
+    </div>
+  );
+
+Awarding.propTypes = {
+  projectName: PropTypes.string.isRequired,
+};
 
 export default Awarding;
