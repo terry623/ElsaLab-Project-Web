@@ -125,6 +125,7 @@ class ExperimentalResults extends Component {
           visible={modalVisible}
           title={modalTitle}
           closeModal={this.closeModal}
+          projectName={projectName}
         />
       </div>
     );

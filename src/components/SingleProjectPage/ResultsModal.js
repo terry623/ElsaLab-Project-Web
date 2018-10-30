@@ -3,15 +3,24 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Modal } from 'antd';
 
-import './ResultsModal.css';
+import BackgroundImage from '../static/background_image_invert_vertical_2.jpg';
+import BackgroundImageGreen from '../static/background_image_green.jpg';
 
 const BodyCSS = {
-  height: '50vmin',
+  height: '60vmin',
+  opacity: '0.7',
+  padding: '0',
 };
 
-const ModalBlock = styled(Modal)``;
-
 const width = '150vmin';
+
+const Background = styled.div`
+  background: url(${props => props.background});
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+`;
 
 const Title = styled.div`
   color: white;
@@ -23,12 +32,17 @@ const Title = styled.div`
   padding-left: 3vmin;
 `;
 
+const backgroundMap = {
+  'Virtual-to-Real': BackgroundImage,
+  'Dynamic-Video-Segmentation-Network': BackgroundImageGreen,
+};
+
 class ResultsModal extends Component {
   render() {
-    const { visible, title, closeModal } = this.props;
+    const { visible, title, closeModal, projectName } = this.props;
 
     return (
-      <ModalBlock
+      <Modal
         visible={visible}
         centered
         bodyStyle={BodyCSS}
@@ -37,14 +51,17 @@ class ResultsModal extends Component {
         footer={null}
         wrapClassName="block"
       >
-        <Title>{title}</Title>
-      </ModalBlock>
+        <Background background={backgroundMap[projectName]}>
+          <Title>{title}</Title>
+        </Background>
+      </Modal>
     );
   }
 }
 
 ResultsModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
+  projectName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
 };
