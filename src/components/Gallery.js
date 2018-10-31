@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import GalleryBackgroundImage from './static/gallery_background_image.jpg';
 import Header from './Header';
+import ProjectCard from './ProjectCard';
 import { media } from './size';
 import { transparentBlack } from './color';
 
@@ -14,21 +15,6 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   z-index: -100;
-`;
-
-const Card = styled.div`
-  width: 100%;
-  height: 30vmin;
-  background: rgba(0, 0, 0, 0.5);
-  margin-top: 2vmin;
-  color: white;
-  padding: 4vmin 4vmin 2vmin;
-  font-size: 3vmin;
-
-  ${media.lessThan('notebook')`
-    margin-bottom: 4vmin;
-    height: 35vmin;
-  `};
 `;
 
 const Year = styled.div`
@@ -67,23 +53,23 @@ const Gallery = () => (
       <Row type="flex" justify="center" gutter={32}>
         <Col xs={{ span: 24 }} xl={{ span: 6 }}>
           <Link to="/project/Virtual-to-Real">
-            <Card>
+            <ProjectCard projectName="Virtual-to-Real">
               <Year>2017</Year>
               <ContentTitle>Virtual-to-Real:</ContentTitle>
               <p>Learning to Control in Visual Semantic Segmentation</p>
-            </Card>
+            </ProjectCard>
           </Link>
         </Col>
         <Col xs={{ span: 24 }} xl={{ span: 6 }}>
           <Link to="/project/Dynamic-Video-Segmentation-Network">
-            <Card>
+            <ProjectCard projectName="Dynamic-Video-Segmentation-Network">
               <Year>2017</Year>
               <ContentTitle>Dynamic Video Segmentation Network</ContentTitle>
-            </Card>
+            </ProjectCard>
           </Link>
         </Col>
         <Col xs={{ span: 24 }} xl={{ span: 6 }}>
-          <Card />
+          <ProjectCard />
         </Col>
       </Row>
     </Background>
