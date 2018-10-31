@@ -17,17 +17,6 @@ const Background = styled.div`
   z-index: -100;
 `;
 
-const Year = styled.div`
-  font-size: 3vmin;
-  margin-bottom: -1vmin;
-`;
-
-const ContentTitle = styled.div`
-  font-size: 4vmin;
-  font-weight: bold;
-  color: white;
-`;
-
 const Title = styled.div`
   font-size: 5vmin;
   font-weight: bold;
@@ -53,19 +42,12 @@ const Gallery = () => (
       <Row type="flex" justify="center" gutter={32}>
         <Col xs={{ span: 24 }} xl={{ span: 6 }}>
           <Link to="/project/Virtual-to-Real">
-            <ProjectCard projectName="Virtual-to-Real">
-              <Year>2017</Year>
-              <ContentTitle>Virtual-to-Real:</ContentTitle>
-              <p>Learning to Control in Visual Semantic Segmentation</p>
-            </ProjectCard>
+            <ProjectCard projectName="Virtual-to-Real" />
           </Link>
         </Col>
         <Col xs={{ span: 24 }} xl={{ span: 6 }}>
           <Link to="/project/Dynamic-Video-Segmentation-Network">
-            <ProjectCard projectName="Dynamic-Video-Segmentation-Network">
-              <Year>2017</Year>
-              <ContentTitle>Dynamic Video Segmentation Network</ContentTitle>
-            </ProjectCard>
+            <ProjectCard projectName="Dynamic-Video-Segmentation-Network" />
           </Link>
         </Col>
         <Col xs={{ span: 24 }} xl={{ span: 6 }}>
