@@ -5,6 +5,7 @@ import { Modal } from 'antd';
 
 import BackgroundImage from '../static/background_image_invert_vertical_2.jpg';
 import BackgroundImageGreen from '../static/background_image_green.jpg';
+import { media } from '../size';
 
 const BodyCSS = {
   height: '60vmin',
@@ -28,8 +29,11 @@ const Title = styled.div`
   width: 100%;
   height: 10vmin;
   font-size: 4vmin;
-  padding: 2vmin;
-  padding-left: 3vmin;
+  padding: 2vmin 2vmin 2vmin 3vmin;
+
+  ${media.lessThan('notebook')`
+    width: 90vmin;
+  `};
 `;
 
 const backgroundMap = {
