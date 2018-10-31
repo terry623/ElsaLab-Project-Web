@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import GalleryBackgroundImage from './static/gallery_background_image.jpg';
 import Header from './Header';
+import { media } from './size';
 import { transparentBlack } from './color';
 
 const Background = styled.div`
@@ -23,6 +24,11 @@ const Card = styled.div`
   color: white;
   padding: 4vmin 4vmin 2vmin;
   font-size: 3vmin;
+
+  ${media.lessThan('notebook')`
+    margin-bottom: 4vmin;
+    height: 35vmin;
+  `};
 `;
 
 const Year = styled.div`
@@ -42,6 +48,11 @@ const Title = styled.div`
   font-style: italic;
   margin-top: 6vmin;
   margin-bottom: 2vmin;
+
+  ${media.lessThan('notebook')`
+    font-size: 7vmin;
+    margin-bottom: 4vmin;
+  `};
 `;
 
 const Gallery = () => (
@@ -49,12 +60,12 @@ const Gallery = () => (
     <Background>
       <Header color={transparentBlack} />
       <Row type="flex" justify="start">
-        <Col span={12} offset={3}>
+        <Col xs={{ span: 24, offset: 1 }} xl={{ span: 12, offset: 3 }}>
           <Title>Recent Project</Title>
         </Col>
       </Row>
       <Row type="flex" justify="center" gutter={32}>
-        <Col span={6}>
+        <Col xs={{ span: 24 }} xl={{ span: 6 }}>
           <Link to="/project/Virtual-to-Real">
             <Card>
               <Year>2017</Year>
@@ -63,7 +74,7 @@ const Gallery = () => (
             </Card>
           </Link>
         </Col>
-        <Col span={6}>
+        <Col xs={{ span: 24 }} xl={{ span: 6 }}>
           <Link to="/project/Dynamic-Video-Segmentation-Network">
             <Card>
               <Year>2017</Year>
@@ -71,18 +82,7 @@ const Gallery = () => (
             </Card>
           </Link>
         </Col>
-        <Col span={6}>
-          <Card />
-        </Col>
-      </Row>
-      <Row type="flex" justify="center" gutter={32}>
-        <Col span={6}>
-          <Card />
-        </Col>
-        <Col span={6}>
-          <Card />
-        </Col>
-        <Col span={6}>
+        <Col xs={{ span: 24 }} xl={{ span: 6 }}>
           <Card />
         </Col>
       </Row>
