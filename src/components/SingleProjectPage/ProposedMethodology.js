@@ -84,12 +84,14 @@ class ProposedMethodology extends Component {
   state = {
     modalVisible: false,
     modalTitle: '',
+    modalId: 0,
   };
 
-  openModal = title => {
+  openModal = (title, id) => {
     this.setState({
       modalVisible: true,
       modalTitle: title,
+      modalId: id,
     });
   };
 
@@ -100,7 +102,7 @@ class ProposedMethodology extends Component {
   };
 
   render() {
-    const { modalVisible, modalTitle } = this.state;
+    const { modalVisible, modalTitle, modalId } = this.state;
     const { projectName, content } = this.props;
 
     return (
@@ -120,7 +122,7 @@ class ProposedMethodology extends Component {
                 <BlockTitle
                   color={colorBlockTitleMap[projectName]}
                   background={colorImageMap[projectName]}
-                  onClick={() => this.openModal(title)}
+                  onClick={() => this.openModal(title, id)}
                 >
                   {title}
                 </BlockTitle>
@@ -131,6 +133,7 @@ class ProposedMethodology extends Component {
         <ResultsModal
           visible={modalVisible}
           title={modalTitle}
+          modalId={modalId}
           closeModal={this.closeModal}
           projectName={projectName}
         />

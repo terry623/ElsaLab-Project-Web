@@ -78,12 +78,14 @@ class ExperimentalResults extends Component {
   state = {
     modalVisible: false,
     modalTitle: '',
+    modalId: 0,
   };
 
-  openModal = title => {
+  openModal = (title, id) => {
     this.setState({
       modalVisible: true,
       modalTitle: title,
+      modalId: id,
     });
   };
 
@@ -94,7 +96,7 @@ class ExperimentalResults extends Component {
   };
 
   render() {
-    const { modalVisible, modalTitle } = this.state;
+    const { modalVisible, modalTitle, modalId } = this.state;
     const { projectName, content } = this.props;
 
     return (
@@ -113,7 +115,7 @@ class ExperimentalResults extends Component {
               <Col xs={{ span: 20, offset: 2 }} xl={{ span: 15, offset: 4 }}>
                 <BlockTitle
                   color={colorBlockTitleMap[projectName]}
-                  onClick={() => this.openModal(title)}
+                  onClick={() => this.openModal(title, id)}
                 >
                   {title}
                 </BlockTitle>
@@ -124,6 +126,7 @@ class ExperimentalResults extends Component {
         <ResultsModal
           visible={modalVisible}
           title={modalTitle}
+          modalId={modalId}
           closeModal={this.closeModal}
           projectName={projectName}
         />

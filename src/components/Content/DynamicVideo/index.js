@@ -37,19 +37,19 @@ const proposedMethodology = [
 
 const experimentalResults = [
   {
-    id: 1,
+    id: 4,
     title: 'Dataset & Experiment Settings',
   },
   {
-    id: 2,
+    id: 5,
     title: 'Validation of DVSNet',
   },
   {
-    id: 3,
+    id: 6,
     title: 'Various DVSNet Configurations',
   },
   {
-    id: 4,
+    id: 7,
     title: 'Frame Division',
   },
 ];

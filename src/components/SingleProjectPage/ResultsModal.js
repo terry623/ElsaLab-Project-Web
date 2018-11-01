@@ -7,6 +7,16 @@ import BackgroundImage from '../static/background_image_invert_vertical_2.jpg';
 import BackgroundImageGreen from '../static/background_image_green.jpg';
 import { media } from '../size';
 
+import {
+  Method1,
+  Method2,
+  Method3,
+  Result1,
+  Result2,
+  Result3,
+  Result4,
+} from './Modal/DynamicVideo';
+
 const BodyCSS = {
   height: '60vmin',
   opacity: '0.7',
@@ -42,8 +52,29 @@ const backgroundMap = {
 };
 
 class ResultsModal extends Component {
+  renderModalContent = modalId => {
+    switch (modalId) {
+      case 1:
+        return <Method1 />;
+      case 2:
+        return <Method2 />;
+      case 3:
+        return <Method3 />;
+      case 4:
+        return <Result1 />;
+      case 5:
+        return <Result2 />;
+      case 6:
+        return <Result3 />;
+      case 7:
+        return <Result4 />;
+      default:
+        return <></>;
+    }
+  };
+
   render() {
-    const { visible, title, closeModal, projectName } = this.props;
+    const { visible, title, modalId, closeModal, projectName } = this.props;
 
     return (
       <Modal
@@ -57,6 +88,7 @@ class ResultsModal extends Component {
       >
         <Background background={backgroundMap[projectName]}>
           <Title>{title}</Title>
+          {this.renderModalContent(modalId)}
         </Background>
       </Modal>
     );
@@ -65,6 +97,7 @@ class ResultsModal extends Component {
 
 ResultsModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
+  modalId: PropTypes.string.isRequired,
   projectName: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,

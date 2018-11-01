@@ -41,15 +41,15 @@ const proposedMethodology = [
 
 const experimentalResults = [
   {
-    id: 1,
+    id: 4,
     title: 'Model Settings and Robotic Platform',
   },
   {
-    id: 2,
+    id: 5,
     title: 'Learning Curves of the Two Tasks',
   },
   {
-    id: 3,
+    id: 6,
     title: 'Comparison in the Simulated and Real Worlds',
   },
 ];
