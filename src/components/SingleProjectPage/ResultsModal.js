@@ -6,6 +6,7 @@ import { Modal } from 'antd';
 import BackgroundImage from '../static/background_image_invert_vertical_2.jpg';
 import BackgroundImageGreen from '../static/background_image_green.jpg';
 import MethodImage1 from '../static/Method1.jpg';
+import MethodImage2 from '../static/Method2.jpg';
 import { media } from '../size';
 
 import {
@@ -58,7 +59,7 @@ class ResultsModal extends Component {
       case 1:
         return <Method1 image={MethodImage1} />;
       case 2:
-        return <Method2 />;
+        return <Method2 image={MethodImage2} />;
       case 3:
         return <Method3 />;
       case 4:
@@ -76,7 +77,7 @@ class ResultsModal extends Component {
 
   // FIXME: 沒使用到變數它不會 build 進來，要改正
   printImageURL = () => {
-    console.log({ MethodImage1 });
+    console.log({ MethodImage1, MethodImage2 });
   };
 
   render() {
