@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 import GalleryBackgroundImage from './static/gallery_background_image.jpg';
 import Header from './Header';
 import ProjectCard from './ProjectCard';
+import { greenColorLight, pinkColorLight, transparentBlack } from './color';
 import { media } from './size';
-import { transparentBlack } from './color';
 
 const Background = styled.div`
   background: url(${GalleryBackgroundImage});
@@ -30,32 +30,71 @@ const Title = styled.div`
   `};
 `;
 
-const Gallery = () => (
-  <div className="section">
-    <Background>
-      <Header color={transparentBlack} />
-      <Row type="flex" justify="start">
-        <Col xs={{ span: 24, offset: 1 }} xl={{ span: 12, offset: 3 }}>
-          <Title>Recent Project</Title>
-        </Col>
-      </Row>
-      <Row type="flex" justify="center" gutter={32}>
-        <Col xs={{ span: 24 }} xl={{ span: 6 }}>
-          <Link to="/project/Virtual-to-Real">
-            <ProjectCard projectName="Virtual-to-Real" />
-          </Link>
-        </Col>
-        <Col xs={{ span: 24 }} xl={{ span: 6 }}>
-          <Link to="/project/Dynamic-Video-Segmentation-Network">
-            <ProjectCard projectName="Dynamic-Video-Segmentation-Network" />
-          </Link>
-        </Col>
-        <Col xs={{ span: 24 }} xl={{ span: 6 }}>
-          <ProjectCard />
-        </Col>
-      </Row>
-    </Background>
-  </div>
-);
+const Layer = styled.div`
+  background-color: ${props => props.color};
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+`;
+
+const backgroundColorMap = {
+  'Virtual-to-Real': pinkColorLight,
+  'Dynamic-Video-Segmentation-Network': greenColorLight,
+};
+
+class Gallery extends Component {
+  state = { color: '' };
+
+  changeMainBackground = projectName => {
+    this.setState({
+      color: backgroundColorMap[projectName],
+    });
+  };
+
+  render() {
+    const { color } = this.state;
+
+    return (
+      <div className="section">
+        <Layer color={color} />
+        <Background>
+          <Header color={transparentBlack} />
+          <Row type="flex" justify="start">
+            <Col xs={{ span: 24, offset: 1 }} xl={{ span: 12, offset: 3 }}>
+              <Title>Recent Project</Title>
+            </Col>
+          </Row>
+          <Row type="flex" justify="center" gutter={32}>
+            <Col xs={{ span: 24 }} xl={{ span: 6 }}>
+              <Link to="/project/Virtual-to-Real">
+                <ProjectCard
+                  projectName="Virtual-to-Real"
+                  changeMainBackground={this.changeMainBackground}
+                />
+              </Link>
+            </Col>
+            <Col xs={{ span: 24 }} xl={{ span: 6 }}>
+              <Link to="/project/Dynamic-Video-Segmentation-Network">
+                <ProjectCard
+                  projectName="Dynamic-Video-Segmentation-Network"
+                  changeMainBackground={this.changeMainBackground}
+                />
+              </Link>
+            </Col>
+            <Col xs={{ span: 24 }} xl={{ span: 6 }}>
+              <ProjectCard
+                projectName=""
+                changeMainBackground={this.changeMainBackground}
+              />
+            </Col>
+          </Row>
+        </Background>
+      </div>
+    );
+  }
+}
 
 export default Gallery;

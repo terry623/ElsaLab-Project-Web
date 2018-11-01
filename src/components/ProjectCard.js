@@ -62,12 +62,13 @@ const initSetting = {
 class ProjectCard extends Component {
   state = initSetting;
 
-  changeBackground = projectName => {
+  changeBackground = (projectName, changeMainBackground) => {
     this.setState({
       filter: '0%',
       rgba: 'rgba(0, 0, 0, 0)',
       fontColor: colorMap[projectName],
     });
+    changeMainBackground(projectName);
   };
 
   backToOrigin = () => {
@@ -101,13 +102,15 @@ class ProjectCard extends Component {
   };
 
   render() {
-    const { projectName } = this.props;
+    const { projectName, changeMainBackground } = this.props;
     const { filter, rgba, fontColor } = this.state;
 
     return (
       <Card
-        onMouseEnter={() => this.changeBackground(projectName)}
-        onMouseLeave={() => this.backToOrigin()}
+        onMouseEnter={() =>
+          this.changeBackground(projectName, changeMainBackground)
+        }
+        onMouseLeave={() => this.backToOrigin(changeMainBackground)}
         background={urlMap[projectName]}
         filter={filter}
         rgba={rgba}
@@ -119,6 +122,7 @@ class ProjectCard extends Component {
 }
 
 ProjectCard.propTypes = {
+  changeMainBackground: PropTypes.func.isRequired,
   projectName: PropTypes.string.isRequired,
 };
 
