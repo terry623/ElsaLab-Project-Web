@@ -71,8 +71,9 @@ class ProjectCard extends Component {
     changeMainBackground(projectName);
   };
 
-  backToOrigin = () => {
+  backToOrigin = changeMainBackground => {
     this.setState(initSetting);
+    changeMainBackground('');
   };
 
   renderCard = (projectName, color) => {
