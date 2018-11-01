@@ -28,7 +28,7 @@ class ModalContent extends Component {
           </Col>
         </Row>
         <Row type="flex" justify="center" align="middle">
-          <Col span={8} offset={4}>
+          <Col span={8}>
             <Content>
               As threshold increases, mIoU increases, but frame rate (fps)
               decreases.
@@ -36,7 +36,7 @@ class ModalContent extends Component {
               the spatial warping path.
             </Content>
           </Col>
-          <Col span={10} offset={2}>
+          <Col span={6} offset={2}>
             <Content>
               DVSNet’s adaptive scheduling policy leads to the best performance.
             </Content>

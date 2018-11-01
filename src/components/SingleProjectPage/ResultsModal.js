@@ -13,6 +13,8 @@ import ResultImage12 from '../static/Result12.jpg';
 import ResultImage2 from '../static/Result2.jpg';
 import ResultImage31 from '../static/Result31.jpg';
 import ResultImage32 from '../static/Result32.jpg';
+import ResultImage41 from '../static/Result41.jpg';
+import ResultImage42 from '../static/Result42.jpg';
 import { media } from '../size';
 
 import {
@@ -75,7 +77,7 @@ class ResultsModal extends Component {
       case 6:
         return <Result3 image={[ResultImage31, ResultImage32]} />;
       case 7:
-        return <Result4 />;
+        return <Result4 image={[ResultImage41, ResultImage42]} />;
       default:
         return <></>;
     }
