@@ -7,6 +7,7 @@ import BackgroundImage from '../static/background_image_invert_vertical_2.jpg';
 import BackgroundImageGreen from '../static/background_image_green.jpg';
 import MethodImage1 from '../static/Method1.jpg';
 import MethodImage2 from '../static/Method2.jpg';
+import MethodImage3 from '../static/Method3.jpg';
 import { media } from '../size';
 
 import {
@@ -61,7 +62,7 @@ class ResultsModal extends Component {
       case 2:
         return <Method2 image={MethodImage2} />;
       case 3:
-        return <Method3 />;
+        return <Method3 image={MethodImage3} />;
       case 4:
         return <Result1 />;
       case 5:
@@ -73,11 +74,6 @@ class ResultsModal extends Component {
       default:
         return <></>;
     }
-  };
-
-  // FIXME: 沒使用到變數它不會 build 進來，要改正
-  printImageURL = () => {
-    console.log({ MethodImage1, MethodImage2 });
   };
 
   render() {
@@ -96,7 +92,6 @@ class ResultsModal extends Component {
         <Background background={backgroundMap[projectName]}>
           <Title>{title}</Title>
           {this.renderModalContent(modalId)}
-          {this.printImageURL()}
         </Background>
       </Modal>
     );
