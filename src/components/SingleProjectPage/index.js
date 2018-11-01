@@ -47,13 +47,13 @@ class SingleProjectPage extends Component {
 
           return (
             <ReactFullpage.Wrapper>
-              {/* <Topic projectName={name} content={content.topic} />
+              <Topic projectName={name} content={content.topic} />
               <SystemStructure projectName={name} />
               <Abstract projectName={name} content={content.abstract} />
               <ProposedMethodology
                 projectName={name}
                 content={content.proposedMethodology}
-              /> */}
+              />
               <ExperimentalResults
                 projectName={name}
                 content={content.experimentalResults}
