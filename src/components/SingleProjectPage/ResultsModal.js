@@ -8,6 +8,9 @@ import BackgroundImageGreen from '../static/background_image_green.jpg';
 import MethodImage1 from '../static/Method1.jpg';
 import MethodImage2 from '../static/Method2.jpg';
 import MethodImage3 from '../static/Method3.jpg';
+import ResultImage11 from '../static/Result11.jpg';
+import ResultImage12 from '../static/Result12.jpg';
+import ResultImage2 from '../static/Result2.jpg';
 import { media } from '../size';
 
 import {
@@ -64,9 +67,9 @@ class ResultsModal extends Component {
       case 3:
         return <Method3 image={MethodImage3} />;
       case 4:
-        return <Result1 />;
+        return <Result1 image={[ResultImage11, ResultImage12]} />;
       case 5:
-        return <Result2 />;
+        return <Result2 image={ResultImage2} />;
       case 6:
         return <Result3 />;
       case 7:
