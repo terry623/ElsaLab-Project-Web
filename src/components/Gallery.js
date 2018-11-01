@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import GalleryBackgroundImage from './static/gallery_background_image.jpg';
 import Header from './Header';
 import ProjectCard from './ProjectCard';
-import { greenColorLight, pinkColorLight, transparentBlack } from './color';
+import { greenColorMid, pinkColorMid, transparentBlack } from './color';
 import { media } from './size';
 
 const Background = styled.div`
@@ -41,8 +41,8 @@ const Layer = styled.div`
 `;
 
 const backgroundColorMap = {
-  'Virtual-to-Real': pinkColorLight,
-  'Dynamic-Video-Segmentation-Network': greenColorLight,
+  'Virtual-to-Real': pinkColorMid,
+  'Dynamic-Video-Segmentation-Network': greenColorMid,
 };
 
 class Gallery extends Component {
