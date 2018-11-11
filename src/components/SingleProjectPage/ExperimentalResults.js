@@ -22,7 +22,7 @@ const MainTitle = styled.div`
   color: ${props => props.color};
   font-style: italic;
   font-size: 6vmin;
-  margin-top: 18vmin;
+  margin-top: 14vmin;
   margin-bottom: 2vmin;
 
   ${media.lessThan('notebook')`

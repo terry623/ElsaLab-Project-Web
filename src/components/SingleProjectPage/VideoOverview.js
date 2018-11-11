@@ -9,8 +9,6 @@ import BackgroundInvertVerticalVerticalImage from '../static/background_image_in
 import { greenColorBackGround, pinkColorMid } from '../color';
 import { media } from '../size';
 
-const VideoURL = 'https://www.youtube.com/embed/8osw3ElPAvY';
-
 const videoConfig = {
   youtube: {
     frameBorder: '0',
@@ -120,6 +118,12 @@ const colorMap = {
   'Dynamic-Video-Segmentation-Network': greenColorBackGround,
 };
 
+const videoMap = {
+  'Virtual-to-Real': 'https://www.youtube.com/embed/_OqdnG4AII8',
+  'Dynamic-Video-Segmentation-Network':
+    'https://www.youtube.com/embed/vadYHOyUVXs',
+};
+
 class VideoOverview extends Component {
   state = {
     isPlaying: false,
@@ -152,7 +156,7 @@ class VideoOverview extends Component {
             <SystemCol xs={{ span: 24 }} xl={{ span: 15, offset: 1 }}>
               <Wrapper>
                 <ReactPlayer
-                  url={VideoURL}
+                  url={videoMap[projectName]}
                   playing={isPlaying}
                   width={videoSize.width}
                   height={videoSize.height}

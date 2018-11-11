@@ -29,7 +29,6 @@ import {
 
 const BodyCSS = {
   height: '80vmin',
-  opacity: '0.7',
   padding: '0',
 };
 
