@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
+import { Spring } from 'react-spring';
 
 import GalleryBackgroundImage from './static/gallery_background_image.jpg';
 import Header from './Header';
@@ -37,7 +38,7 @@ const Layer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0.5;
+  opacity: ${props => props.opactiy};
 `;
 
 const backgroundColorMap = {
@@ -59,7 +60,17 @@ class Gallery extends Component {
 
     return (
       <div className="section">
-        <Layer color={color} />
+        <Spring
+          from={{ opacity: 0 }}
+          to={{ opacity: 0.5 }}
+          config={{ tension: 120, friction: 14 }}
+          reset
+        >
+          {props => {
+            console.log({ props });
+            return <Layer color={color} opactiy={props.opacity} />;
+          }}
+        </Spring>
         <Background>
           <Header color={transparentBlack} />
           <Row type="flex" justify="start">
