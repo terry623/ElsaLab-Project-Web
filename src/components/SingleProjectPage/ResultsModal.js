@@ -28,12 +28,12 @@ import {
 } from './Modal/DynamicVideo';
 
 const BodyCSS = {
-  height: '60vmin',
+  height: '80vmin',
   opacity: '0.7',
   padding: '0',
 };
 
-const width = '150vmin';
+const width = '180vmin';
 
 const Background = styled.div`
   background: url(${props => props.background});

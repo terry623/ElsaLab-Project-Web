@@ -5,12 +5,12 @@ import { Col, Row } from 'antd';
 
 const Media = styled.img`
   width: 80%;
-  margin-top: 6vmin;
+  margin-top: 12vmin;
 `;
 
 const Content = styled.p`
-  font-size: 1.5vmin;
-  margin-top: 6vmin;
+  font-size: 2vmin;
+  margin-top: 4vmin;
 `;
 
 class ModalContent extends Component {

@@ -5,12 +5,12 @@ import { Col, Row } from 'antd';
 
 const Media = styled.img`
   width: 100%;
-  margin-top: 10vmin;
+  margin-top: 12vmin;
 `;
 
 const Content = styled.p`
-  font-size: 1.5vmin;
-  margin-top: 6vmin;
+  font-size: 2vmin;
+  margin-top: 4vmin;
 `;
 
 class ModalContent extends Component {
@@ -30,9 +30,11 @@ class ModalContent extends Component {
             layers of the flow network, trained to perform regression.
             <br />
             The goal of DN is to learn to predict an expected confidence score
-            for a frame region. //The confidence score is defined as the
-            pixel-wise similarity between the resultant segmentations of the
-            spatial warping path and the segmentation path.
+            for a frame region.
+            <br />
+            The confidence score is defined as the pixel-wise similarity between
+            the resultant segmentations of the spatial warping path and the
+            segmentation path.
           </Content>
         </Col>
       </Row>

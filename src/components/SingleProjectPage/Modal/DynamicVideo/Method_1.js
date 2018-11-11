@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
 const Media = styled.img`
-  width: 100vmin;
-  margin-top: 3vmin;
+  width: 100%;
+  margin-top: 5vmin;
 `;
 
 const Content = styled.p`
-  font-size: 1.5vmin;
+  font-size: 2vmin;
   margin-top: 2vmin;
 `;
 
