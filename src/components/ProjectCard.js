@@ -65,7 +65,7 @@ class ProjectCard extends Component {
   changeBackground = (projectName, changeMainBackground) => {
     this.setState({
       filter: '0%',
-      rgba: 'rgba(0, 0, 0, 0)',
+      rgba: 'rgb(255,255,255,0.6)',
       fontColor: colorMap[projectName],
     });
     changeMainBackground(projectName);
