@@ -62,7 +62,7 @@ class Gallery extends Component {
       <div className="section">
         <Spring
           from={{ opacity: 0 }}
-          to={{ opacity: 0.5 }}
+          to={{ opacity: 0.4 }}
           config={{ tension: 120, friction: 14 }}
           reset
         >
