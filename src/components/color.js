@@ -6,3 +6,5 @@ export const greenColorLight = '#6fe8cd';
 export const greenColorDark = '#32685d';
 export const greenColorBackGround = '#beede4';
 export const greenColorMid = '#4acbad';
+
+export const homeColor = '#343434';

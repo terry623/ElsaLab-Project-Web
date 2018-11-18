@@ -3,8 +3,8 @@ import React from 'react';
 
 const Loading = () => <div>Loading...</div>;
 
-const Home = Loadable({
-  loader: () => import('./Home'),
+const HomePage = Loadable({
+  loader: () => import('./HomePage'),
   loading: Loading,
 });
 
@@ -18,4 +18,4 @@ const About = Loadable({
   loading: Loading,
 });
 
-export { Home, Project, About };
+export { HomePage, Project, About };
