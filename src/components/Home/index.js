@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundCourses from '../static/home/Courses.jpg';
 import BackgroundHome from '../static/home/delta.jpg';
+import BackgroundNews from '../static/home/News.jpg';
+import BackgroundProjects from '../static/home/Projects.jpg';
+import BackgroundPublications from '../static/home/Publications.jpg';
 import IconImg from '../static/icon.png';
 import { homeColor } from '../color';
 
@@ -41,7 +45,7 @@ const Title2 = styled.p`
 const LogoContent = styled(Col)`
   font-size: 2vmin;
   color: white;
-  margin-top: 10vmin;
+  margin-top: 8vmin;
 `;
 
 const Hr = styled.hr`
@@ -89,58 +93,90 @@ const Text = styled.div`
   margin: 3px;
 `;
 
+const EntryLink = styled.div`
+  position: absolute;
+  padding-left: 3.5vw;
+  padding-right: 3.5vw;
+  top: 70%;
+  left: 0;
+`;
+
+const ImageEntry = styled.img`
+  width: 100%;
+  height: 100%;
+  border: 5px white solid;
+`;
+
 class Home extends Component {
   render() {
     return (
-      <Row>
-        <Col span={9}>
-          <BackgroundColor>
-            <MainRow type="flex" justify="center">
-              <LogoContent span={18}>
-                <Row type="flex" justify="start" align="bottom" gutter={8}>
-                  <Col>
-                    <IconImage src={IconImg} />
-                  </Col>
-                  <Col>
-                    <Title1>NTHU</Title1>
-                    <Title2>ELSA</Title2>
-                  </Col>
-                </Row>
-              </LogoContent>
-              <SmallContent span={18}>
-                <Row type="flex" justify="start" align="bottom">
-                  <Col span={6}>
-                    <Hr />
-                  </Col>
-                  <Col span={12} offset={1}>
-                    Professor : Chun-Yi Lee
-                  </Col>
-                </Row>
-              </SmallContent>
-              <BigTitle span={18}>
-                <TitleText>Welcome to ELSA LAB</TitleText>
-              </BigTitle>
-              <MedContent span={12}>
-                Department of Computer Science, National Tsing Hua University,
-                No.101, Sec .2, Kuang-Fu Road, Hsinchu, 30013, Taiwan
-              </MedContent>
-              <OtherLink span={6}>
-                <Row>
-                  <TextCol span={24}>
-                    <Text>About Elsa Lab</Text>
-                  </TextCol>
-                  <TextCol span={24}>
-                    <Text>Sign in</Text>
-                  </TextCol>
-                </Row>
-              </OtherLink>
-            </MainRow>
-          </BackgroundColor>
-        </Col>
-        <Col span={15}>
-          <BackgroundImage />
-        </Col>
-      </Row>
+      <Fragment>
+        <Row>
+          <Col span={9}>
+            <BackgroundColor>
+              <MainRow type="flex" justify="center">
+                <LogoContent span={18}>
+                  <Row type="flex" justify="start" align="bottom" gutter={8}>
+                    <Col>
+                      <IconImage src={IconImg} />
+                    </Col>
+                    <Col>
+                      <Title1>NTHU</Title1>
+                      <Title2>ELSA</Title2>
+                    </Col>
+                  </Row>
+                </LogoContent>
+                <SmallContent span={18}>
+                  <Row type="flex" justify="start" align="bottom">
+                    <Col span={6}>
+                      <Hr />
+                    </Col>
+                    <Col span={12} offset={1}>
+                      Professor : Chun-Yi Lee
+                    </Col>
+                  </Row>
+                </SmallContent>
+                <BigTitle span={18}>
+                  <TitleText>Welcome to ELSA LAB</TitleText>
+                </BigTitle>
+                <MedContent span={12}>
+                  Department of Computer Science, National Tsing Hua University,
+                  No.101, Sec .2, Kuang-Fu Road, Hsinchu, 30013, Taiwan
+                </MedContent>
+                <OtherLink span={6}>
+                  <Row>
+                    <TextCol span={24}>
+                      <Text>About Elsa Lab</Text>
+                    </TextCol>
+                    <TextCol span={24}>
+                      <Text>Sign in</Text>
+                    </TextCol>
+                  </Row>
+                </OtherLink>
+              </MainRow>
+            </BackgroundColor>
+          </Col>
+          <Col span={15}>
+            <BackgroundImage />
+          </Col>
+        </Row>
+        <EntryLink>
+          <Row type="flex" justify="space-around">
+            <Col span={4}>
+              <ImageEntry src={BackgroundCourses} />
+            </Col>
+            <Col span={4}>
+              <ImageEntry src={BackgroundPublications} />
+            </Col>
+            <Col span={4}>
+              <ImageEntry src={BackgroundProjects} />
+            </Col>
+            <Col span={4}>
+              <ImageEntry src={BackgroundNews} />
+            </Col>
+          </Row>
+        </EntryLink>
+      </Fragment>
     );
   }
 }
