@@ -8,17 +8,37 @@ import BackgroundNews from '../static/home/News.jpg';
 import BackgroundProjects from '../static/home/Projects.jpg';
 import BackgroundPublications from '../static/home/Publications.jpg';
 import IconImg from '../static/icon.png';
-import { homeColor } from '../color';
+import {
+  backgroundColorCourses,
+  backgroundColorInvertCourses,
+  bigTitleCourses,
+  medContentCourses,
+  otherColorCourses,
+  smallContentCourses,
+} from '../Content/Home/homeContent';
+
+const backgroundImageMap = [BackgroundHome];
+
+const backgroundColorMap = [backgroundColorCourses];
+
+const backgroundColorInvertMap = [backgroundColorInvertCourses];
+
+const otherColorMap = [otherColorCourses];
+
+const smallContentMap = [smallContentCourses];
+
+const bigTitleMap = [bigTitleCourses];
+
+const medContentMap = [medContentCourses];
 
 const BackgroundColor = styled.div`
-  background-color: ${homeColor};
+  background-color: ${props => props.color};
   height: 100vh;
   width: 100%;
 `;
 
 const BackgroundImage = styled.div`
-  /* background: url(${props => props.image}); */
-  background:url(${BackgroundHome});
+  background: url(${props => props.image});
   background-size: cover;
   height: 100vh;
   width: 100%;
@@ -52,12 +72,12 @@ const Hr = styled.hr`
   width: 100%;
   border: 0;
   height: 2px;
-  background: #a9a9a9;
+  background: ${props => props.color};
 `;
 
 const SmallContent = styled(Col)`
   font-size: 2vmin;
-  color: #a9a9a9;
+  color: ${props => props.color};
   margin-top: 5vmin;
 `;
 
@@ -89,7 +109,7 @@ const TextCol = styled.div`
 `;
 
 const Text = styled.div`
-  background-color: black;
+  background-color: ${props => props.color};
   margin: 3px;
 `;
 
@@ -108,12 +128,24 @@ const ImageEntry = styled.img`
 `;
 
 class Home extends Component {
+  state = {
+    current: 0,
+  };
+
+  changeBackground = index => {
+    this.setState({
+      current: index,
+    });
+  };
+
   render() {
+    const { current } = this.state;
+
     return (
       <Fragment>
         <Row>
           <Col span={9}>
-            <BackgroundColor>
+            <BackgroundColor color={backgroundColorMap[current]}>
               <MainRow type="flex" justify="center">
                 <LogoContent span={18}>
                   <Row type="flex" justify="start" align="bottom" gutter={8}>
@@ -126,30 +158,30 @@ class Home extends Component {
                     </Col>
                   </Row>
                 </LogoContent>
-                <SmallContent span={18}>
+                <SmallContent
+                  span={18}
+                  color={backgroundColorInvertMap[current]}
+                >
                   <Row type="flex" justify="start" align="bottom">
                     <Col span={6}>
-                      <Hr />
+                      <Hr color={backgroundColorInvertMap[current]} />
                     </Col>
                     <Col span={12} offset={1}>
-                      Professor : Chun-Yi Lee
+                      {smallContentMap[current]}
                     </Col>
                   </Row>
                 </SmallContent>
                 <BigTitle span={18}>
-                  <TitleText>Welcome to ELSA LAB</TitleText>
+                  <TitleText>{bigTitleMap[0]}</TitleText>
                 </BigTitle>
-                <MedContent span={12}>
-                  Department of Computer Science, National Tsing Hua University,
-                  No.101, Sec .2, Kuang-Fu Road, Hsinchu, 30013, Taiwan
-                </MedContent>
+                <MedContent span={12}>{medContentMap[current]}</MedContent>
                 <OtherLink span={6}>
                   <Row>
                     <TextCol span={24}>
-                      <Text>About Elsa Lab</Text>
+                      <Text color={otherColorMap[current]}>About Elsa Lab</Text>
                     </TextCol>
                     <TextCol span={24}>
-                      <Text>Sign in</Text>
+                      <Text color={otherColorMap[current]}>Sign in</Text>
                     </TextCol>
                   </Row>
                 </OtherLink>
@@ -157,22 +189,38 @@ class Home extends Component {
             </BackgroundColor>
           </Col>
           <Col span={15}>
-            <BackgroundImage />
+            <BackgroundImage image={backgroundImageMap[current]} />
           </Col>
         </Row>
         <EntryLink>
           <Row type="flex" justify="space-around">
             <Col span={4}>
-              <ImageEntry src={BackgroundCourses} />
+              <ImageEntry
+                src={BackgroundCourses}
+                onMouseEnter={() => this.changeBackground(1)}
+                onMouseLeave={() => this.changeBackground(0)}
+              />
             </Col>
             <Col span={4}>
-              <ImageEntry src={BackgroundPublications} />
+              <ImageEntry
+                src={BackgroundPublications}
+                onMouseEnter={() => this.changeBackground(2)}
+                onMouseLeave={() => this.changeBackground(0)}
+              />
             </Col>
             <Col span={4}>
-              <ImageEntry src={BackgroundProjects} />
+              <ImageEntry
+                src={BackgroundProjects}
+                onMouseEnter={() => this.changeBackground(3)}
+                onMouseLeave={() => this.changeBackground(0)}
+              />
             </Col>
             <Col span={4}>
-              <ImageEntry src={BackgroundNews} />
+              <ImageEntry
+                src={BackgroundNews}
+                onMouseEnter={() => this.changeBackground(4)}
+                onMouseLeave={() => this.changeBackground(0)}
+              />
             </Col>
           </Row>
         </EntryLink>
