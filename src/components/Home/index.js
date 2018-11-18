@@ -24,6 +24,30 @@ import {
   otherColorHome,
   smallContentHome,
 } from '../Content/Home/homeContent';
+import {
+  backgroundColorInvertNews,
+  backgroundColorNews,
+  bigTitleNews,
+  medContentNews,
+  otherColorNews,
+  smallContentNews,
+} from '../Content/Home/newContent';
+import {
+  backgroundColorInvertProjects,
+  backgroundColorProjects,
+  bigTitleProjects,
+  medContentProjects,
+  otherColorProjects,
+  smallContentProjects,
+} from '../Content/Home/projectContent';
+import {
+  backgroundColorInvertPublications,
+  backgroundColorPublications,
+  bigTitlePublications,
+  medContentPublications,
+  otherColorPublications,
+  smallContentPublications,
+} from '../Content/Home/publicationContent';
 
 const backgroundImageMap = [
   BackgroundHome,
@@ -33,20 +57,53 @@ const backgroundImageMap = [
   BackgroundNews,
 ];
 
-const backgroundColorMap = [backgroundColorHome, backgroundColorCourses];
+const backgroundColorMap = [
+  backgroundColorHome,
+  backgroundColorCourses,
+  backgroundColorPublications,
+  backgroundColorProjects,
+  backgroundColorNews,
+];
 
 const backgroundColorInvertMap = [
   backgroundColorInvertHome,
   backgroundColorInvertCourses,
+  backgroundColorInvertPublications,
+  backgroundColorInvertProjects,
+  backgroundColorInvertNews,
 ];
 
-const otherColorMap = [otherColorHome, otherColorCourses];
+const otherColorMap = [
+  otherColorHome,
+  otherColorCourses,
+  otherColorPublications,
+  otherColorProjects,
+  otherColorNews,
+];
 
-const smallContentMap = [smallContentHome, smallContentCourses];
+const smallContentMap = [
+  smallContentHome,
+  smallContentCourses,
+  smallContentPublications,
+  smallContentProjects,
+  smallContentNews,
+];
 
-const bigTitleMap = [bigTitleHome, bigTitleCourses];
+const bigTitleMap = [
+  bigTitleHome,
+  bigTitleCourses,
+  bigTitlePublications,
+  bigTitleProjects,
+  bigTitleNews,
+];
 
-const medContentMap = [medContentHome, medContentCourses];
+const medContentMap = [
+  medContentHome,
+  medContentCourses,
+  medContentPublications,
+  medContentProjects,
+  medContentNews,
+];
 
 const BackgroundColor = styled.div`
   background-color: ${props => props.color};
