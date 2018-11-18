@@ -15,21 +15,38 @@ import {
   medContentCourses,
   otherColorCourses,
   smallContentCourses,
+} from '../Content/Home/courseContent';
+import {
+  backgroundColorHome,
+  backgroundColorInvertHome,
+  bigTitleHome,
+  medContentHome,
+  otherColorHome,
+  smallContentHome,
 } from '../Content/Home/homeContent';
 
-const backgroundImageMap = [BackgroundHome];
+const backgroundImageMap = [
+  BackgroundHome,
+  BackgroundCourses,
+  BackgroundPublications,
+  BackgroundProjects,
+  BackgroundNews,
+];
 
-const backgroundColorMap = [backgroundColorCourses];
+const backgroundColorMap = [backgroundColorHome, backgroundColorCourses];
 
-const backgroundColorInvertMap = [backgroundColorInvertCourses];
+const backgroundColorInvertMap = [
+  backgroundColorInvertHome,
+  backgroundColorInvertCourses,
+];
 
-const otherColorMap = [otherColorCourses];
+const otherColorMap = [otherColorHome, otherColorCourses];
 
-const smallContentMap = [smallContentCourses];
+const smallContentMap = [smallContentHome, smallContentCourses];
 
-const bigTitleMap = [bigTitleCourses];
+const bigTitleMap = [bigTitleHome, bigTitleCourses];
 
-const medContentMap = [medContentCourses];
+const medContentMap = [medContentHome, medContentCourses];
 
 const BackgroundColor = styled.div`
   background-color: ${props => props.color};
@@ -172,7 +189,7 @@ class Home extends Component {
                   </Row>
                 </SmallContent>
                 <BigTitle span={18}>
-                  <TitleText>{bigTitleMap[0]}</TitleText>
+                  <TitleText>{bigTitleMap[current]}</TitleText>
                 </BigTitle>
                 <MedContent span={12}>{medContentMap[current]}</MedContent>
                 <OtherLink span={6}>
