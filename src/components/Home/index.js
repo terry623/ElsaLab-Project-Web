@@ -53,23 +53,6 @@ class Home extends Component {
     current: 0,
   };
 
-  changeFullPage = index => {
-    switch (index) {
-      case 0:
-        return <FullPage current={index} />;
-      case 1:
-        return <FullPage current={index} />;
-      case 2:
-        return <FullPage current={index} />;
-      case 3:
-        return <FullPage current={index} />;
-      case 4:
-        return <FullPage current={index} />;
-      default:
-        break;
-    }
-  };
-
   changeBackground = index => {
     this.setState({
       current: index,
@@ -81,7 +64,7 @@ class Home extends Component {
 
     return (
       <Fragment>
-        {this.changeFullPage(current)}
+        <FullPage current={current} />
         <EntryLink>
           <Row type="flex" justify="space-around">
             <Col span={4}>

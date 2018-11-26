@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
+import { Link } from 'react-router-dom';
 
 import BackgroundCourses from '../static/home/Courses.jpg';
 import BackgroundHome from '../static/home/delta.jpg';
@@ -106,6 +107,8 @@ const medContentMap = [
   medContentNews,
 ];
 
+const MedColorMap = ['#a9a9a9', 'white', 'white', 'white', 'white'];
+
 const BackgroundColor = styled.div`
   background-color: ${props => props.color};
   height: 100vh;
@@ -124,7 +127,7 @@ const MainRow = styled(Row)`
 `;
 
 const IconImage = styled.img`
-  width: 5vmin;
+  width: 4.5vmin;
 `;
 
 const Title1 = styled.p`
@@ -169,7 +172,7 @@ const TitleText = styled.div`
 
 const MedContent = styled(Col)`
   font-size: 2vmin;
-  color: #a9a9a9;
+  color: ${props => props.color};
   margin-top: 5vmin;
 `;
 
@@ -186,6 +189,20 @@ const TextCol = styled.div`
 const Text = styled.div`
   background-color: ${props => props.color};
   margin: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+
+  :hover {
+    background-color: white;
+  }
+`;
+
+const PageLink = styled(Link)`
+  color: white;
+
+  :hover {
+    color: black;
+  }
 `;
 
 class FullPage extends Component {
@@ -198,7 +215,7 @@ class FullPage extends Component {
           <BackgroundColor color={backgroundColorMap[current]}>
             <MainRow type="flex" justify="center">
               <LogoContent span={18}>
-                <Row type="flex" justify="start" align="bottom" gutter={8}>
+                <Row type="flex" justify="start" align="middle" gutter={8}>
                   <Col>
                     <IconImage src={IconImg} />
                   </Col>
@@ -224,14 +241,20 @@ class FullPage extends Component {
                   {bigTitleMap[current]}
                 </TitleText>
               </BigTitle>
-              <MedContent span={12}>{medContentMap[current]}</MedContent>
+              <MedContent span={12} color={MedColorMap[current]}>
+                {medContentMap[current]}
+              </MedContent>
               <OtherLink span={6}>
                 <Row>
                   <TextCol span={24}>
-                    <Text color={otherColorMap[current]}>About Elsa Lab</Text>
+                    <PageLink to="/about">
+                      <Text color={otherColorMap[current]}>About Elsa Lab</Text>
+                    </PageLink>
                   </TextCol>
                   <TextCol span={24}>
-                    <Text color={otherColorMap[current]}>Sign in</Text>
+                    <PageLink to="/about">
+                      <Text color={otherColorMap[current]}>Sign in</Text>
+                    </PageLink>
                   </TextCol>
                 </Row>
               </OtherLink>

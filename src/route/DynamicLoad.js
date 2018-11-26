@@ -13,9 +13,9 @@ const Project = Loadable({
   loading: Loading,
 });
 
-const About = Loadable({
-  loader: () => import('./About'),
+const AboutPage = Loadable({
+  loader: () => import('./AboutPage'),
   loading: Loading,
 });
 
-export { HomePage, Project, About };
+export { HomePage, Project, AboutPage };
