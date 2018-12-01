@@ -46,7 +46,7 @@ const Title = styled.div`
 const TextArea = styled.div`
   padding-left: 2.5vw;
   padding-right: 4vw;
-  padding-top: 1.2vw;
+  padding-top: 2vh;
 `;
 
 const ImageArea = styled.div`
@@ -57,12 +57,12 @@ const ImageArea = styled.div`
   background-position: center center;
 `;
 
-const Projects = [
+const ProjectsContent = [
   { content: project1.topic, image: BackgroundImage },
   { content: project2.topic, image: BackgroundImageGreen },
 ];
 
-const Courses = () => (
+const Projects = () => (
   <Row>
     <Col span={9}>
       <BackgroundColor color="#a1afd8">
@@ -100,7 +100,7 @@ const Courses = () => (
       <BackgroundColor color="white">
         <Header fontColor="#9b9b9b" />
         <Blocks>
-          {Projects.map(({ content, image }) => (
+          {ProjectsContent.map(({ content, image }) => (
             <EachBlock key={content[1]}>
               <Row>
                 <Col span={12}>
@@ -122,4 +122,4 @@ const Courses = () => (
   </Row>
 );
 
-export default Courses;
+export default Projects;

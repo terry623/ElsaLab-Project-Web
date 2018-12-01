@@ -1,6 +1,9 @@
 import React from 'react';
+import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import BackgroundImage from '../static/background_image_invert_vertical.jpg';
+import BackgroundImageGreen from '../static/background_image_green.jpg';
 import Header from '../Share/Header';
 import IconImg from '../static/icon.png';
 import {
@@ -16,6 +19,47 @@ import {
   Title2,
   TitleText,
 } from '../Share';
+
+const Blocks = styled.div`
+  padding-top: 20vh;
+`;
+
+const EachBlock = styled.div`
+  width: 100%;
+  height: 20vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-bottom: 5vh;
+  color: white;
+  font-size: 1.2vw;
+`;
+
+const Year = styled.div`
+  margin-bottom: -1vh;
+  font-weight: bold;
+`;
+
+const Title = styled.div`
+  font-size: 2vw;
+`;
+
+const TextArea = styled.div`
+  padding-left: 2.5vw;
+  padding-right: 4vw;
+  padding-top: 4.5vh;
+`;
+
+const ImageArea = styled.div`
+  width: 100%;
+  height: 20vh;
+  background: url(${props => props.image});
+  background-size: cover;
+  background-position: center center;
+`;
+
+const CoursesContent = [
+  { content: '', image: BackgroundImage },
+  { content: '', image: BackgroundImageGreen },
+];
 
 const Courses = () => (
   <Row>
@@ -54,6 +98,23 @@ const Courses = () => (
     <Col span={15}>
       <BackgroundColor color="white">
         <Header fontColor="#9b9b9b" />
+        <Blocks>
+          {CoursesContent.map(({ content, image }) => (
+            <EachBlock key={content[1]}>
+              <Row>
+                <Col span={12}>
+                  <TextArea>
+                    <Year>2018 Fall</Year>
+                    <Title>Hardware Design and Lab</Title>
+                  </TextArea>
+                </Col>
+                <Col span={12}>
+                  <ImageArea image={image} />
+                </Col>
+              </Row>
+            </EachBlock>
+          ))}
+        </Blocks>
       </BackgroundColor>
     </Col>
   </Row>
