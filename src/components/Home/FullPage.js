@@ -31,46 +31,45 @@ const BackgroundImage = styled.div`
 `;
 
 const MainRow = styled(Row)`
-  padding-left: 6vmin;
+  padding-left: 3vw;
 `;
 
 const IconImage = styled.img`
-  width: 4.5vmin;
+  width: 2vw;
 `;
 
 const Title1 = styled.p`
-  font-size: 1.5vmin;
+  font-size: 0.75vw;
   margin: 0;
 `;
 
 const Title2 = styled.p`
-  font-size: 2vmin;
+  font-size: 1vw;
   margin: 0;
 `;
 
 const LogoContent = styled(Col)`
-  font-size: 2vmin;
   color: white;
-  margin-top: 8vmin;
+  margin-top: 8vh;
 `;
 
 const Hr = styled.hr`
   width: 100%;
-  border: 0;
   height: 2px;
+  border: 0;
   background: ${props => props.color};
 `;
 
 const SmallContent = styled(Col)`
-  font-size: 2vmin;
   color: ${props => props.color};
-  margin-top: 5vmin;
+  font-size: 1vw;
+  margin-top: 5vh;
 `;
 
 const BigTitle = styled(Col)`
-  font-size: 8vmin;
+  font-size: 4vw;
   color: white;
-  margin-top: 6vmin;
+  margin-top: 6vh;
   font-weight: bold;
 `;
 
@@ -79,18 +78,18 @@ const TitleText = styled.div`
 `;
 
 const MedContent = styled(Col)`
-  font-size: 2vmin;
   color: ${props => props.color};
-  margin-top: 5vmin;
+  font-size: 1vw;
+  margin-top: 5vh;
 `;
 
 const OtherLink = styled(Col)`
-  margin-top: 5vmin;
+  margin-top: 5vh;
 `;
 
 const TextCol = styled.div`
   float: right;
-  font-size: 2vmin;
+  font-size: 1vw;
   color: white;
 `;
 
