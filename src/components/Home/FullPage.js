@@ -4,110 +4,18 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
-import BackgroundCourses from '../static/home/Courses.jpg';
-import BackgroundHome from '../static/home/delta.jpg';
-import BackgroundNews from '../static/home/News.jpg';
-import BackgroundProjects from '../static/home/Projects.jpg';
-import BackgroundPublications from '../static/home/Publications.jpg';
 import IconImg from '../static/icon.png';
+
 import {
-  backgroundColorCourses,
-  backgroundColorInvertCourses,
-  bigTitleCourses,
-  medContentCourses,
-  otherColorCourses,
-  smallContentCourses,
-} from '../Content/Home/courseContent';
-import {
-  backgroundColorHome,
-  backgroundColorInvertHome,
-  bigTitleHome,
-  medContentHome,
-  otherColorHome,
-  smallContentHome,
-} from '../Content/Home/homeContent';
-import {
-  backgroundColorInvertNews,
-  backgroundColorNews,
-  bigTitleNews,
-  medContentNews,
-  otherColorNews,
-  smallContentNews,
-} from '../Content/Home/newContent';
-import {
-  backgroundColorInvertProjects,
-  backgroundColorProjects,
-  bigTitleProjects,
-  medContentProjects,
-  otherColorProjects,
-  smallContentProjects,
-} from '../Content/Home/projectContent';
-import {
-  backgroundColorInvertPublications,
-  backgroundColorPublications,
-  bigTitlePublications,
-  medContentPublications,
-  otherColorPublications,
-  smallContentPublications,
-} from '../Content/Home/publicationContent';
-
-const backgroundImageMap = [
-  BackgroundHome,
-  BackgroundCourses,
-  BackgroundPublications,
-  BackgroundProjects,
-  BackgroundNews,
-];
-
-const backgroundColorMap = [
-  backgroundColorHome,
-  backgroundColorCourses,
-  backgroundColorPublications,
-  backgroundColorProjects,
-  backgroundColorNews,
-];
-
-const backgroundColorInvertMap = [
-  backgroundColorInvertHome,
-  backgroundColorInvertCourses,
-  backgroundColorInvertPublications,
-  backgroundColorInvertProjects,
-  backgroundColorInvertNews,
-];
-
-const otherColorMap = [
-  otherColorHome,
-  otherColorCourses,
-  otherColorPublications,
-  otherColorProjects,
-  otherColorNews,
-];
-
-const smallContentMap = [
-  smallContentHome,
-  smallContentCourses,
-  smallContentPublications,
-  smallContentProjects,
-  smallContentNews,
-];
-
-const bigTitleMap = [
-  bigTitleHome,
-  bigTitleCourses,
-  bigTitlePublications,
-  bigTitleProjects,
-  bigTitleNews,
-];
-
-const medContentMap = [
-  medContentHome,
-  medContentCourses,
-  medContentPublications,
-  medContentProjects,
-  medContentNews,
-];
-
-const MedColorMap = ['#a9a9a9', 'white', 'white', 'white', 'white'];
+  backgroundColorInvertMap,
+  backgroundColorMap,
+  backgroundImageMap,
+  bigTitleMap,
+  medColorMap,
+  medContentMap,
+  otherColorMap,
+  smallContentMap,
+} from './StyleMap';
 
 const BackgroundColor = styled.div`
   background-color: ${props => props.color};
@@ -241,7 +149,7 @@ class FullPage extends Component {
                   {bigTitleMap[current]}
                 </TitleText>
               </BigTitle>
-              <MedContent span={12} color={MedColorMap[current]}>
+              <MedContent span={12} color={medColorMap[current]}>
                 {medContentMap[current]}
               </MedContent>
               <OtherLink span={6}>
