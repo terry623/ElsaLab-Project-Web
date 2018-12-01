@@ -48,6 +48,25 @@ const Text = styled.div`
   height: 100%;
 `;
 
+const EachEntry = [
+  {
+    name: 'Courses',
+    image: BackgroundCourses,
+  },
+  {
+    name: 'Publications',
+    image: BackgroundPublications,
+  },
+  {
+    name: 'Projects',
+    image: BackgroundProjects,
+  },
+  {
+    name: 'News',
+    image: BackgroundNews,
+  },
+];
+
 class Home extends Component {
   state = {
     current: 0,
@@ -67,42 +86,17 @@ class Home extends Component {
         <FullPage current={current} />
         <EntryLink>
           <Row type="flex" justify="space-around">
-            <Col span={4}>
-              <ImageEntry src={BackgroundCourses} />
-              <BlackLayer
-                onMouseEnter={() => this.changeBackground(1)}
-                onMouseLeave={() => this.changeBackground(0)}
-              >
-                <Text>Courses</Text>
-              </BlackLayer>
-            </Col>
-            <Col span={4}>
-              <ImageEntry src={BackgroundPublications} />
-              <BlackLayer
-                onMouseEnter={() => this.changeBackground(2)}
-                onMouseLeave={() => this.changeBackground(0)}
-              >
-                <Text>Publications</Text>
-              </BlackLayer>
-            </Col>
-            <Col span={4}>
-              <ImageEntry src={BackgroundProjects} />
-              <BlackLayer
-                onMouseEnter={() => this.changeBackground(3)}
-                onMouseLeave={() => this.changeBackground(0)}
-              >
-                <Text>Projects</Text>
-              </BlackLayer>
-            </Col>
-            <Col span={4}>
-              <ImageEntry src={BackgroundNews} />
-              <BlackLayer
-                onMouseEnter={() => this.changeBackground(4)}
-                onMouseLeave={() => this.changeBackground(0)}
-              >
-                <Text>News</Text>
-              </BlackLayer>
-            </Col>
+            {EachEntry.map(({ name, image }, index) => (
+              <Col span={4}>
+                <ImageEntry src={image} />
+                <BlackLayer
+                  onMouseEnter={() => this.changeBackground(index + 1)}
+                  onMouseLeave={() => this.changeBackground(0)}
+                >
+                  <Text>{name}</Text>
+                </BlackLayer>
+              </Col>
+            ))}
           </Row>
         </EntryLink>
       </Fragment>
