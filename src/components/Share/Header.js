@@ -7,21 +7,28 @@ import { Link } from 'react-router-dom';
 const Layout = styled.div`
   width: 100%;
   float: right;
-  margin-top: 3vh;
   margin-right: 2vw;
 `;
 
 const LinkCol = styled(Col)`
   font-size: 1vw;
   text-align: center;
+  padding-top: 3vh;
+  padding-bottom: 1vh;
+
+  :hover {
+    cursor: pointer;
+    background-color: black;
+    opacity: 0.5;
+  }
 `;
 
 const EachLink = styled(Link)`
   color: ${props => props.color};
   text-decoration: none !important;
 
-  :hover {
-    color: ${props => props.color};
+  ${LinkCol}:hover & {
+    color: white;
   }
 `;
 
