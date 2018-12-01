@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 
+import Header from '../Share/Header';
 import IconImg from '../static/icon.png';
 import TeacherImageSrc from '../static/home/teacher.png';
 import {
@@ -17,19 +18,6 @@ import {
   Title2,
   TitleText,
 } from '../Share';
-
-const TempHeader = styled.div`
-  width: 100%;
-  float: right;
-  margin-top: 3vh;
-  margin-right: 2vw;
-`;
-
-const LinkCol = styled(Col)`
-  font-size: 1vw;
-  color: white;
-  text-align: center;
-`;
 
 const TeachBlock = styled.div`
   width: 100%;
@@ -110,16 +98,7 @@ const About = () => (
     </Col>
     <Col span={15}>
       <BackgroundColor color="#9c8370">
-        <TempHeader>
-          <Row type="flex" justify="end" align="middle">
-            <LinkCol span={2}>Home</LinkCol>
-            <LinkCol span={2}>Course</LinkCol>
-            <LinkCol span={3}>Publications</LinkCol>
-            <LinkCol span={2}>Projects</LinkCol>
-            <LinkCol span={2}>News</LinkCol>
-            <LinkCol span={2}>Sign in</LinkCol>
-          </Row>
-        </TempHeader>
+        <Header fontColor="white" />
         <TeachBlock>
           <Row type="flex" justify="center" align="top">
             <Col span={10}>

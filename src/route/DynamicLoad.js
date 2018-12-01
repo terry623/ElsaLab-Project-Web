@@ -8,6 +8,16 @@ const HomePage = Loadable({
   loading: Loading,
 });
 
+const CoursesPage = Loadable({
+  loader: () => import('./Pages/CoursesPage'),
+  loading: Loading,
+});
+
+const ProjectsPage = Loadable({
+  loader: () => import('./Pages/ProjectsPage'),
+  loading: Loading,
+});
+
 const Project = Loadable({
   loader: () => import('./Pages/Project'),
   loading: Loading,
@@ -18,4 +28,4 @@ const AboutPage = Loadable({
   loading: Loading,
 });
 
-export { HomePage, Project, AboutPage };
+export { HomePage, CoursesPage, ProjectsPage, Project, AboutPage };
