@@ -104,7 +104,7 @@ class Home extends Component {
         <EntryLink>
           <Row type="flex" justify="space-around">
             {EachEntry.map(({ name, image, href }, index) => (
-              <Col span={4}>
+              <Col key={name} span={4}>
                 <ImageEntry src={image} />
                 <BlackLayer
                   onMouseEnter={() => this.changeBackground(index + 1)}
