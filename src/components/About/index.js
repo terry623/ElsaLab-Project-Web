@@ -4,76 +4,29 @@ import { Col, Row } from 'antd';
 
 import IconImg from '../static/icon.png';
 import TeacherImageSrc from '../static/home/teacher.png';
-
-const BackgroundColor = styled.div`
-  background-color: ${props => props.color};
-  height: 100vh;
-  width: 100%;
-`;
-
-const MainRow = styled(Row)`
-  padding-left: 6vmin;
-`;
-
-const IconImage = styled.img`
-  width: 4.5vmin;
-`;
-
-const Title1 = styled.p`
-  font-size: 1.5vmin;
-  margin: 0;
-`;
-
-const Title2 = styled.p`
-  font-size: 2vmin;
-  margin: 0;
-`;
-
-const LogoContent = styled(Col)`
-  font-size: 2vmin;
-  color: white;
-  margin-top: 8vmin;
-`;
-
-const Hr = styled.hr`
-  width: 100%;
-  border: 0;
-  height: 2px;
-  /* background: ${props => props.color}; */
-`;
-
-const SmallContent = styled(Col)`
-  font-size: 2vmin;
-  color: ${props => props.color};
-  margin-top: 5vmin;
-`;
-
-const BigTitle = styled(Col)`
-  font-size: 8vmin;
-  color: white;
-  margin-top: 6vmin;
-  font-weight: bold;
-`;
-
-const TitleText = styled.div`
-  line-height: 1.2;
-`;
-
-const MedContent = styled(Col)`
-  font-size: 2vmin;
-  color: ${props => props.color};
-  margin-top: 5vmin;
-`;
+import {
+  BackgroundColor,
+  BigTitle,
+  Hr,
+  IconImage,
+  LogoContent,
+  MainRow,
+  MedContent,
+  SmallContent,
+  Title1,
+  Title2,
+  TitleText,
+} from '../Share';
 
 const TempHeader = styled.div`
   width: 100%;
   float: right;
-  margin-top: 3vmin;
-  margin-right: 4.5vmin;
+  margin-top: 3vh;
+  margin-right: 2vw;
 `;
 
 const LinkCol = styled(Col)`
-  font-size: 2vmin;
+  font-size: 1vw;
   color: white;
   text-align: center;
 `;
@@ -81,12 +34,12 @@ const LinkCol = styled(Col)`
 const TeachBlock = styled.div`
   width: 100%;
   float: right;
-  margin-top: 12vmin;
-  padding-left: 10vmin;
+  margin-top: 10vh;
+  padding-left: 5vw;
 `;
 
 const TeacherImage = styled.img`
-  width: 27vmin;
+  width: 13vw;
   border-radius: 100%;
   display: block;
   margin-left: auto;
@@ -94,14 +47,15 @@ const TeacherImage = styled.img`
 `;
 
 const Profile = styled.div`
-  font-size: 2vmin;
+  font-size: 1vw;
   color: white;
   text-align: center;
-  margin-top: 2vmin;
+  margin-top: 2vh;
 `;
 
 const ExperienceAndEducation = styled.div`
-  font-size: 1.8vmin;
+  font-size: 1vw;
+  line-height: 140%;
   color: white;
 `;
 
@@ -168,7 +122,7 @@ const About = () => (
         </TempHeader>
         <TeachBlock>
           <Row type="flex" justify="center" align="top">
-            <Col span={12}>
+            <Col span={10}>
               <TeacherImage src={TeacherImageSrc} />
               <Profile>
                 <b>

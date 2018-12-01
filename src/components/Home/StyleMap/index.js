@@ -1,8 +1,8 @@
-import BackgroundCourses from '../static/home/Courses.jpg';
-import BackgroundHome from '../static/home/delta.jpg';
-import BackgroundNews from '../static/home/News.jpg';
-import BackgroundProjects from '../static/home/Projects.jpg';
-import BackgroundPublications from '../static/home/Publications.jpg';
+import BackgroundCourses from '../../static/home/Courses.jpg';
+import BackgroundHome from '../../static/home/delta.jpg';
+import BackgroundNews from '../../static/home/News.jpg';
+import BackgroundProjects from '../../static/home/Projects.jpg';
+import BackgroundPublications from '../../static/home/Publications.jpg';
 import {
   backgroundColorCourses,
   backgroundColorInvertCourses,
@@ -10,7 +10,7 @@ import {
   medContentCourses,
   otherColorCourses,
   smallContentCourses,
-} from '../Content/Home/courseContent';
+} from '../../Content/Home/courseContent';
 import {
   backgroundColorHome,
   backgroundColorInvertHome,
@@ -18,7 +18,7 @@ import {
   medContentHome,
   otherColorHome,
   smallContentHome,
-} from '../Content/Home/homeContent';
+} from '../../Content/Home/homeContent';
 import {
   backgroundColorInvertNews,
   backgroundColorNews,
@@ -26,7 +26,7 @@ import {
   medContentNews,
   otherColorNews,
   smallContentNews,
-} from '../Content/Home/newContent';
+} from '../../Content/Home/newContent';
 import {
   backgroundColorInvertProjects,
   backgroundColorProjects,
@@ -34,7 +34,7 @@ import {
   medContentProjects,
   otherColorProjects,
   smallContentProjects,
-} from '../Content/Home/projectContent';
+} from '../../Content/Home/projectContent';
 import {
   backgroundColorInvertPublications,
   backgroundColorPublications,
@@ -42,9 +42,9 @@ import {
   medContentPublications,
   otherColorPublications,
   smallContentPublications,
-} from '../Content/Home/publicationContent';
+} from '../../Content/Home/publicationContent';
 
-const backgroundImageMap = [
+export const backgroundImageMap = [
   BackgroundHome,
   BackgroundCourses,
   BackgroundPublications,
@@ -52,7 +52,7 @@ const backgroundImageMap = [
   BackgroundNews,
 ];
 
-const backgroundColorMap = [
+export const backgroundColorMap = [
   backgroundColorHome,
   backgroundColorCourses,
   backgroundColorPublications,
@@ -60,7 +60,7 @@ const backgroundColorMap = [
   backgroundColorNews,
 ];
 
-const backgroundColorInvertMap = [
+export const backgroundColorInvertMap = [
   backgroundColorInvertHome,
   backgroundColorInvertCourses,
   backgroundColorInvertPublications,
@@ -68,7 +68,7 @@ const backgroundColorInvertMap = [
   backgroundColorInvertNews,
 ];
 
-const otherColorMap = [
+export const otherColorMap = [
   otherColorHome,
   otherColorCourses,
   otherColorPublications,
@@ -76,7 +76,7 @@ const otherColorMap = [
   otherColorNews,
 ];
 
-const smallContentMap = [
+export const smallContentMap = [
   smallContentHome,
   smallContentCourses,
   smallContentPublications,
@@ -84,7 +84,7 @@ const smallContentMap = [
   smallContentNews,
 ];
 
-const bigTitleMap = [
+export const bigTitleMap = [
   bigTitleHome,
   bigTitleCourses,
   bigTitlePublications,
@@ -92,7 +92,7 @@ const bigTitleMap = [
   bigTitleNews,
 ];
 
-const medContentMap = [
+export const medContentMap = [
   medContentHome,
   medContentCourses,
   medContentPublications,
@@ -100,15 +100,4 @@ const medContentMap = [
   medContentNews,
 ];
 
-const medColorMap = ['#a9a9a9', 'white', 'white', 'white', 'white'];
-
-export {
-  backgroundImageMap,
-  backgroundColorMap,
-  backgroundColorInvertMap,
-  otherColorMap,
-  smallContentMap,
-  bigTitleMap,
-  medContentMap,
-  medColorMap,
-};
+export const medColorMap = ['#a9a9a9', 'white', 'white', 'white', 'white'];
