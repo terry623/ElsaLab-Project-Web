@@ -5,7 +5,6 @@ import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
 import BackgroundImage from '../../static/background_image_invert_vertical.jpg';
-import BackgroundImageGreen from '../../static/background_image_green.jpg';
 import Header from '../../Share/Header';
 import IconImg from '../../static/icon.png';
 import {
@@ -27,17 +26,19 @@ const Blocks = styled.div`
 `;
 
 const EachBlock = styled.div`
-  width: 100%;
+  width: 80%;
   height: 20vh;
   background-color: rgba(0, 0, 0, 0.3);
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 5vh;
   color: white;
-  font-size: 1.2vw;
+  font-size: 1.5vw;
 `;
 
-const Year = styled.div`
-  margin-bottom: -1vh;
-  font-weight: bold;
+const Date = styled.span`
+  font-size: 0.8vw;
+  padding-left: 0.25vw;
 `;
 
 const Title = styled.div`
@@ -58,18 +59,24 @@ const ImageArea = styled.div`
   background-position: center center;
 `;
 
-const CoursesContent = [
-  {
-    content: { year: '2018 Fall', name: 'Hardware Design and lab' },
-    image: BackgroundImage,
-    link: '/course/Hardware_Design_And_Lab',
+const MidText = styled.div`
+  font-size: 80%;
+  font-style: italic;
+  margin-top: 3vh;
+`;
+
+const CourseContent = {
+  Hardware_Design_And_Lab: {
+    year: '2018 Fall',
+    name: 'Hardware Design and lab',
+    pdfs: ['page1', 'page2', 'page3'],
   },
-  {
-    content: { year: '2018 Fall', name: 'Hardware Design and lab 2' },
-    image: BackgroundImageGreen,
-    link: '/course/Hardware_Design_And_Lab',
+  Hardware_Design_And_Lab_2: {
+    year: '2018 Fall',
+    name: 'Hardware Design and lab 2',
+    pdfs: ['page1'],
   },
-];
+};
 
 const Course = ({ courseName }) => (
   <Row>
@@ -98,7 +105,8 @@ const Course = ({ courseName }) => (
             </Row>
           </SmallContent>
           <BigTitle span={18}>
-            <TitleText>Courses</TitleText>
+            <TitleText>{CourseContent[courseName].year}</TitleText>
+            <MidText>{CourseContent[courseName].name}</MidText>
           </BigTitle>
           <MedContent span={12} color="#8c8c8c" />
           <Col span={6} />
@@ -109,18 +117,20 @@ const Course = ({ courseName }) => (
       <BackgroundColor color="white">
         <Header fontColor="#9b9b9b" />
         <Blocks>
-          {CoursesContent.map(({ content, image, link }) => (
-            <Link key={content.name} to={link}>
+          {CourseContent[courseName].pdfs.map((temp, index) => (
+            <Link key={temp} to="/">
               <EachBlock>
                 <Row>
-                  <Col span={12}>
-                    <TextArea>
-                      <Year>{content.year}</Year>
-                      <Title>{content.name}</Title>
-                    </TextArea>
+                  <Col span={8}>
+                    <ImageArea image={BackgroundImage} />
                   </Col>
-                  <Col span={12}>
-                    <ImageArea image={image} />
+                  <Col span={16}>
+                    <TextArea>
+                      <div>
+                        material #{index} <Date>2019/02/17</Date>
+                      </div>
+                      <Title>{CourseContent[courseName].name}</Title>
+                    </TextArea>
                   </Col>
                 </Row>
               </EachBlock>

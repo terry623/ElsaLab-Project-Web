@@ -66,7 +66,7 @@ const CoursesContent = [
   {
     content: { year: '2018 Fall', name: 'Hardware Design and lab 2' },
     image: BackgroundImageGreen,
-    link: '/course/Hardware_Design_And_Lab',
+    link: '/course/Hardware_Design_And_Lab_2',
   },
 ];
 
