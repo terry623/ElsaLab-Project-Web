@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 
 import {
   AboutPage,
+  Course,
   CoursesPage,
   HomePage,
   Project,
@@ -15,6 +16,7 @@ class Main extends Component {
       <div>
         <Route exact path="/" component={HomePage} />
         <Route path="/courses" component={CoursesPage} />
+        <Route path="/course/:name?" component={Course} />
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/project/:name?" component={Project} />
         <Route path="/about" component={AboutPage} />

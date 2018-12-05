@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
-import BackgroundImage from '../static/background_image_invert_vertical.jpg';
-import BackgroundImageGreen from '../static/background_image_green.jpg';
-import Header from '../Share/Header';
-import IconImg from '../static/icon.png';
+import BackgroundImage from '../../static/background_image_invert_vertical.jpg';
+import BackgroundImageGreen from '../../static/background_image_green.jpg';
+import Header from '../../Share/Header';
+import IconImg from '../../static/icon.png';
 import {
   BackgroundColor,
   BigTitle,
@@ -19,7 +20,7 @@ import {
   Title1,
   Title2,
   TitleText,
-} from '../Share';
+} from '../../Share';
 
 const Blocks = styled.div`
   padding-top: 20vh;
@@ -70,7 +71,7 @@ const CoursesContent = [
   },
 ];
 
-const Courses = () => (
+const Course = ({ courseName }) => (
   <Row>
     <Col span={9}>
       <BackgroundColor color="#f8d188">
@@ -92,7 +93,7 @@ const Courses = () => (
                 <Hr color="#8c8c8c" />
               </Col>
               <Col span={12} offset={1}>
-                Home
+                Home / Courses
               </Col>
             </Row>
           </SmallContent>
@@ -131,4 +132,8 @@ const Courses = () => (
   </Row>
 );
 
-export default Courses;
+Course.propTypes = {
+  courseName: PropTypes.string.isRequired,
+};
+
+export default Course;

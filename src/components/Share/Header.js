@@ -10,61 +10,58 @@ const Layout = styled.div`
   margin-right: 2vw;
 `;
 
+const EachLink = styled(Link)`
+  color: ${props => props.color};
+  text-decoration: none !important;
+`;
+
 const LinkCol = styled(Col)`
   font-size: 1vw;
   text-align: center;
   padding-top: 3vh;
   padding-bottom: 1vh;
 
-  :hover {
+  ${EachLink}:hover & {
     cursor: pointer;
+    color: white;
     background-color: black;
     opacity: 0.5;
-  }
-`;
-
-const EachLink = styled(Link)`
-  color: ${props => props.color};
-  text-decoration: none !important;
-
-  ${LinkCol}:hover & {
-    color: white;
   }
 `;
 
 const Header = ({ fontColor }) => (
   <Layout>
     <Row type="flex" justify="end" align="middle">
-      <LinkCol span={2}>
+      <Col span={2}>
         <EachLink color={fontColor} to="/">
-          Home
+          <LinkCol>Home</LinkCol>
         </EachLink>
-      </LinkCol>
-      <LinkCol span={2}>
+      </Col>
+      <Col span={2}>
         <EachLink color={fontColor} to="/courses">
-          Course
+          <LinkCol>Course</LinkCol>
         </EachLink>
-      </LinkCol>
-      <LinkCol span={3}>
+      </Col>
+      <Col span={3}>
         <EachLink color={fontColor} to="/">
-          Publications
+          <LinkCol>Publications</LinkCol>
         </EachLink>
-      </LinkCol>
-      <LinkCol span={2}>
+      </Col>
+      <Col span={2}>
         <EachLink color={fontColor} to="/projects">
-          Projects
+          <LinkCol>Projects</LinkCol>
         </EachLink>
-      </LinkCol>
-      <LinkCol span={2}>
+      </Col>
+      <Col span={2}>
         <EachLink color={fontColor} to="/">
-          News
+          <LinkCol>News</LinkCol>
         </EachLink>
-      </LinkCol>
-      <LinkCol span={2}>
+      </Col>
+      <Col span={2}>
         <EachLink color={fontColor} to="/">
-          Sign in
+          <LinkCol>Sign in</LinkCol>
         </EachLink>
-      </LinkCol>
+      </Col>
     </Row>
   </Layout>
 );
