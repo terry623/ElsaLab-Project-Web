@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
-import BackgroundImage from '../../static/background_image_invert_vertical.jpg';
-import Header from '../../Share/Header';
-import IconImg from '../../static/icon.png';
+import BackgroundImage from '../../../static/background_image_invert_vertical.jpg';
+import Header from '../../../Share/Header';
+import IconImg from '../../../static/icon.png';
 import {
   BackgroundColor,
   BigTitle,
@@ -19,7 +19,7 @@ import {
   Title1,
   Title2,
   TitleText,
-} from '../../Share';
+} from '../../../Share';
 
 const Blocks = styled.div`
   padding-top: 20vh;
@@ -43,13 +43,12 @@ const Date = styled.span`
 
 const Title = styled.div`
   font-size: 2vw;
-  line-height: 120%;
 `;
 
 const TextArea = styled.div`
   padding-left: 2.5vw;
   padding-right: 4vw;
-  padding-top: 3vh;
+  padding-top: 4.5vh;
 `;
 
 const ImageArea = styled.div`
@@ -66,38 +65,20 @@ const MidText = styled.div`
   margin-top: 3vh;
 `;
 
-const CourseContent = {
+const PdfContent = {
   Hardware_Design_And_Lab: {
     year: '2018 Fall',
     name: 'Hardware Design and lab',
-    pdfs: [
-      {
-        name: 'Course Syllabus',
-        link: '/course/Hardware_Design_And_Lab/syllabus',
-      },
-      {
-        name: 'Verilog-Introduction-and-FPGA-Implementation',
-        link: '/course/Hardware_Design_And_Lab/lecture_1',
-      },
-      {
-        name: 'Verilog-Data-Flow-and-Data-Types',
-        link: '/course/Hardware_Design_And_Lab/lecture_2',
-      },
-    ],
+    pdfs: ['page1', 'page2', 'page3'],
   },
   Hardware_Design_And_Lab_2: {
     year: '2018 Fall',
     name: 'Hardware Design and lab 2',
-    pdfs: [
-      {
-        name: 'NOTHING',
-        link: '/course/Hardware_Design_And_Lab_2',
-      },
-    ],
+    pdfs: ['page1'],
   },
 };
 
-const Course = ({ courseName }) => (
+const PdfPage = ({ pdfName }) => (
   <Row>
     <Col span={9}>
       <BackgroundColor color="#f8d188">
@@ -124,8 +105,8 @@ const Course = ({ courseName }) => (
             </Row>
           </SmallContent>
           <BigTitle span={18}>
-            <TitleText>{CourseContent[courseName].year}</TitleText>
-            <MidText>{CourseContent[courseName].name}</MidText>
+            <TitleText>{PdfContent[pdfName].year}</TitleText>
+            <MidText>{PdfContent[pdfName].name}</MidText>
           </BigTitle>
           <MedContent span={12} color="#8c8c8c" />
           <Col span={6} />
@@ -136,8 +117,8 @@ const Course = ({ courseName }) => (
       <BackgroundColor color="white">
         <Header fontColor="#9b9b9b" />
         <Blocks>
-          {CourseContent[courseName].pdfs.map(({ name, link }, index) => (
-            <Link key={name} to={link}>
+          {PdfContent[pdfName].pdfs.map((temp, index) => (
+            <Link key={temp} to="/">
               <EachBlock>
                 <Row>
                   <Col span={8}>
@@ -146,9 +127,9 @@ const Course = ({ courseName }) => (
                   <Col span={16}>
                     <TextArea>
                       <div>
-                        material #{index + 1} <Date>2019/02/17</Date>
+                        material #{index} <Date>2019/02/17</Date>
                       </div>
-                      <Title>{name}</Title>
+                      <Title>{PdfContent[pdfName].name}</Title>
                     </TextArea>
                   </Col>
                 </Row>
@@ -161,8 +142,8 @@ const Course = ({ courseName }) => (
   </Row>
 );
 
-Course.propTypes = {
-  courseName: PropTypes.string.isRequired,
+PdfPage.propTypes = {
+  pdfName: PropTypes.string.isRequired,
 };
 
-export default Course;
+export default PdfPage;
